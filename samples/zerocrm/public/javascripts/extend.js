@@ -1,16 +1,3 @@
-/*
-{
-  "container": "ext-test",
-  "name": "on-new-lead",
-  "token": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjIifQ.eyJqdGkiOiJmODYyZWMyMzhkZGQ0MGU2OWNkN2RkODI5ODJlNDRhYyIsImlhdCI6MTQ5MDIyMzMwMywiY2EiOlsiZTBjOGMxMDE5N2YyNGU0ZTgwZTJjMmY2YTdjMWUwZmYiLCI4YTg1MmJiYmQxMzE0MWJjOTJhNzYzYjIzMDQ4YWIyNSJdLCJkZCI6MCwidGVuIjoiZXh0LXRlc3QiLCJlY3R4IjoibElQZjFZbWc1RHFPZXpFZHh4aGx6Wm1SbkREclY0d0VzMmZlOVAzWVFnWDlITWNucENTK3pSVytKU243blM1UEJhbzhQSjk0ckdGQUVCRXlDQ0tvMVgzanJjMzQzUzI5YWZ2cWl3QWtoMXZ5YnJCQngvU0ZMZ1d6RzhxSDNYSVguSCszcHB6bmtHVHZPc0YvS0dkcnFFUT09IiwianRuIjoib24tbmV3LWxlYWQiLCJwYiI6MiwidXJsIjoid2VidGFzazovL2xvY2FsaG9zdC9hcGkvZGF0YS9jb2RlL2V4dC10ZXN0JTJGb24tbmV3LWxlYWQifQ.jHtyJc_ltS7ysgoqB9-G7I4I7g0_AtNrsIt-siK-Rrw",
-  "meta": {
-    "auth0-extension-secret": "9f0f6154a64dedd0e2f84ca34c43e2e618638e75f3267447f75d9b86c57831d2",
-    "auth0-extension-type": "on-new-lead",
-    "wt-compiler": "auth0-ext-compilers/generic"
-  },
-  "webtask_url": "https://ext-test.run.webtask.io/on-new-lead"
-}
-*/
 
 // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#hosting-the-editor
 function createExtendEditorConfig(options) {
