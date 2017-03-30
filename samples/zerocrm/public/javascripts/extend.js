@@ -6,7 +6,7 @@ function createExtendEditorConfig(options) {
         webtaskUrl: options.webtaskContext.webtaskUrl,
         webtaskContainer: options.webtask.container,
         webtaskName: options.webtask.name,
-        defaultEditor: 'https://auth0.github.io/webtask-workbench/function-editor.js',
+        // defaultEditor: 'https://auth0.github.io/webtask-workbench/function-editor.js',
         // themeUrl: 'https://auth0.github.io/webtask-workbench/themes/white-theme.css',
         themeUrl: 'https://auth0.github.io/webtask-workbench/themes/auth0-theme.css',
         header: false,
