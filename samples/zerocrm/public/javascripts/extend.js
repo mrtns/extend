@@ -6,12 +6,11 @@ function createExtendEditorConfig(options) {
         webtaskUrl: options.webtaskContext.webtaskUrl,
         webtaskContainer: options.webtask.container,
         webtaskName: options.webtask.name,
-        // defaultEditor: 'https://auth0.github.io/webtask-workbench/function-editor.js',
-        // themeUrl: 'https://auth0.github.io/webtask-workbench/themes/white-theme.css',
-        themeUrl: 'https://auth0.github.io/webtask-workbench/themes/auth0-theme.css',
+        theme: 'dark', // or 'light' or URL to custom CSS
         header: false,
         // header: {
-        //     logoUrl: '...'
+        //     enabled: true,
+        //     logoUrl: '{URL to image}'
         // },
         toolbar: {
             enabled: true,
@@ -26,6 +25,7 @@ function createExtendEditorConfig(options) {
         allowEditingSchedule: false,
         allowSwitchingTemplates: false,
         allowCreatingFromTemplate: false,
+        
     };
     return editorOptions;
 }
