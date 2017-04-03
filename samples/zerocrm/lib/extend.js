@@ -18,7 +18,7 @@ exports.mapTenantToIsolationScope = (tenant, cb) => {
         return cb(null, {
             webtaskContainer: tenant,
             webtaskToken: tenantWebtaskToken,
-            webtaskUrl: config.webtaskUrl
+            hostUrl: config.hostUrl
         })
     });
 
@@ -40,7 +40,7 @@ exports.mapTenantToIsolationScope = (tenant, cb) => {
         // to only allow managing webtasks in the webtask container with a name matching
         // the tenant name in the ZeroCRM system. 
         superagent
-            .post(`${config.webtaskUrl}/api/tokens/issue`)
+            .post(`${config.hostUrl}/api/tokens/issue`)
             .set('Authorization', `Bearer ${config.masterWebtaskToken}`)
             .send({
                 ten: tenant
@@ -55,7 +55,7 @@ exports.mapTenantToIsolationScope = (tenant, cb) => {
 
 // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#discovering-extensions
 exports.discoverExtensions = (webtaskContext, extensibilityPoint, cb) => {
-    return superagent.get(`${webtaskContext.webtaskUrl}/api/webtask/${webtaskContext.webtaskContainer}`)
+    return superagent.get(`${webtaskContext.hostUrl}/api/webtask/${webtaskContext.webtaskContainer}`)
         .query({ meta: `auth0-extension-type:${extensibilityPoint}` })
         .set('Authorization', `Bearer ${webtaskContext.webtaskToken}`)
         .end((error, res) => {

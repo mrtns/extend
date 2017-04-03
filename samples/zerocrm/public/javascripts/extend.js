@@ -3,7 +3,7 @@
 function createExtendEditorConfig(options) {
     var editorOptions = {
         token: options.webtaskContext.webtaskToken,
-        webtaskUrl: options.webtaskContext.webtaskUrl,
+        hostUrl: options.webtaskContext.hostUrl,
         webtaskContainer: options.webtask.container,
         webtaskName: options.webtask.name,
         theme: 'light', // or 'dark' or URL to custom CSS
@@ -61,7 +61,7 @@ function ensureExtensionExists(options) {
     }
 
     function createWebtask(code) {
-        return superagent.put(`${options.webtaskContext.webtaskUrl}/api/webtask/${options.webtaskContext.webtaskContainer}/${options.extensibilityPoint}`)
+        return superagent.put(`${options.webtaskContext.hostUrl}/api/webtask/${options.webtaskContext.webtaskContainer}/${options.extensibilityPoint}`)
             .set('Authorization', `Bearer ${options.webtaskContext.webtaskToken}`)
             .send({
                 code: code, 
@@ -84,7 +84,7 @@ function ensureExtensionExists(options) {
 
 // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#discovering-extensions
 function discoverExtensions(options) {
-    return superagent.get(`${options.webtaskContext.webtaskUrl}/api/webtask/${options.webtaskContext.webtaskContainer}`)
+    return superagent.get(`${options.webtaskContext.hostUrl}/api/webtask/${options.webtaskContext.webtaskContainer}`)
         .query({ meta: `auth0-extension-type:${options.extensibilityPoint}` })
         .set('Authorization', `Bearer ${options.webtaskContext.webtaskToken}`)
         .then((res) => {
