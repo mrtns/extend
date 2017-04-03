@@ -41,13 +41,7 @@
       
       <div class="content" id="editor-content" style="display: none;">
           <a class="back" href="/settings"><i class="icon-budicon-463"></i>Back to settings</a>
-          <div class="spinner-container">
-            <div class="spinner-text">Loading</div>
-            <div class="spinner spinner-sm">
-              <div class="circle"></div>
-            </div>
-          </div>
-          <div id="extend-editor" style="height: 600px"></div>
+          <div id="extend-editor" style="height: 600px; border: 1px solid rgba(73,85,103,0.1); border-radius: 2px;"></div>
       </div>
       
       <div class="content" id="settings-content">
@@ -113,10 +107,6 @@
     $('#onopportunitychanged').click(function () {
       displayExtendEditor('on-opportunity-changed');
     });    
-    
-    $('#code').on('load', function () {
-      $('.spinner-container').hide();
-    });
   });
   </script>
 </body>

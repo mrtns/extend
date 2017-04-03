@@ -6,7 +6,7 @@ function createExtendEditorConfig(options) {
         webtaskUrl: options.webtaskContext.webtaskUrl,
         webtaskContainer: options.webtask.container,
         webtaskName: options.webtask.name,
-        theme: 'dark', // or 'light' or URL to custom CSS
+        theme: 'light', // or 'dark' or URL to custom CSS
         header: false,
         // header: {
         //     enabled: true,
