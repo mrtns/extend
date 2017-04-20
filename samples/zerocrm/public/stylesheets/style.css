@@ -124,29 +124,29 @@ html, body {
   outline: none;
   width: 170px;
   font-size: 14px;
-  color: #989EA1;
+  color: rgba(64,71,81,1);
   line-height: 22px;
   font-weight: 100;
 }
 
 ::-webkit-input-placeholder {
   font-size: 14px;
-  color: rgba(211,211,211,.6);
+  color: rgba(64,71,81,.6);
   font-weight: 100;
 }
 ::-moz-placeholder {
   font-size: 14px;
-  color: rgba(211,211,211,.6);
+  color: rgba(64,71,81,.6);
   font-weight: 100;
 }
 :-ms-input-placeholder { 
   font-size: 14px;
-  color: rgba(211,211,211,.6);
+  color: rgba(64,71,81,.6);
   font-weight: 100;
 }
 :-moz-placeholder {
   font-size: 14px;
-  color: rgba(211,211,211,.6);
+  color: rgba(64,71,81,.6);
   font-weight: 100;
 }
 
@@ -288,7 +288,7 @@ html, body {
 
 .crm .container .content .list-container .list p {
   font-size: 13px;
-  color: #989EA1;
+  color: rgba(64,71,81,.7);
   user-select: none;
   cursor: default;
   margin-bottom: 0;
@@ -323,7 +323,7 @@ html, body {
 
 .crm .container .content .list-container .list .actions button {
   font-size: 14px;
-  color: rgba(152,158,161,.5);
+  color: rgba(64,71,81,.9);
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -504,6 +504,6 @@ html, body {
 }
 
 .form-result pre {
-  font-size: 11px;
+  font-size: 13px;
   color: #4C5153;
 }
