@@ -6,21 +6,23 @@ const config = require('./config');
 const db = require('./db');
 
 // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#mapping-isolation-requirements-onto-webtask-tokens
-exports.mapTenantToIsolationScope = (tenant, cb) => {
-    return async.waterfall([
-        (cb) => db.getTenant(tenant, cb),
-        (tenantData, cb) => ensureTenantWebtaskToken(tenant, tenantData, cb)
-    ], (error, tenantWebtaskToken) => {
-        if (error) return cb(error);
-        // Isolation scope is defined by the webtaskContainer and webtaskToken that
-        // authorizes management of webtasks in that container. In this simple case
-        // the tenant name is directly mapped onto the webtask container name. 
-        return cb(null, {
-            webtaskContainer: tenant,
-            webtaskToken: tenantWebtaskToken,
-            hostUrl: config.hostUrl
-        })
-    });
+exports.mapTenantToIsolationScope = (req, cb) => {
+    return req.webtask
+        ? cb(null, req.webtask)
+        : async.waterfall([
+            (cb) => db.getTenant(config.zerocrmTenant, cb),
+            (tenantData, cb) => ensureTenantWebtaskToken(config.zerocrmTenant, tenantData, cb)
+        ], (error, tenantWebtaskToken) => {
+            if (error) return cb(error);
+            // Isolation scope is defined by the webtaskContainer and webtaskToken that
+            // authorizes management of webtasks in that container. In this simple case
+            // the tenant name is directly mapped onto the webtask container name. 
+            return cb(null, {
+                webtaskContainer: config.zerocrmTenant,
+                webtaskToken: tenantWebtaskToken,
+                hostUrl: config.hostUrl
+            })
+        });
 
     function ensureTenantWebtaskToken(tenant, tenantData, cb) {        
         // If the webtask token is already associated with the tenant in the system, return it.
@@ -30,8 +32,8 @@ exports.mapTenantToIsolationScope = (tenant, cb) => {
 
         // Otherwise create a tenant webtask token and store it for future use in the database.
         return async.waterfall([
-            (cb) => createTenantWebtaskToken(tenant, cb),
-            (tenantWebtaskToken, cb) => db.updateTenant(tenant, { webtaskToken: tenantWebtaskToken }, (e) => cb(e, tenantWebtaskToken))
+            (cb) => createTenantWebtaskToken(config.zerocrmTenant, cb),
+            (tenantWebtaskToken, cb) => db.updateTenant(config.zerocrmTenant, { webtaskToken: tenantWebtaskToken }, (e) => cb(e, tenantWebtaskToken))
         ], cb)
     }
 
@@ -43,7 +45,7 @@ exports.mapTenantToIsolationScope = (tenant, cb) => {
             .post(`${config.hostUrl}/api/tokens/issue`)
             .set('Authorization', `Bearer ${config.masterWebtaskToken}`)
             .send({
-                ten: tenant
+                ten: config.zerocrmTenant
             })
             .end((error, res) => {
                 if (error || !res.ok) return cb(new Error(`Unable to create tenant webtask token: ${ error ? error.message : res.text }`));

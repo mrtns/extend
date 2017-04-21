@@ -53,7 +53,7 @@ function ensureExtensionExists(options) {
     }
 
     function loadExtensionCode() {
-        return superagent.get(`/javascripts/${options.extensibilityPoint}.js`)
+        return superagent.get(`javascripts/${options.extensibilityPoint}.js`)
             .then((res) => {
                 if (!res.ok) return Promise.reject(new Error(`Unable to obtain template code for new extension: HTTP ${res.statusCode}`));
                 return Promise.resolve(res.text);

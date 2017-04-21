@@ -1,19 +1,20 @@
 var crypto = require('crypto');
 var express = require('express');
-var router = express.Router();
+var router = new express();
 var bodyParser = require('body-parser');
 var async = require('async');
 var extend = require('../lib/extend');
 var config = require('../lib/config');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-router.use(function (req, res, next) {
-    // Establish the ZeroCRM tenant this operation is running on behalf of. 
-    // In production, this would be typically derived from the authentication context.
-    // In this demo, the tenant to use is explicitly specified through configuration.
-
-    req.zerocrmTenant = config.zerocrmTenant;
-    return next();
-});
+router.set('views', path.join(__dirname, '..', 'views'));
+router.set('view engine', 'ejs');
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(cookieParser());
+router.use(express.static(path.join(__dirname, '..', 'public')));
 
 router.get('/', function(req, res) {
     res.render('index', { });
@@ -23,7 +24,7 @@ router.get('/settings', function(req, res, next) {
     // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#mapping-isolation-requirements-onto-webtask-tokens
 
     return async.waterfall([
-        (cb) => extend.mapTenantToIsolationScope(req.zerocrmTenant, cb),
+        (cb) => extend.mapTenantToIsolationScope(req, cb),
         (webtaskContext, cb) => res.render('settings', { 
             webtaskContext: webtaskContext, 
             randomBytes: crypto.randomBytes(32).toString('hex')
@@ -35,7 +36,7 @@ router.post('/api/leads', bodyParser.json(), function (req, res, next) {
     // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#invoking-extensions
 
     return async.waterfall([
-        (cb) => extend.mapTenantToIsolationScope(req.zerocrmTenant, cb),
+        (cb) => extend.mapTenantToIsolationScope(req, cb),
         (webtaskContext, cb) => extend.discoverExtensions(webtaskContext, 'on-new-lead', cb),
         (extensions, cb) => extend.invokeExtension(extensions, req.body, cb),
         (result, cb) => {
