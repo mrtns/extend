@@ -79,7 +79,7 @@ html, body {
 .crm .header {
   order: 1;
   height: 74px;
-  background: #FFFFFF;
+  background: #f2f4f5;
   border-bottom: 1px solid rgba(73,85,103,0.1);
   padding-left: 34px;
   padding-right: 34px;
@@ -127,6 +127,7 @@ html, body {
   color: rgba(64,71,81,1);
   line-height: 22px;
   font-weight: 100;
+  background: #f2f4f5;
 }
 
 ::-webkit-input-placeholder {
@@ -152,7 +153,7 @@ html, body {
 
 .crm .header .user {
   font-size: 14px;
-  color: #989EA1;
+  color: rgba(64,71,81,.7);
   display: flex;
   align-items: center;
   position: absolute;
@@ -161,12 +162,14 @@ html, body {
 }
 
 .crm .header .user .avatar {
-  background: #F0F0F0;
+  background: #DDD;
   border-radius: 100px;
   height: 45px;
   width: 45px;
   display: inline-block;
   margin-left: 21px;
+  /*margin-right: 21px;*/
+  /*display: none;*/
 }
 
 .crm .container {
@@ -227,7 +230,7 @@ html, body {
 
 .crm .container .content {
   order: 2;
-  background: #FFFFFF;
+  background: #FDFDFD;
   padding: 55px;
   width: 100%;
 }
@@ -246,7 +249,7 @@ html, body {
 }
 
 .crm .container .content .list-container {
-  background: #FFFFFF;
+  background: #FDFDFD;
   border: 1px solid #ECEEEF;
   border-radius: 2px;
   padding-top: 21px;
@@ -270,10 +273,10 @@ html, body {
 }
 
 .crm .container .content .list-container .list .actions {
-  display: none;
-  flex-direction: row;
-  position: absolute;
-  margin-right: 21px;
+  display: block;
+  float: right;
+  position: relative;
+  margin-top: 13px;
 }
 
 .crm .container .content .list-container .list h3 {
@@ -300,7 +303,8 @@ html, body {
 }
 
 .crm .container .content .list-container .list div.list-item:hover {
-  background: #FCFCFC;
+  /*background: #ebeff1;*/
+  background: rgba(242,244,245,.5);
   border-radius: 2px;
 }
 
@@ -323,7 +327,7 @@ html, body {
 
 .crm .container .content .list-container .list .actions button {
   font-size: 14px;
-  color: rgba(64,71,81,.9);
+  color: rgba(64,71,81,.6);
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -333,11 +337,12 @@ html, body {
 
 .crm .container .content .back {
   text-decoration: none;
-  color: rgba(0,0,0,.3);
+  color: rgba(64,71,81,.7);
   font-size: 14px;
   margin-bottom: 13px;
   display: block;
   margin-bottom: 34px;
+  width: 135px;
 }
 
 .crm .container .content .back i { 
@@ -470,7 +475,7 @@ html, body {
 }
 
 .crm .container .content .form-container {
-  background: #FFFFFF;
+  background: #FDFDFD;
   border: 1px solid #ECEEEF;
   border-radius: 2px;
   padding-top: 21px;
