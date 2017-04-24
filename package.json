@@ -1,12 +1,12 @@
 {
-  "name": "extend",
+  "name": "auth0-extend",
   "private": true,
   "author": {
     "name": "Tomasz Janczuk <tomasz@janczuk.org>",
     "url": "http://tomasz.janczuk.org",
     "twitter": "tjanczuk"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auth0 Extend Samples",
   "scripts": {
     "sec-deps": "nsp check --warn-only",
