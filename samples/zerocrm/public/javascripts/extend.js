@@ -165,35 +165,29 @@ function createInitialTutorial() {
     var trip = new Trip([
         { 
           sel : $(".tutorial.step1"), 
-          content : "Enter the name 'Customer'",
+          content : "Enter 'Customer' as a sample customer name.",
           position : "e",
           animation: 'bounce'
         },
         { 
           sel : $(".tutorial.step2"), 
-          content : "Put the value '5000'",
+          content : "Enter '5000' as the value of the prospective deal.",
           position : "e" 
         },
         { 
           sel : $(".tutorial.step3"), 
-          content : "Click here",
+          content : "Click here.",
           position : "e" 
         },
         {
           sel : $(".tutorial.step4"), 
-          content: 'a JSON result is returned showing the lead has been created',
+          content: 'JSON result is returned showing information about the newly created lead.',
           position : "n",
           delay : 5000
         },
         {
-          sel : $(".tutorial.step5"), 
-          content: 'Zero CRM uses Auth0 Extend to execute custom user actions on creation of the lead.',
-          position : "s" ,
-          delay : 6000
-        },
-        {
           sel : $(".tutorial.step6"), 
-          content: 'The Settings screen is where you do this configuration.',
+          content: 'Zero CRM can be extended via custom actions to intercept the lead creation event, and implement custom logic. The Settings screen is where you can configure custom actions.',
           position : "e",
           expose : true
           // delay: 1000
@@ -214,13 +208,13 @@ function createSettingsTutorial() {
     var trip = new Trip([
       { 
         sel : $(".tutorial.step1"), 
-        content : "Click here",
-        position : "e",
+        content : "Most platforms today use webhooks for extensibility. Zero CRM uses Auth0 Extend to allow users to write the extension code in-place instead, and later execute it securely. Click here to edit the on-new-lead custom action.",
+        position : "n",
         animation: 'bounce'
       },
       { 
         sel : $(".tutorial.step2"), 
-        content : "The code for the action was created on 'Edit' for illustration, in a real system you would likely have a different default template. This code first writes out to the console when a new lead is created. It then checks to see if the lead value is greater than $1000 and has a placeholder for sending an email. Finally, it tacks on additional profile information to the returned lead.",
+        content : "The Auth0 Extend editor provides feature-rich and highly customizable in-product extension development experience. Extensions can be written in Node.js or domain specific languages. Users can manage secrets, access real-time logs, and test the code all from within the Auth0 Extend editor. Try modifying the JSON the code returns, save, then go back to 'Leads' and add a new lead to see your custom action executed.",
         position : "n",
         showCloseBox: true
       }
