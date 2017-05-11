@@ -209,7 +209,7 @@ function createSettingsTutorial() {
       { 
         sel : $(".tutorial.step1"), 
         content : "Most platforms today use webhooks for extensibility. Zero CRM uses Auth0 Extend to allow users to write the extension code in-place instead, and later execute it securely. Click here to edit the on-new-lead custom action.",
-        position : "n",
+        position : "w",
         animation: 'bounce'
       },
       { 
