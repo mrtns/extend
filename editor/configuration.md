@@ -88,4 +88,4 @@ Several aspects of the Extend Editor can be controlled throught the options obje
 }
 ```
 
-Last update: `5/12/2017`.
+Last update: `5/15/2017`.
