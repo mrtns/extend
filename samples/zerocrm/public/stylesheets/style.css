@@ -205,8 +205,6 @@ html, body {
   width: 30px;
   display: inline-block;
   margin-left: 21px;
-  /*margin-right: 21px;*/
-  /*display: none;*/
 }
 
 .crm .container {
@@ -218,6 +216,7 @@ html, body {
 }
 
 .crm .sidebar {
+  overflow-y: auto;
   order: 1;
   min-width: 294px;
   background: #3445DC;
@@ -311,10 +310,6 @@ html, body {
   top: 2px;
 }
 
-/*.crm .sidebar ol li a:hover {
-  color: #00B6E6;
-}*/
-
 .crm .sidebar ol li.active {
   color: #00B6E6;
   border-left: 5px solid #FFF;
@@ -323,9 +318,10 @@ html, body {
 .crm .container .content {
   order: 2;
   background: #FDFDFD;
-  padding: 55px;
+  padding: 98px;
   padding-left: 82px;
-  width: 100%;
+  padding-right: 82px;
+  overflow-y: auto;
 }
 
 .crm .container iframe {
@@ -342,27 +338,24 @@ html, body {
 }
 
 .crm .container .content .list-container {
-  background: #FDFDFD;
-  border: 1px solid #ECEEEF;
-  border-radius: 2px;
   padding-top: 21px;
   padding-bottom: 21px;
-  padding-left: 34px;
   padding-right: 34px;
 }
 
 .crm .container .content .list-container h2 {
   padding: 0;
   margin: 0;
-  font-size: 16px;
-  color: #4C5153;
-  margin-bottom: 45px;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 30px;
   font-weight: normal;
 }
 
 .crm .container .content .list-container .list {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid #ECECEC;
 }
 
 .crm .container .content .list-container .list .actions {
@@ -373,8 +366,8 @@ html, body {
 }
 
 .crm .container .content .list-container .list h3 {
-  font-size: 14px;
-  color: #4C5153;
+  font-size: 18px;
+  color: #000;
   padding: 0;
   margin: 0;
   font-weight: normal;
@@ -383,8 +376,8 @@ html, body {
 }
 
 .crm .container .content .list-container .list p {
-  font-size: 13px;
-  color: rgba(64,71,81,.7);
+  font-size: 15px;
+  color: rgba(0,0,0,.6);
   user-select: none;
   cursor: default;
   margin-bottom: 0;
@@ -392,11 +385,12 @@ html, body {
 
 .crm .container .content .list-container .list div.list-item {
   padding: 13px;
-  margin-bottom: 5px;
+  border-bottom: 1px solid #ECECEC;
+  padding-top: 21px;
+  padding-bottom: 21px;
 }
 
 .crm .container .content .list-container .list div.list-item:hover {
-  /*background: #ebeff1;*/
   background: rgba(242,244,245,.5);
   border-radius: 2px;
 }
@@ -430,23 +424,24 @@ html, body {
 
 .crm .container .content .back {
   text-decoration: none;
-  color: rgba(64,71,81,.7);
-  font-size: 14px;
+  color: #7D7D7D;
+  font-size: 13px;
   margin-bottom: 13px;
   display: block;
   margin-bottom: 34px;
   width: 135px;
+  margin-top: -40px;
 }
 
 .crm .container .content .back i { 
-  font-size: 13px;
+  font-size: 12px;
   position: relative;
   top: 1px;
   margin-right: 8px;
 }
 
 .crm .container .content .back:hover { 
-  color: #00B6E6;
+  color: #3445DC;
 }
 
 .spinner-container {
@@ -566,11 +561,9 @@ html, body {
 
 .crm .container .content .form-container {
   background: #FDFDFD;
-  /*border: 1px solid #ECEEEF;*/
   border-radius: 2px;
   padding-top: 21px;
   padding-bottom: 34px;
-  /*padding-left: 34px;*/
   padding-right: 34px;
 }
 
@@ -586,7 +579,6 @@ html, body {
 .crm .container .content .form-container .form-content {
   display: flex;
   flex-direction: row;
-  /*align-items: center;*/
   height: 165px;
 }
 
@@ -601,4 +593,23 @@ html, body {
 .form-result pre {
   font-size: 13px;
   color: #4C5153;
+}
+
+#editor-content h2 {
+  font-size: 16px;
+  color: rgba(0,0,0,0.60);
+  font-weight: normal;
+  margin-bottom: 55px;
+}
+
+#editor-content h1 {
+  margin-bottom: 21px;
+}
+
+#editor-content .wt-workbench {
+  border-radius: 2px;
+}
+
+#extend-editor {
+  height: 500px;
 }

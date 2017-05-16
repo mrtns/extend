@@ -950,10 +950,10 @@
 
 .trip-block {
   max-width: 600px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   display: none;
-  padding: 8px;
+  padding: 18px;
   position: absolute;
   text-align: center;
   min-width: 100px;
@@ -1147,21 +1147,21 @@
     border-left-color: #333; }
 
 .trip-block.white {
-  background: #ddd;
-  color: #4C5153;
-  border: 1px solid #ddd; }
+  background: #EBEEF0;
+  color: #6F7C96;
+  border: 1px solid #EBEEF0; }
   .trip-block.white .trip-close {
     color: #333; }
     .trip-block.white .trip-close:hover {
       color: #000; }
   .trip-block.white.n:before {
-    border-top-color: #ddd; }
+    border-top-color: #EBEEF0; }
   .trip-block.white.s:before {
-    border-bottom-color: #ddd; }
+    border-bottom-color: #EBEEF0; }
   .trip-block.white.e:before {
-    border-right-color: #ddd; }
+    border-right-color: #EBEEF0; }
   .trip-block.white.w:before {
-    border-left-color: #ddd; }
+    border-left-color: #EBEEF0; }
 
 .trip-overlay.yeti {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
