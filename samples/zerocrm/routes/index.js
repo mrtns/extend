@@ -32,6 +32,10 @@ router.get('/settings', function(req, res, next) {
     ], next);
 });
 
+router.get('/settings-old', function(req, res, next) {
+    return res.render('settings_old', {});
+});
+
 router.post('/api/leads', bodyParser.json(), function (req, res, next) {
     // Documentation: https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#invoking-extensions
 

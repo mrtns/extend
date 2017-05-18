@@ -130,6 +130,20 @@ html, body {
   background: #f2f4f5;
 }
 
+.webhook {
+  outline: none;
+  font-size: 13px;
+  color: #4C5153;
+  padding: 8px;
+  line-height: 21px;
+  border: 1px solid #ECEEEF;
+  border-radius: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 400px;
+  margin-top: 5px;
+}
+
 ::-webkit-input-placeholder {
   font-size: 14px;
   color: rgba(64,71,81,.6);
