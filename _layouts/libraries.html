@@ -1,0 +1,100 @@
+---
+layout: default
+---
+<div class="navigation-bar">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      <li class="nav-tab">
+        <a href="/docs/what-is-auth0-extend">Articles</a>
+      </li>
+      <li class="nav-tab">
+        <a href="/docs/apis/overview">APIs</a>
+      </li>
+      <li class="nav-tab active">
+        <a href="/docs/libraries/sandboxjs" class="active">Libraries</a>
+      </li>
+    </ul>
+  </div>
+</div>          
+
+<div class="container">
+  <div class="row">
+    <div class="sidebar-container">
+      <div>
+        <div style="padding-bottom: 0px;"></div>
+        <div style="transform: translateZ(0px);"></div>
+        <div class="sidebar">
+          <div class="section-title">Libraries</div>
+          {% for entry in site.data.libraries %}
+            <ul class="sidebar-item-list sidebar-item-list-depth0" id="myScrollspy">
+              <div class="mobile-dropdown-content scrollable">
+              {% for subcategory in entry.subcategories %}
+                <li class="sidebar-item sidebar-item-depth0">
+                  <a id="{{ subcategory.name }}" class="js-subcategory" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
+                  <ul class="sidebar-item-list sidebar-item-list-depth1">
+                  {% for item in subcategory.items %}
+                    <li class="sidebar-item sidebar-item-depth1 ">
+                      <a class="js-subcategory-item" href="{{ item.href }}">{{ item.title }}</a>
+                    </li>
+                  {% endfor %}
+                  </ul>
+                </li>
+              {% endfor %}
+              </div>
+            <ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="docs-content-container">
+        <article class="docs-content">
+          {{ content }}
+        </article>
+
+        <div class="feedback-footer">
+          <div class="feedback-title">Was this article helpful?</div>
+          <div class="feedback-buttons">
+            <button class="feedback-button-yes btn btn-transparent">
+              <span class="btn-icon icon-budicon-470"></span>
+              Yes
+            </button>
+            <button class="feedback-button-no btn btn-transparent">
+              <span class="btn-icon icon-budicon-471"></span>
+              No
+            </button>
+          </div>
+          <div class="feedback-content">
+            <div class="feedback-message">
+              Suggestions? Typos?
+              <a class="edit-link" href="#" target="_blank">Edit this document on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3'
+    });
+
+    // Update menu
+    $('.js-subcategory').removeClass('is-dropdown-open');
+
+    var elementId = window.location.pathname.replace('/docs/libraries/', '').replace('/docs/libraries', '');
+
+    console.log(elementId);
+
+    $('#'+elementId)
+      .addClass('active')
+      .siblings('ul')
+      .addClass('is-current');
+
+    $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+  });
+</script>

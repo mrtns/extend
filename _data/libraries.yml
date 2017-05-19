@@ -1,0 +1,22 @@
+- title: Libraries entries
+  subcategories:
+    - title: Sandboxjs
+      name: sandboxjs
+      href: /docs/libraries/sandboxjs
+      items:
+        - title: Setup
+          href: "#setup"
+          name: setup
+        - title: Create and run a webtask
+          href: "#create-and-run-a-webtask"
+          name: create-and-run-a-webtask
+        - title: Create a webtask and get the URL
+          href: "#create-a-webtask-and-get-the-url"
+          name: create-a-webtask-and-get-the-url
+        - title: Update an existing webtask
+          href: "#update-an-existing-webtask"
+          name: update-an-existing-webtask      
+
+    - title: Extend Editor
+      name: extend-editor
+      href: /docs/libraries/extend-editor
