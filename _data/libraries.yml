@@ -2,7 +2,7 @@
   subcategories:
     - title: Sandboxjs
       name: sandboxjs
-      href: /docs/libraries/sandboxjs
+      href: /extend/docs/libraries/sandboxjs
       items:
         - title: Setup
           href: "#setup"

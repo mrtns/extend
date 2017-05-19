@@ -2,7 +2,7 @@
   subcategories:
     - title: What is Auth0 Extend
       name: what-is-auth0-extend
-      href: /docs/what-is-auth0-extend
+      href: /extend/docs/what-is-auth0-extend
       items:
         - title: Platform Extensibility
           href: "#platform-extensibility"
@@ -16,7 +16,7 @@
 
     - title: Developer Guide
       name: developer-guide
-      href: /docs/developer-guide
+      href: /extend/docs/developer-guide
       items:
         - title: Overview
           href: "#overview"
@@ -57,7 +57,7 @@
 
     - title: Hosting the Editor
       name: hosting-the-editor          
-      href: /docs/hosting-the-editor
+      href: /extend/docs/hosting-the-editor
       items:
         - title: Hosting the Editor in Your Web Site
           href: "#hosting-the-editor-in-your-web-site"

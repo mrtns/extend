@@ -8,13 +8,13 @@ layout: default
   <div class="container">
     <ul class="navigation-bar-tabs nav nav-tabs">
       <li class="nav-tab">
-        <a href="/docs/what-is-auth0-extend">Articles</a>
+        <a href="/extend/docs/what-is-auth0-extend">Articles</a>
       </li>
       <li class="nav-tab active">
-        <a href="/docs/apis/overview" class="active">APIs</a>
+        <a href="/extend/docs/apis/overview" class="active">APIs</a>
       </li>
       <li class="nav-tab">
-        <a href="/docs/libraries/sandboxjs">Libraries</a>
+        <a href="/extend/docs/libraries/sandboxjs">Libraries</a>
       </li>
     </ul>
   </div>
@@ -89,7 +89,7 @@ layout: default
     // Update menu
     $('.js-subcategory').removeClass('is-dropdown-open');
 
-    var elementId = window.location.pathname.replace('/docs/apis/', '').replace('/docs/apis', '');
+    var elementId = window.location.pathname.replace('/extend/docs/apis/', '').replace('/extend/docs/apis', '');
 
     $('#'+elementId)
       .addClass('active')

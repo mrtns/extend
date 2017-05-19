@@ -2,15 +2,15 @@
   subcategories:
     - title: Overview
       name: overview
-      href: /docs/apis#overview
+      href: /extend/docs/apis#overview
 
     - title: Testing with Postman
       name: testing-with-postman
-      href: /docs/apis/testing-with-postman
+      href: /extend/docs/apis/testing-with-postman
 
     - title: HTTP API
       name: http-api
-      href: /docs/apis/http-api
+      href: /extend/docs/apis/http-api
       items:
         - title: Authentication
           href: "#authentication"
