@@ -15,3 +15,7 @@ This operations guide explains the features and settings of an Auth0 Extend inst
 {% include include-layout.html src="docs/operations-guide/customizing-behavior-with-settings.md" name="customizing-behavior-with-settings" %}
 
 {% include include-layout.html src="docs/operations-guide/image-customization.md" name="image-customization" %}
+
+{::options parse_block_html="false" /}
+
+{% include feedback.html src="operations-guide" %}

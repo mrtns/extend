@@ -14,3 +14,6 @@ permalink: docs/what-is-auth0-extend
 
 {% include include-layout.html src="docs/what-is-auth0-extend/relationship-to-auth0-webtasks.md" name="relationship-to-auth0-webtasks"%}
  
+{::options parse_block_html="false" /}
+
+{% include feedback.html src="what-is-auth0-extend" %}

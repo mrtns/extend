@@ -42,3 +42,6 @@ permalink: docs/developer-guide
 
 {% include include-layout.html src="docs/developer-guide/middleware.md" name="middleware" %}
  
+{::options parse_block_html="false" /}
+
+{% include feedback.html src="developer-guide" %}

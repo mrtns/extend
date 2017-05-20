@@ -1,16 +1,8 @@
-- title: APIs entries
+- title: API entries
   subcategories:
-    - title: Overview
-      name: overview
-      href: /extend/docs/apis#overview
-
-    - title: Testing with Postman
-      name: testing-with-postman
-      href: /extend/docs/apis/testing-with-postman
-
     - title: HTTP API
       name: http-api
-      href: /extend/docs/apis/http-api
+      href: /extend/docs/api/http-api
       items:
         - title: Authentication
           href: "#authentication"
@@ -59,3 +51,7 @@
         - title: Streaming Logs
           href: "#streaming-logs"
           name: streaming-logs                                                                                              
+
+    - title: Testing with Postman
+      name: testing-with-postman
+      href: /extend/docs/api/testing-with-postman

@@ -32,3 +32,6 @@ Below are the most common cases of responses you will see.
 
 {% include include-layout.html src="docs/handling-errors-from-extensions/uncaught-asynchronous-exception-in-extension-code.md" name="uncaught-asynchronous-exception-in-extension-code" %}
  
+{::options parse_block_html="false" /}
+
+{% include feedback.html src="handling-errors-from-extensions" %}

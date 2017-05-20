@@ -20,3 +20,6 @@ In either mode of integration, Extend Editor supports a range of configuration o
 
 {% include include-layout.html src="docs/hosting-the-editor/using-extend-editor-as-a-stand-alone-web-app.md" name="using-extend-editor-as-a-stand-alone-web-app"%}
  
+{::options parse_block_html="false" /}
+
+{% include feedback.html src="hosting-the-editor" %}

@@ -2,7 +2,7 @@
 title:  Overview
 layout: apis
 root: true
-permalink: docs/apis/http-api
+permalink: docs/api/http-api
 --- 
 ## HTTP API
 

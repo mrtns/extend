@@ -11,7 +11,7 @@ layout: default
         <a href="/extend/docs/what-is-auth0-extend">Articles</a>
       </li>
       <li class="nav-tab active">
-        <a href="/extend/docs/apis/overview" class="active">APIs</a>
+        <a href="/extend/docs/api/http-api" class="active">API</a>
       </li>
       <li class="nav-tab">
         <a href="/extend/docs/libraries/sandboxjs">Libraries</a>
@@ -27,7 +27,7 @@ layout: default
         <div style="padding-bottom: 0px;"></div>
         <div style="transform: translateZ(0px);"></div>
         <div class="sidebar">
-          <div class="section-title">APIs</div>
+          <div class="section-title">API</div>
           {% for entry in site.data.apis %}
             <ul class="sidebar-item-list sidebar-item-list-depth0" id="myScrollspy">
               <div class="mobile-dropdown-content scrollable">
@@ -54,27 +54,6 @@ layout: default
         <article class="docs-content">
           {{ content }}
         </article>
-
-        <div class="feedback-footer">
-          <div class="feedback-title">Was this article helpful?</div>
-          <div class="feedback-buttons">
-            <button class="feedback-button-yes btn btn-transparent">
-              <span class="btn-icon icon-budicon-470"></span>
-              Yes
-            </button>
-            <button class="feedback-button-no btn btn-transparent">
-              <span class="btn-icon icon-budicon-471"></span>
-              No
-            </button>
-          </div>
-          <div class="feedback-content">
-            <div class="feedback-message">
-              Suggestions? Typos?
-              <a class="edit-link" href="#" target="_blank">Edit this document on GitHub</a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -89,7 +68,7 @@ layout: default
     // Update menu
     $('.js-subcategory').removeClass('is-dropdown-open');
 
-    var elementId = window.location.pathname.replace('/extend/docs/apis/', '').replace('/extend/docs/apis', '');
+    var elementId = window.location.pathname.replace('/extend/docs/api/', '').replace('/extend/docs/api', '');
 
     $('#'+elementId)
       .addClass('active')
