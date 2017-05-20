@@ -31,3 +31,14 @@ permalink: docs/developer-guide
 {% include include-layout.html src="docs/developer-guide/creating-extensions.md" name="creating-extensions" %}
 
 {% include include-layout.html src="docs/developer-guide/discovering-extensions.md" name="discovering-extensions" %}
+
+{% include include-layout.html src="docs/developer-guide/enabling-command-line-tool-for-your-users.md" name="enabling-command-line-tool-for-your-users" %}
+
+{% include include-layout.html src="docs/developer-guide/invoking-extensions.md" name="invoking-extensions" %}
+
+{% include include-layout.html src="docs/developer-guide/runtime-and-management-apis.md" name="runtime-and-management-apis" %}
+
+{% include include-layout.html src="docs/developer-guide/monitoring-and-diagnostics.md" name="monitoring-and-diagnostics" %}
+
+{% include include-layout.html src="docs/developer-guide/middleware.md" name="middleware" %}
+ 

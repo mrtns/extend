@@ -54,6 +54,44 @@
         - title: Discovering Extensions
           href: "#discovering-extensions"
           name: discovering-extensions
+        - title: Enabling Command Line Tool for Your Users
+          href: "#enabling-command-line-tool-for-your-users"
+          name: enabling-command-line-tool-for-your-users
+        - title: Invoking Extensions
+          href: "#invoking-extensions"
+          name: invoking-extensions
+        - title: Runtime and Management APIs
+          href: "#runtime-and-management-apis"
+          name: runtime-and-management-apis
+        - title: Monitoring and Diagnostics
+          href: "#monitoring-and-diagnostics"
+          name: monitoring-and-diagnostics
+        - title: Middleware
+          href: "#middleware"
+          name: middleware                                                  
+
+    - title: Handling Errors from Extensions
+      name: handling-errors-from-extensions          
+      href: /extend/docs/handling-errors-from-extensions
+      items:
+        - title: Successful Response
+          href: "#successful-response"
+          name: successful-response
+        - title: Application Level Error
+          href: "#application-level-error"
+          name: application-level-error
+        - title: Application Level Error with Custom Status Code
+          href: "#application-level-error-with-custom-status-code"
+          name: application-level-error-with-custom-status-code    
+        - title: Syntax Error in Extension Code
+          href: "#syntax-error-in-extension-code"
+          name: syntax-error-in-extension-code    
+        - title: Uncaught Synchronous Exception in Extension Code
+          href: "#uncaught-synchronous-exception-in-extension-code"
+          name: uncaught-synchronous-exception-in-extension-code    
+        - title: Uncaught Asynchronous Exception in Extension Code
+          href: "#uncaught-asynchronous-exception-in-extension-code"
+          name: uncaught-asynchronous-exception-in-extension-code                                  
 
     - title: Hosting the Editor
       name: hosting-the-editor          
@@ -67,4 +105,22 @@
           name: configuring-extend-editor
         - title: Using Extend Editor as a Stand Alone Web App
           href: "#using-extend-editor-as-a-stand-alone-web-app"
-          name: using-extend-editor-as-a-stand-alone-web-app          
+          name: using-extend-editor-as-a-stand-alone-web-app       
+
+    - title: Operations Guide
+      name: operations-guide          
+      href: /extend/docs/operations-guide
+      items:
+        - title: Enabling External Logging
+          href: "#enabling-external-logging"
+          name: enabling-external-logging
+        - title: Customizing Behavior with Settings
+          href: "#customizing-behavior-with-settings"
+          name: customizing-behavior-with-settings
+        - title: Image Customization
+          href: "#image-customization"
+          name: image-customization
+
+    - title: Support
+      name: support
+      href: /extend/docs/support
