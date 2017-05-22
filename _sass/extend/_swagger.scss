@@ -1,6 +1,11 @@
 .swagger-ui {
   margin-top: 21px !important;
 
+  .headerline {
+    color: #fff;
+    display: block;
+  }
+
   .information-container, .scheme-container, .opblock-tag.no-desc, .try-out {
     display: none;
   }
