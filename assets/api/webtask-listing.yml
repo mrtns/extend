@@ -15,16 +15,15 @@ paths:
       produces:
       - application/json
       parameters:
-      - in: header
-        name: Authorization
-        required: true
-        description: Your webtask token
-        type: string
-        default: "Bearer "
       - in: path
         name: webtask_container
         description: Your webtask container 
         required: true
+        type: string
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
         type: string
       - in: query
         name: offset

@@ -16,12 +16,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - in: header
-        name: Authorization
-        required: true
-        description: Your webtask token
-        type: string
-        default: "Bearer "
       - in: path
         name: webtask_container
         description: Your webtask container
@@ -32,6 +26,11 @@ paths:
         description: The name of the webtask
         required: true
         type: string        
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string
       responses:
         200:
           description: The data associated to your webtask
