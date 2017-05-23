@@ -70,7 +70,8 @@
         }
         else {
           var newTop = documentHeight - s.stickyElement.outerHeight()
-            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+            - s.topSpacing - s.bottomSpacing - scrollTop - extra - 200;
+
           if (newTop < 0) {
             newTop = newTop + s.topSpacing;
           } else {
@@ -87,6 +88,7 @@
             if (newWidth == null) {
                 newWidth = s.stickyElement.width();
             }
+
             s.stickyElement
               .css('width', newWidth)
               .css('position', 'fixed')
