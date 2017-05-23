@@ -4,48 +4,47 @@ layout: apis
 root: true
 permalink: docs/api/testing-with-postman
 --- 
-# Using the Webtask API with our Postman Collections
+# Using the Webtask API with our Postman Collection
 
-## Installing the Collections
+## Installing the Collection
 
 To install the Postman Collection you will need to have installed the Postman App for Windows, Mac or Chrome. You can download any of these from the [Postman Apps page](https://www.getpostman.com/apps).
 
-Next, head over to our new [API Landing Page](/api/info), and install the Collection you want to use by clicking on the relevant "Run in Postman" button.
+Once you have Postman installed, go to `Import` menu and select `Import from link`. Then, paste the following url:
 
-![](https://cdn2.auth0.com/docs/media/articles/api/postman/auth0-api-landing.png)
+```
+{{ "assets/webtask-collection.json" | absolute_url}}
+```
 
-Postman will prompt whether you want to open the Collection in Postman for Chrome or Postman for Windows / Mac. Select the application you have installed.
+![]({{ "assets/img/postman-import.png" | absolute_url}})
 
-![](https://cdn2.auth0.com/docs/media/articles/api/postman/postman-open-with-dialog.png)
+After clicking on `Import`, Postman will open the collection.
 
-Once you have made a selection, the selected Postman application will be opened and the collection will be imported.
-
-![](https://cdn2.auth0.com/docs/media/articles/api/postman/collection-post-install.png)
-
-Our API Collections are organized into folders which categorizes the various API calls according to category, so for example, for the Management API you will find all the Users methods under the **Users** folder.
+![]({{ "assets/img/postman-collection.png" | absolute_url}})
 
 ## Configuring the Postman Environment
 
-The Auth0 Postman collections make use of environment variables to customize the requests being sent. More information on managing Postman environments can be found at [Setting up an environment with variables](https://www.getpostman.com/docs/environments)
+The Webtask Postman collection make use of environment variables to customize the requests being sent. More information on managing Postman environments can be found at [Setting up an environment with variables](https://www.getpostman.com/docs/environments)
 
 You will need to create an environment and configure the following variables:
 
-* `auth0_domain`: Should contain the domain for your Auth0 tenant, e.g. **jerrie.auth0.com**.
-* `auth0_token`: Should contain the token needed when making calls to the Management API, and is therefore only required when using the Management API collection. More information on how to generate a token can be found at [The Auth0 Management APIv2 Token](https://auth0.com/docs/api/management/v2/tokens) 
+* `webtask_container`: Should contain your webtask container, e.g. **my-containter**.
+* `webtask_token`: Should contain the token needed when making calls to the Webtask API.
+* `webtask_name`: Should contain the name of the webtask that you want to work with.
 
-In the screenshot below you can see a Postman environment configured with both the `auth0_domain` and `auth0_token` variables defined:
+In the screenshot below you can see a Postman environment configured with both the `webtask_container`, `webtask_token` and `webtask_name` variables defined:
 
-![](https://cdn2.auth0.com/docs/media/articles/api/postman/environment-configured.png)
+![]({{ "assets/img/postman-environment.png" | absolute_url}})
 
 ## Executing a request
 
-Once the environment is configured, you can follow theses steps to execute an Auth0 API method:
+Once the environment is configured, you can follow theses steps to execute an Webtask API method:
 
 1. Select the environment you want to work with
 2. Select the relevant API method in the collection folder
 3. Click the send button
 
-![](https://cdn2.auth0.com/docs/media/articles/api/postman/execute-api-method.png)
+![]({{ "assets/img/postman-sample.png" | absolute_url}})
 
 You man also optionally have to configure query parameters or the JSON method body, depending on the API call. For more information please refer to the [Sending Requests](https://www.getpostman.com/docs/requests) document on the Postman website.
 

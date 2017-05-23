@@ -4,14 +4,6 @@
       name: http-api
       href: /extend/docs/api/http-api
       items:
-        - title: Authentication
-          href: "#authentication"
-          name: authentication
-
-        - title: Executing Webtasks
-          href: "#executing-webtasks"
-          name: executing-webtasks
-
         - title: Webtask Creation
           href: "#webtask-creation"
           name: webtask-creation
@@ -42,15 +34,7 @@
 
         - title: Inspecting Webtask Tokens
           href: "#inspecting-webtask-tokens"
-          name: inspecting-webtask-tokens
-
-        - title: Rate limits
-          href: "#rate-limits"
-          name: rate-limits
-
-        - title: Streaming Logs
-          href: "#streaming-logs"
-          name: streaming-logs                                                                                              
+          name: inspecting-webtask-tokens                                                                                           
 
     - title: Testing with Postman
       name: testing-with-postman

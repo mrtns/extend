@@ -1,0 +1,213 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Webtask HTTP API",
+		"_postman_id": "7d3661ea-759d-d573-5451-38a5522247fa",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Webtask Listing",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}?offset=0&limit=1000",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Webtask Creation",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}/{{webtask_name}}",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": \"module.exports = function(cb) { cb(null, { message: 'Hello Webtasks!'});\",\n  \"secrets\": {\n    \"key\": \"value\"\n  },\n  \"meta\": {\n    \"name\": \"auth0-logging-extension\",\n    \"version\": \"1.0.0\",\n    \"description\": \"Real-time webtask logs\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Webtask Deletion",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}/{{webtask_name}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Webtask Storage - Get Data",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}/{{webtask_name}}/data",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Webtask Storage - Put Data",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}/{{webtask_name}}/data",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": \"{\\\"flag\\\": true }\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Webtask Cache - Container Level",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Webtask Cache - Webtask Level",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/webtask/{{webtask_container}}/{{webtask_name}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Token Issuance",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/tokens/issue",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ten\": \"my-container\",\n  \"jtn\": \"my-webtask-name\",\n  \"code\": \"module.exports = function(cb) { cb(null, { message: 'Hello Webtasks!'});\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Token Revocation",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/tokens/issue",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token\": \"ey...\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Token Inspection",
+			"request": {
+				"url": "https://webtask.it.auth0.com/api/tokens/inspect?fetch_code=false&decrypt=false&token=",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{webtask_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

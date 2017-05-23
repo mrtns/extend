@@ -1,0 +1,70 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Webtask API
+
+host: webtask.it.auth0.com
+
+schemes:
+- https
+
+paths:
+  /api/webtask/{webtask_container}/{webtask_name}:
+    put:
+      produces:
+        - application/json  
+      consumes:
+        - application/json 
+      parameters:
+      - in: path
+        name: webtask_container
+        description: Your webtask container
+        required: true
+        type: string
+      - in: path
+        name: webtask_name
+        description: The name of the webtask
+        required: true
+        type: string
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string 
+      - in: body
+        name: Webtask
+        type: object
+        schema:
+          $ref: '#/definitions/Webtask'      
+      responses:
+        200:
+          description: The data associated to your webtask        
+        400:
+          description: Bad request
+        403:
+          description: The webtask token is not submitted with the request or does not grant sufficient permissions.
+
+definitions:
+  Webtask:
+    type: object
+    properties:
+      code:
+        type: string
+        description: Pass in the code that the webtask will run on every request.
+        example: "module.exports = function(cb) { cb(null, { message: 'Hello Webtasks!'});"
+      secrets:
+        type: object
+        description: Pass in an optional object whose keys / value pairs represent secrets that will be encrypted and embedded within the underlying token and will be available on the secrets parameter of the context object.
+        example: 
+          {
+            key: value
+          }
+      meta:
+        type: object
+        description: Pass in a set of string key / value pairs in order to set metadata that describe your webtask. Later on you can retrieve the metadata for a given webtask or even filter your webtasks searching for specific metadata properties.
+        example:
+          {
+            name: 'auth0-logging-extension',
+            version: '1.0.0',
+            description: 'Real-time webtask logs'
+          }

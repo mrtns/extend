@@ -1,0 +1,59 @@
+<div>
+  <p>The webtask token request endpoint is used to issue a new webtask token. Request provides the authenticating webtask token A1 and a JSON structure with token request parameters. Response contains newly issued token A2.</p>
+  <p>Issuing new tokens is useful when you want to provide your application or specific user with a restricted capability of running webtasks. For example, you can restrict the webtask token to only execute code from a specific URL, or specify secret parameters that will be passed to that code at execution time.</p>
+  <p>The request must be <strong>authenticated</strong> by specifying the A1 webtask token as the <code>key</code> URL query parameter or with the <code>Authorization</code> HTTP request header as described above. The content type of the request must be <code>application/json</code>. The body of the request must contain a JSON object representing the intended restrictions of the A2 token to be issued. The object can specify the following properties (all of them optional):</p>
+  
+  <h4>ten</h4>
+  <p>is a restriction on the webtask container name in which webtask requests using the newly issued token can execute code. You can provide a regular expression (e.g. <code>/^foo[0-9]$/</code>) or a comma-delimited list of string literals (e.g. <code>foo1,foo2</code>).</p>
+  
+  <h4>jtn</h4>
+  <p>is an optional name of the webtask to create. For requests that specify this parameter, webtask cluster will durably store the issued webtask token and assign it a logical name, or an alias, of the form <code>{ten}/{jtn}</code>. This allows later execution of this webtask using shorthand URLs of the form <code>https://{webtask_domain}/api/run/{ten}/{jtn}</code>. If <code>jtn</code> is specified, the <code>ten</code> parameter must be a simple string literal. </p>
+  
+  <h4>jtnm</h4>
+  <p>is an optional array of strings limiting the names of the webtasks the token can be used to perform management operations on. Tokens with <code>ten</code> and <code>jtnm</code> claims can be used to limit bearer's management capabilities within the scope of a single webtask container. </p>
+  
+  <h4>nbf</h4>
+  <p>is a not before time restriction in Unix time.</p>
+  
+  <h4>exp</h4>
+  <p>is a not after time restriction in Unix time.</p>
+  
+  <h4>host</h4>
+  <p>is the custom domain name webtasks can be called with. This parameter requires also the parameter <code>ten</code>, since you can only set a custom domain when creating tokens for a specific container. Setting a value for <code>host</code> while not setting <code>ten</code> will result in an error. When <code>host</code> is set, the webtask runtime will validate whether the caller owns the custom domain. This validation is done by checking if a TXT record exists in the DNS of the specified custom domain. This TXT record should list the webtask container name (the value of property <code>ten</code>) and is a statement from the domain owner, permitting webtasks called over that custom domain name to run in a specific webtask container. An example of how TXT records look like in <a href="https://www.cloudflare.com/">CloudFlare</a> DNS management system:</p>
+  <p><img src="https://webtask.io/images/docs/wt-host-txt.png" alt="cloudfare-dns-txt-records"></p>
+  <p>In this example we have associated our custom domain (<code>host = serverless.host</code>) with two containers (<code>ten = auth0, tjanczuk</code>). So the syntax of the TXT record should be: <code>webtask:container:{ten}</code> , where <code>{ten}</code> is the same as the <code>ten</code> value specified in the token creation request.</p>
+  <p>If the ownership is not validated then an error will be displayed prompting the user to add a DNS record with type TXT and value <code>webtask:container:{ten}</code>.</p>
+  
+  <h4>meta</h4>
+  <p>is used to specify metadata (a set of string key / value pairs) for a token. The parameter can only be specified if the <code>jtn</code> parameter is also specified, which means a named webtask is being upserted.</p>
+  
+  <h4>pb</h4>
+  <p>is a flag indicating whether webtask runtime should automatically process request bodies of requests with <code>application/json</code> or <code>application/x-www-urlformencoded</code> content type. If set to 0, request body will not be parsed. If set to 1, request body will be processed and stored in the <code>context.body</code> attribute. </p>
+  <p>If set to 2 or left unset (default), request body will be processed depending on the arity of the webtask function: for <code>(context, cb)</code> function signature, request body will be parsed and stored in the <code>context.body</code> attribute, and for <code>(ctx, req, res)</code> function signature, requst body will be left unread. </p>
+  
+  <h4>mb</h4>
+  <p>is a flag indicating whether body data processed when <code>pb</code> is set to 1 should be merged into <code>context.data</code> in apition to being stored in <code>context.body</code>. If set to 1, and if the body of the request represents a JavaScript object, properties of that object will be aped to <code>context.data</code>, unless they already exist there. It only makes sense to set <code>mb</code> when <code>pb</code> is also set.</p>
+  
+  <h4>dd</h4>
+  <p>is the maximum depth of token issuance the issued token will be able to perform. If token T1 has depth 2, it means it can be used to issue token T2 with depth 1; token T2 can be used to issue token T3 with depth 0; and token T3 cannot be used to issue any more tokens. Default depth is 1. You cannot request value of <code>dd</code> that is equal or larger than the authenticating token.</p>
+  
+  <h4>dr</h4>
+  <p>is a flag indicating whether the issued token can revoke itself with a call to the <a href="/docs/api_revoke">revocation HTTP API</a>. If the <code>dr</code> flag is absent (the default) or set to 0, the issued token can revoke itself. Set <code>dr=1</code> to prevent the token from revoking itself. This may be useful if you plan to ship the issued token in multiple applications or to multiple users, some of whom cannot be trusted with the revocation decision.</p>
+  
+  <h4>pctx</h4>
+  <p></p>is an JSON object with string properties which specifies parameters that will be provided to the webtask code at the time of execution. The properties will be signed and protected from interference but not encrypted - anyone with access to the newly issued token A2 can read their value.
+  
+  <h4>ectx</h4>
+  <p></p>is an JSON object with string properties which specifies parameters that will be provided to the webtask code at the time of execution. The properties will be signed and encrypted, therefore making them tamper-proof and inaccessible from third parties, including anyone with access to the newly issued A2 token. This is a convenient mechanism to pass secrets to the webtask code.
+  
+  <h4>url</h4>
+  <p></p>is the URL of the webtask code to execute. Webtask requests authenticated with the newly issued A2 token that contains the url property must not specify the code to execute at all. The webtask cluster will obtain the code from the URL specified in url with HTTP GET. This is a mechanism you can use to fix the code a given token can execute. The <code>url</code>parameter is mutually exclusive with the <code>code</code> parameter.
+  
+  <h4>code</h4>
+  <p></p>is the literal code of the webtask to execute. Webtask cluster will store the webtask code using internal storage facilities and issue an A2 token that specifies the <code>url</code> property indicating its location. The <code>code</code> parameter is mutually exclusive with the <code>url</code> parameter.
+  
+  <h4>ls, lm, lh, ld, lw, lo</h4>
+  <p></p>are the per second, minute, hour, day, week, and month (respectively) rate limits applied <em>per webtask container</em>. Only limits that are specified are applied. All specified limits must be positive integers. When issuing tokens, container rate limits of the authenticating token are propagated to the issued token.
+  
+  <h4>lts, ltm, lth, ltd, ltw, lto</h4>
+  <p></p>are the per second, minute, hour, day, week, and month (respectively) rate limits applied <em>per webtask token</em>. Only limits that are specified are applied. All specified limits must be positive integers. Unlike in case of container limits, token limits are not propagated from the authenticating token to the issued token during token issuance. This means every token can have its own token rate limits that are determined by the immediate issuer. </div>

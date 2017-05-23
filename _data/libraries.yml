@@ -1,5 +1,22 @@
 - title: Libraries entries
   subcategories:
+    - title: Extend Editor
+      name: extend-editor
+      href: /extend/docs/libraries/extend-editor
+      items:
+        - title: Hosting the Editor in Your Web Site
+          href: "#hosting-the-editor-in-your-web-site"
+          name: hosting-the-editor-in-your-web-site
+        - title: Configuring Extend Editor
+          href: "#configuring-extend-editor"
+          name: configuring-extend-editor
+        - title: Using Extend Editor as a Stand Alone Web App
+          href: "#using-extend-editor-as-a-stand-alone-web-app"
+          name: using-extend-editor-as-a-stand-alone-web-app 
+        - title: Playground
+          href: "#playground"
+          name: playground              
+            
     - title: Sandboxjs
       name: sandboxjs
       href: /extend/docs/libraries/sandboxjs
@@ -15,8 +32,4 @@
           name: create-a-webtask-and-get-the-url
         - title: Update an existing webtask
           href: "#update-an-existing-webtask"
-          name: update-an-existing-webtask      
-
-    - title: Extend Editor
-      name: extend-editor
-      href: /docs/libraries/extend-editor
+          name: update-an-existing-webtask                    

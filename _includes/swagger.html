@@ -1,6 +1,10 @@
 <div id="{{ include.name }}" class="layout scrollspy">
-  <h3>{{ include.name | replace: '-', ' ' | capitalize }}</h3>
+  <h3 style="text-transform: capitalize;">{{ include.name | replace: '-', ' ' | capitalize }}</h3>
+  
+  {% include docs/apis/{{include.name}}.html %}
+
   <div id="{{ include.name }}-swagger"></div>
+
 
   <script>
     SwaggerUIBundle({
