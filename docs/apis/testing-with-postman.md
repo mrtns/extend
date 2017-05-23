@@ -16,7 +16,7 @@ Once you have Postman installed, go to `Import` menu and select `Import from lin
 {{ "assets/webtask-collection.json" | absolute_url}}
 ```
 
-![]({{ "assets/img/postman-import.png" | absolute_url}})
+![]({{ "assets/img/postman-import.png" | relative_url }})
 
 After clicking on `Import`, Postman will open the collection.
 

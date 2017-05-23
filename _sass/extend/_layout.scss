@@ -9,3 +9,10 @@
 @import "swagger";
 @import "hljs";
 @import "editor-playground";
+
+#sticky-wrapper {
+  .sidebar-container {
+    width: 100%;   
+    padding: 0;
+  }
+}

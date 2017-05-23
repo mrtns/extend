@@ -25,3 +25,14 @@
     </div>
   </div>
 </footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3'
+    });
+
+    $('.scrollspy')
+      .scrollSpy({ scrollOffset: 30 });
+  });
+</script>

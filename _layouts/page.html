@@ -19,7 +19,7 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="sidebar-container">
+    <div class="sidebar-container col-md-3">
       <div>
         <div style="padding-bottom: 0px;"></div>
         <div style="transform: translateZ(0px);"></div>
@@ -30,11 +30,26 @@ layout: default
               <div class="mobile-dropdown-content scrollable">
               {% for subcategory in entry.subcategories %}
                 <li class="sidebar-item sidebar-item-depth0">
-                  <a id="{{ subcategory.name }}" class="js-subcategory" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
-                  <ul class="sidebar-item-list sidebar-item-list-depth1">
-                  {% for item in subcategory.items %}
-                    <li class="sidebar-item sidebar-item-depth1 ">
-                      <a class="js-subcategory-item" href="{{ item.href }}">{{ item.title }}</a>
+                  
+                  {% if page.url contains subcategory.name %}
+                    {% assign isActive = "active" %}
+                    {% assign isCurrent = "is-current" %}
+                  {% else %}  
+                    {% assign isActive = "" %}
+                    {% assign isCurrent = "" %}
+                  {% endif %}
+
+                  <a id="{{ subcategory.name }}" class="js-subcategory {{ isActive }}" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
+                  <ul class="sidebar-item-list sidebar-item-list-depth1 {{ isCurrent }}">
+                    {% for item in subcategory.items %}
+                    <li class="sidebar-item sidebar-item-depth1">
+                      {% if forloop.first %}
+                        {% assign isSubActive = "active" %}
+                      {% else %}                          
+                        {% assign isSubActive = "" %}                      
+                      {% endif %}
+                        
+                      <a class="js-subcategory-item {{ isSubActive }}" href="{{ item.href }}">{{ item.title }}</a>
                     </li>
                   {% endfor %}
                   </ul>
@@ -55,23 +70,3 @@ layout: default
     </div>
   </div>
 </div>
-
-<script>
-  $(window).load(function(){
-    $(".sidebar-container").sticky({ 
-      wrapperClassName: 'col-md-3'
-    });
-
-    // Update menu
-    $('.js-subcategory').removeClass('is-dropdown-open');
-
-    var elementId = window.location.pathname.replace('/extend/docs/', '');
-
-    $('#'+elementId)
-      .addClass('active')
-      .siblings('ul')
-      .addClass('is-current');
-
-    $('.scrollspy').scrollSpy({ scrollOffset: 30 });
-  });
-</script>

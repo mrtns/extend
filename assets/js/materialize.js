@@ -2904,7 +2904,7 @@ if (jQuery) {
 				visible.push($(this));
 			}
 
-
+      $('.sidebar-item.sidebar-item-depth1 a').removeClass('active');
 			$('a[href="#' + visible[0].attr('id') + '"]').addClass('active');
       if (history && history.pushState) {
         history.pushState({}, '', '#'+visible[0].attr('id'));
@@ -2922,6 +2922,7 @@ if (jQuery) {
 	        return value.attr('id') != $this.attr('id');
 	      });
 	      if (visible[0]) { // Check if empty
+          
 					$('a[href="#' + visible[0].attr('id') + '"]').addClass('active');
           if (history && history.pushState) {
             history.pushState({}, '', '#'+visible[0].attr('id'));
