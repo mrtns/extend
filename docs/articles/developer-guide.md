@@ -2,7 +2,7 @@
 title:  Developer Guide
 layout: page
 root: true
-permalink: developer-guide
+permalink: docs/developer-guide
 --- 
 # Developer Guide
 

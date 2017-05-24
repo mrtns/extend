@@ -2,7 +2,7 @@
 title:  Testing with Postman
 layout: apis
 root: true
-permalink: api/testing-with-postman
+permalink: docs/api/testing-with-postman
 --- 
 # Using the Webtask API with our Postman Collection
 
@@ -13,14 +13,14 @@ To install the Postman Collection you will need to have installed the Postman Ap
 Once you have Postman installed, go to `Import` menu and select `Import from link`. Then, paste the following url:
 
 ```
-{{ "assets/webtask-collection.json" | absolute_url}}
+https://cdn.auth0.com/auth0-extend/docs/assets/webtask-collection.json
 ```
 
-![]({{ "assets/img/postman-import.png" | relative_url }})
+![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-import.png)
 
 After clicking on `Import`, Postman will open the collection.
 
-![]({{ "assets/img/postman-collection.png" | absolute_url}})
+![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-collection.png)
 
 ## Configuring the Postman Environment
 
@@ -34,7 +34,7 @@ You will need to create an environment and configure the following variables:
 
 In the screenshot below you can see a Postman environment configured with both the `webtask_container`, `webtask_token` and `webtask_name` variables defined:
 
-![]({{ "assets/img/postman-environment.png" | absolute_url}})
+![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-environment.png)
 
 ## Executing a request
 
@@ -44,7 +44,7 @@ Once the environment is configured, you can follow theses steps to execute an We
 2. Select the relevant API method in the collection folder
 3. Click the send button
 
-![]({{ "assets/img/postman-sample.png" | absolute_url}})
+![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-sample.png)
 
 You man also optionally have to configure query parameters or the JSON method body, depending on the API call. For more information please refer to the [Sending Requests](https://www.getpostman.com/docs/requests) document on the Postman website.
 

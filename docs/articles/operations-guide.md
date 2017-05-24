@@ -2,7 +2,7 @@
 title:  Operations Guide
 layout: page
 root: true
-permalink: operations-guide
+permalink: docs/operations-guide
 --- 
 # Operations Guide
 

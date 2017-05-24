@@ -2,7 +2,7 @@
 title:  Support
 layout: page
 root: true
-permalink: support
+permalink: docs/support
 --- 
 # Support
 

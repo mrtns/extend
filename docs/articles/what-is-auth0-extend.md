@@ -2,7 +2,7 @@
 title:  What is Auth0 Extend
 layout: page
 root: true
-permalink: what-is-auth0-extend
+permalink: docs/what-is-auth0-extend
 redirect_from: "/"
 --- 
 # What is Auth0 Extend
