@@ -2,7 +2,7 @@
 title:  Sandboxjs
 layout: libraries
 root: true
-permalink: docs/libraries/sandboxjs
+permalink: libraries/sandboxjs
 --- 
 # Sandboxjs
 

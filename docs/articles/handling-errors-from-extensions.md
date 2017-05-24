@@ -2,7 +2,7 @@
 title:  Handling Errors from Extensions
 layout: page
 root: true
-permalink: docs/handling-errors-from-extensions
+permalink: handling-errors-from-extensions
 --- 
 # Handling Errors from Extensions
 

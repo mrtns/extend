@@ -2,7 +2,7 @@
 title:  Testing with Postman
 layout: apis
 root: true
-permalink: docs/api/testing-with-postman
+permalink: api/testing-with-postman
 --- 
 # Using the Webtask API with our Postman Collection
 

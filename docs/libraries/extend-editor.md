@@ -2,7 +2,7 @@
 title:  Extend Editor
 layout: libraries
 root: true
-permalink: docs/libraries/extend-editor
+permalink: libraries/extend-editor
 --- 
 # Extend Editor
 
