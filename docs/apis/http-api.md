@@ -21,5 +21,3 @@ permalink: docs/api/http-api
 {% include swagger.html name="revoking-webtask-tokens" %}
 
 {% include swagger.html name="inspecting-webtask-tokens" %}
-
-{% include swagger.html name="streaming-logs" %}

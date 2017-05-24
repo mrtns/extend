@@ -1,4 +1,4 @@
-<div id="{{ include.name }}" class="layout scrollspy">
+<div id="{{ include.name }}" class="layout scrollspy js-swagger">
   <h3 style="text-transform: capitalize;">{{ include.name | replace: '-', ' ' | capitalize }}</h3>
   
   {% include docs/apis/{{include.name}}.html %}
@@ -13,6 +13,32 @@
       presets: [
         SwaggerUIBundle.presets.apis
       ]
-    })
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['{{ include.name }}'] = setInterval(function () {
+      var $el = $('#{{ include.name }}.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['{{ include.name }}']);
+        delete window.SwaggerRenderers['{{ include.name }}'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
   </script>
 </div>
