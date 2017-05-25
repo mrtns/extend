@@ -7,6 +7,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "webtaskName": "string",
   "webtaskContainer": "string",
   "hostUrl": "string",
+  "fullscreen": "object",
   "createIfNotExists": {
     "enabled": "boolean",
     "category": "string"
