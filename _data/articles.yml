@@ -2,7 +2,7 @@
   subcategories:
     - title: What is Auth0 Extend
       name: what-is-auth0-extend
-      href: /extend/docs/what-is-auth0-extend
+      href: /extend/docs
       items:
         - title: Platform Extensibility
           href: "#platform-extensibility"
