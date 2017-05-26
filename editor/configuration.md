@@ -64,8 +64,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
       },
       "expand": "boolean"
     },
-    "explanation": "string",
-    "sample": "string"
+    "explanation": "string"
   },
   "shortcuts": {
     "enabled": "boolean",
@@ -90,4 +89,4 @@ Several aspects of the Extend Editor can be controlled throught the options obje
 }
 ```
 
-Last update: `5/25/2017`.
+Last update: `5/26/2017`.
