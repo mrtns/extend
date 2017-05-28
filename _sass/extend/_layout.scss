@@ -16,3 +16,31 @@
     padding: 0;
   }
 }
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 28px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+
+table>thead:first-child>tr:first-child>th {
+  border-top: 0;
+}
+
+table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th {
+  padding: 8px;
+  line-height: 2;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+th {
+  font-weight: 400;
+}

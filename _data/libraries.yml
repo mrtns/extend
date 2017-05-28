@@ -15,7 +15,11 @@
           name: using-extend-editor-as-a-stand-alone-web-app 
         - title: Playground
           href: "#playground"
-          name: playground              
+          name: playground 
+
+    - title: Logs Viewer
+      name: logs-viewer
+      href: /extend/docs/libraries/logs-viewer                     
             
     - title: Sandboxjs
       name: sandboxjs

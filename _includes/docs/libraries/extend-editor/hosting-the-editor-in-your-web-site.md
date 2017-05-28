@@ -14,7 +14,8 @@ Extend Editor can be hosted within your own web site and customized to provide y
     ExtendEditor.create(document.getElementById('extend-editor'), {
       hostUrl: '{host_url}',
       webtaskContainer: '{webtask_container}',
-      token: '{webtask_token}'
+      token: '{webtask_token}',
+      webtakName: 'webtask-sample'
     });
   </script>
 </body>
@@ -30,4 +31,4 @@ In the typical situation, the Extend Editor would be presented to an authenticat
 
 The minimal configuration above will display the Extend Editor using all the default options:
 
-![Default Extend Editor](https://cloud.githubusercontent.com/assets/822369/24305963/065ed0f0-107c-11e7-98eb-93bb8f29c773.png)
+![Default Extend Editor](https://cloud.githubusercontent.com/assets/302314/26526687/e34688aa-4358-11e7-8f17-9f3f222e3541.png)

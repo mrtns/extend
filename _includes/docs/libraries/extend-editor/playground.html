@@ -14,7 +14,12 @@
         editor: window.ExtendEditor,
         initialConfig: {},  
         readOnly: {},
-        hide: {}
+        hide: {
+          createIfNotExists: true,
+          defaultEditor: true,
+          loader: true,
+          allowHashParams: true
+        }
       })
     </script>
 </div>
