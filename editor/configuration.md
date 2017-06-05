@@ -7,7 +7,11 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "webtaskName": "string",
   "webtaskContainer": "string",
   "hostUrl": "string",
-  "fullscreen": "object",
+  "fullscreen": {
+    "enabled": "boolean",
+    "height": "string",
+    "width": "string"
+  },
   "createIfNotExists": {
     "enabled": "boolean",
     "category": "string"
@@ -89,4 +93,4 @@ Several aspects of the Extend Editor can be controlled throught the options obje
 }
 ```
 
-Last update: `5/28/2017`.
+Last update: `6/5/2017`.
