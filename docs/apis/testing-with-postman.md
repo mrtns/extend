@@ -4,7 +4,7 @@ layout: apis
 root: true
 permalink: docs/api/testing-with-postman
 --- 
-# Using the Webtask API with our Postman Collection
+{% include sticky-title.html title="Using the Webtask API with Postman" %}
 
 ## Installing the Collection
 

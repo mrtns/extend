@@ -16,12 +16,12 @@
 </div>
 
 <script>
-  function onFeedback(state) {
+  function onFeedback(helpful) {
     var url = 'https://wt-centurion_javier-gmail_com-0.run.webtask.io/extend-docs-widget';
 
     $('.feedback-content').show();
     
-    if (state) {
+    if (helpful) {
       $('.feedback-button-no').attr('disabled', true);
     } else {
       $('.feedback-button-yes').attr('disabled', true);
@@ -31,7 +31,7 @@
       type: "POST",
       url: url,
       contentType: 'application/json',
-      data: JSON.stringify({ state: state }),
+      data: JSON.stringify({ helpful: helpful, source: '{{ include.source }}' }),
       dataType: 'json'
     });
   }

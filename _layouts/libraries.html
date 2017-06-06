@@ -45,7 +45,6 @@ layout: default
                     {% assign isCurrent = "" %}
                   {% endif %}
 
-
                   <a id="{{ subcategory.name }}" class="js-subcategory {{ isActive }}" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
                   <ul class="sidebar-item-list sidebar-item-list-depth1 {{ isCurrent }}">
                   {% for item in subcategory.items %}

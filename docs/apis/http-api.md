@@ -4,7 +4,7 @@ layout: apis
 root: true
 permalink: docs/api/http-api
 --- 
-## HTTP API
+{% include sticky-title.html title="HTTP API" %}
 
 {% include swagger.html name="webtask-creation" %}
 

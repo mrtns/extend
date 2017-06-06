@@ -28,10 +28,11 @@ Below, you will find the structure of files for the articles. Basically, you hav
 |   ├── articles.yml
 ├── _includes
 |   ├── docs
-|   |    ├── what-is-auth0-extend
-|   |    |    ├── how-auth0-extend-helps-you.md
-|   |    |    ├── platform-extensibility.md
-|   |    |    ├── relationship-to-auth0-webtasks.md
+|   |    ├── articles
+|   |    |    ├── what-is-auth0-extend
+|   |    |    |    ├── how-auth0-extend-helps-you.md
+|   |    |    |    ├── platform-extensibility.md
+|   |    |    |    ├── relationship-to-auth0-webtasks.md
 ├── docs
 |   ├── articles
 |   |   ├── what-is-auth0-extend.md
@@ -55,9 +56,9 @@ For adding a new article `my-article` with a section `my-article-section` you wi
           name: my-article-section
 ```
 
-- Create a new folder `my-article` at `_includes/docs`.
+- Create a new folder `my-article` at `_includes/docs/articles`.
 
-- Create a new file `my-article-section.md` at `_includes/docs/my-article`:
+- Create a new file `my-article-section.md` at `_includes/docs/articles/my-article`:
 
 ```
 ## My article section

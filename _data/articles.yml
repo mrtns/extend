@@ -60,6 +60,9 @@
         - title: Invoking Extensions
           href: "#invoking-extensions"
           name: invoking-extensions
+        - title: Handling Errors from Extensions
+          href: "#handling-errors-from-extensions"
+          name: handling-errors-from-extensions          
         - title: Runtime and Management APIs
           href: "#runtime-and-management-apis"
           name: runtime-and-management-apis
@@ -69,29 +72,6 @@
         - title: Middleware
           href: "#middleware"
           name: middleware                                                  
-
-    - title: Handling Errors from Extensions
-      name: handling-errors-from-extensions          
-      href: /extend/docs/handling-errors-from-extensions
-      items:
-        - title: Successful Response
-          href: "#successful-response"
-          name: successful-response
-        - title: Application Level Error
-          href: "#application-level-error"
-          name: application-level-error
-        - title: Application Level Error with Custom Status Code
-          href: "#application-level-error-with-custom-status-code"
-          name: application-level-error-with-custom-status-code    
-        - title: Syntax Error in Extension Code
-          href: "#syntax-error-in-extension-code"
-          name: syntax-error-in-extension-code    
-        - title: Uncaught Synchronous Exception in Extension Code
-          href: "#uncaught-synchronous-exception-in-extension-code"
-          name: uncaught-synchronous-exception-in-extension-code    
-        - title: Uncaught Asynchronous Exception in Extension Code
-          href: "#uncaught-asynchronous-exception-in-extension-code"
-          name: uncaught-asynchronous-exception-in-extension-code                                      
 
     - title: Operations Guide
       name: operations-guide          

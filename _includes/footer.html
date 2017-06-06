@@ -8,7 +8,7 @@
         <li><a href="/extend/docs">Documentation</a>
         </li>
         <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
-        <li><a href="#" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
         </li>
       </ul>
       <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
@@ -31,7 +31,51 @@
 <script>
   $(window).load(function(){
     $(".sidebar-container").sticky({ 
-      wrapperClassName: 'col-md-3'
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
     });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
   });
 </script>

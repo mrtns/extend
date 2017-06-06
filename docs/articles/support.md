@@ -1,10 +1,10 @@
 ---
 title:  Support
-layout: page
+layout: articles
 root: true
 permalink: docs/support
 --- 
-# Support
+{% include sticky-title.html title="Support" %}
 
 There are several ways in which you can reach us for support. 
 
@@ -30,4 +30,4 @@ We offer premium support options for Auth0 Extend as outlined in our [Support Pl
 
 {::options parse_block_html="false" /}
 
-{% include feedback.html src="support" %}
+{% include feedback.html src="support" source="support" %}

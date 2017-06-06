@@ -20,6 +20,9 @@ body {
 }
 
 .sidebar-container {
+  overflow: auto;
+  height: 100%;
+
   @media (min-width: 992px) {
     // padding-left: 0;
     // padding-right: 0;
@@ -182,9 +185,9 @@ body {
           display: inline-block;
           width: 100%;
           color: $color-text-light;
-          white-space: nowrap;
+          // white-space: nowrap;
           overflow: hidden;
-          text-overflow: ellipsis;
+          // text-overflow: ellipsis;
 
           &.active {
             color: darken($color-blue-light, 5%);
