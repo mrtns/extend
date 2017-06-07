@@ -20,4 +20,4 @@ The Auth0 Sandboxjs is a node.js package that allows you to sandbox your code an
 
 {::options parse_block_html="false" /}
 
-{% include feedback.html src="libraries/sandboxjs" source="sandboxjs" %}
+{% include feedback.html src="libraries/sandboxjs" %}

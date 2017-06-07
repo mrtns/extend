@@ -76,3 +76,15 @@ layout: default
     </div>
   </div>
 </div>
+
+<script>
+  var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+  $.ajax({
+    type: "POST",
+    url: url,
+    contentType: 'application/json',
+    data: JSON.stringify({ source: '{{ page.title }}' }),
+    dataType: 'json'
+  });
+</script>

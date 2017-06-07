@@ -46,4 +46,4 @@ permalink: docs/developer-guide
  
 {::options parse_block_html="false" /}
 
-{% include feedback.html src="developer-guide" source="developer-guide" %}
+{% include feedback.html src="developer-guide" %}

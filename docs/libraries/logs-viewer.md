@@ -40,4 +40,4 @@ filter | Determines how the logs viewer will filter the incoming log events. Exa
 onClose | This event will be called once the user closes the logs viewer.
 onError | This event will be called if an error occurred with the connection between the logs viewer and the logs API.
 
-{% include feedback.html src="libraries/sandboxjs" source="logs-viewer" %}
+{% include feedback.html src="libraries/sandboxjs" %}

@@ -16,4 +16,4 @@ permalink: docs/
  
 {::options parse_block_html="false" /}
 
-{% include feedback.html src="what-is-auth0-extend" source="what-is-auth0-extend" %}
+{% include feedback.html src="what-is-auth0-extend" %}

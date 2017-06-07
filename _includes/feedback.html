@@ -17,7 +17,7 @@
 
 <script>
   function onFeedback(helpful) {
-    var url = 'https://wt-centurion_javier-gmail_com-0.run.webtask.io/extend-docs-widget';
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
 
     $('.feedback-content').show();
     
@@ -31,8 +31,8 @@
       type: "POST",
       url: url,
       contentType: 'application/json',
-      data: JSON.stringify({ helpful: helpful, source: '{{ include.source }}' }),
+      data: JSON.stringify({ helpful: helpful, source: '{{ page.title }}' }),
       dataType: 'json'
     });
   }
-</script>  
+</script>

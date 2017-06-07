@@ -26,4 +26,4 @@ In either mode of integration, Extend Editor supports a range of configuration o
 
 {::options parse_block_html="false" /}
 
-{% include feedback.html src="libraries/extend-editor" source="extend-editor" %}
+{% include feedback.html src="libraries/extend-editor" %}
