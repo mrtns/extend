@@ -7,6 +7,11 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "webtaskName": "string",
   "webtaskContainer": "string",
   "hostUrl": "string",
+  "fullscreen": {
+    "enabled": "boolean",
+    "height": "string",
+    "width": "string"
+  },
   "createIfNotExists": {
     "enabled": "boolean",
     "category": "string"
@@ -63,8 +68,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
       },
       "expand": "boolean"
     },
-    "explanation": "string",
-    "sample": "string"
+    "explanation": "string"
   },
   "shortcuts": {
     "enabled": "boolean",
@@ -89,4 +93,4 @@ Several aspects of the Extend Editor can be controlled throught the options obje
 }
 ```
 
-Last update: `5/17/2017`.
+Last update: `6/12/2017`.
