@@ -136,7 +136,7 @@
               </li>
             
               <li class="sidebar-item sidebar-item-depth1 ">
-                <a class="js-subcategory-item " href="#how-auth0-extend-helps-you">How Auth0 Extend Can Help You</a>
+                <a class="js-subcategory-item " href="#the-value-of-auth0-extend">The Value of Auth0 Extend</a>
               </li>
             
               <li class="sidebar-item sidebar-item-depth1 ">
@@ -299,7 +299,12 @@
 <section id="overview" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="overview">Overview</h2>
 
-  <p>There are to main areas to consider when integrating Auth0 Extend into your SaaS product: providing users of your product with extension authoring experience, and invoking the extensions at runtime.</p>
+  <p>When integrating Auth0 Extend into your SaaS product there are two things to consider:</p>
+
+  <ul>
+    <li>The extension authoring experience</li>
+    <li>Invoking the extensions at runtime</li>
+  </ul>
 
   <p>This guide starts off with extension execution considerations. At the high level, extension execution is very much like calling a web hook from within a product: all extensions are exposed as an HTTP endpoint with a protocol contract you define. Part of the integration process focuses on providing a usable programming model on top of the protocol, securing the extension endpoints to ensure they can only be called from within your product, and designing isolation scopes for code execution.</p>
 

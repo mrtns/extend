@@ -1,6 +1,9 @@
 ## Overview
 
-There are to main areas to consider when integrating Auth0 Extend into your SaaS product: providing users of your product with extension authoring experience, and invoking the extensions at runtime. 
+When integrating Auth0 Extend into your SaaS product there are two things to consider:
+
+- The extension authoring experience
+- Invoking the extensions at runtime 
 
 This guide starts off with extension execution considerations. At the high level, extension execution is very much like calling a web hook from within a product: all extensions are exposed as an HTTP endpoint with a protocol contract you define. Part of the integration process focuses on providing a usable programming model on top of the protocol, securing the extension endpoints to ensure they can only be called from within your product, and designing isolation scopes for code execution. 
 

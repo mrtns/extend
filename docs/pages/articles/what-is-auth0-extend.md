@@ -10,7 +10,7 @@ collection: "Articles"
 
 {% include include-layout.html src="content/articles/what-is-auth0-extend/platform-extensibility.md" name="platform-extensibility" %}
 
-{% include include-layout.html src="content/articles/what-is-auth0-extend/how-auth0-extend-helps-you.md" name="how-auth0-extend-helps-you" %}
+{% include include-layout.html src="content/articles/what-is-auth0-extend/the-value-of-auth0-extend.md" name="the-value-of-auth0-extend" %}
 
 {% include include-layout.html src="content/articles/what-is-auth0-extend/relationship-to-auth0-webtasks.md" name="relationship-to-auth0-webtasks"%}
  
