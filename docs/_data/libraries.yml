@@ -1,0 +1,39 @@
+- title: Libraries
+  subcategories:
+    - title: Extend Editor
+      name: extend-editor
+      href: /extend/docs/libraries/extend-editor
+      items:
+        - title: Hosting the Editor in Your Web Site
+          href: "#hosting-the-editor-in-your-web-site"
+          name: hosting-the-editor-in-your-web-site
+        - title: Configuring Extend Editor
+          href: "#configuring-extend-editor"
+          name: configuring-extend-editor
+        - title: Using Extend Editor as a Stand Alone Web App
+          href: "#using-extend-editor-as-a-stand-alone-web-app"
+          name: using-extend-editor-as-a-stand-alone-web-app 
+        - title: Playground
+          href: "#playground"
+          name: playground 
+
+    - title: Logs Viewer
+      name: logs-viewer
+      href: /extend/docs/libraries/logs-viewer                     
+            
+    - title: Sandboxjs
+      name: sandboxjs
+      href: /extend/docs/libraries/sandboxjs
+      items:
+        - title: Setup
+          href: "#setup"
+          name: setup
+        - title: Create and run a webtask
+          href: "#create-and-run-a-webtask"
+          name: create-and-run-a-webtask
+        - title: Create a webtask and get the URL
+          href: "#create-a-webtask-and-get-the-url"
+          name: create-a-webtask-and-get-the-url
+        - title: Update an existing webtask
+          href: "#update-an-existing-webtask"
+          name: update-an-existing-webtask                    

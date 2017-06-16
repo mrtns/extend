@@ -1,0 +1,50 @@
+<div id="{{ include.name }}" class="layout scrollspy js-swagger">
+  <h3 style="text-transform: capitalize;">{{ include.name | replace: '-', ' ' | capitalize }}</h3>
+  
+  {% include docs/apis/{{include.name}}.html %}
+
+  <div id="{{ include.name }}-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/{{ include.name }}.yml",
+      dom_id: '#{{ include.name }}-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['{{ include.name }}'] = setInterval(function () {
+      var $el = $('#{{ include.name }}.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['{{ include.name }}']);
+        delete window.SwaggerRenderers['{{ include.name }}'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>

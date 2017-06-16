@@ -1,0 +1,41 @@
+- title: API
+  subcategories:
+    - title: HTTP API
+      name: http-api
+      href: /extend/docs/api/http-api
+      items:
+        - title: Webtask Creation
+          href: "#webtask-creation"
+          name: webtask-creation
+
+        - title: Webtask Listing
+          href: "#webtask-listing"
+          name: webtask-listing
+
+        - title: Webtask Deletion
+          href: "#webtask-deletion"
+          name: webtask-deletion
+
+        - title: Webtask Storage
+          href: "#webtask-storage"
+          name: webtask-storage
+
+        - title: Webtask Cache
+          href: "#webtask-cache"
+          name: webtask-cache
+
+        - title: Creating Webtask Tokens
+          href: "#creating-webtask-tokens"
+          name: creating-webtask-tokens
+
+        - title: Revoking Webtask Tokens
+          href: "#revoking-webtask-tokens"
+          name: revoking-webtask-tokens
+
+        - title: Inspecting Webtask Tokens
+          href: "#inspecting-webtask-tokens"
+          name: inspecting-webtask-tokens                                                                                           
+
+    - title: Testing with Postman
+      name: testing-with-postman
+      href: /extend/docs/api/testing-with-postman

@@ -1,0 +1,16 @@
+<div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      {% for collection in site.data.outline %}
+        {% if include.current == collection.title %}
+          {% assign isActive = 'active' %}
+        {% else %}
+          {% assign isActive = '' %}
+        {% endif %}
+        <li class="nav-tab {{ isActive }}">
+          <a href="{{collection.href}}" class="{{ isActive }}">{{collection.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>  

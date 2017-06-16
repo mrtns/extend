@@ -1,0 +1,177 @@
+- title: Articles
+  href: /extend/docs
+  subcategories:
+    - title: What is Auth0 Extend
+      name: what-is-auth0-extend
+      href: /extend/docs
+      items:
+        - title: Platform Extensibility
+          href: "#platform-extensibility"
+          name: platform-extensibility
+        - title: How Auth0 Extend Can Help You
+          href: "#how-auth0-extend-helps-you"
+          name: how-auth0-extend-helps-you
+        - title: Relationship to Auth0 Webtasks
+          href: "#relationship-to-auth0-webtasks"
+          name: relationship-to-auth0-webtasks
+
+    - title: Developer Guide
+      name: developer-guide
+      href: /extend/docs/developer-guide
+      items:
+        - title: Overview
+          href: "#overview"
+          name: overview
+        - title: Running the Sample Application
+          href: "#running-the-sample-application"
+          name: running-the-sample-application
+        - title: Identify Extensibility Points
+          href: "#identify-extensibility-points"
+          name: identify-extensibility-points
+        - title: Choose Programming Models
+          href: "#choose-programming-models"
+          name: choose-programming-models
+        - title: Node.js programming model
+          href: "#nodejs-programming-model"
+          name: nodejs-programming-model
+        - title: Node.js Modules And Dependencies
+          href: "#nodejs-modules-and-dependencies"
+          name: nodejs-modules-and-dependencies
+        - title: Choose the Extension Authoring Experience
+          href: "#choose-the-extension-authoring-experience"
+          name: choose-the-extension-authoring-experience
+        - title: Isolation Requirements
+          href: "#isolation-requirements"
+          name: isolation-requirements
+        - title: Key Auth0 Extend Concepts
+          href: "#key-auth0-extend-concepts"
+          name: key-auth0-extend-concepts
+        - title: Mapping Isolation Requirements onto Webtask Tokens
+          href: "#mapping-isolation-requirements-onto-webtask-tokens"
+          name: mapping-isolation-requirements-onto-webtask-tokens         
+        - title: Creating Extensions
+          href: "#creating-extensions"
+          name: creating-extensions
+        - title: Discovering Extensions
+          href: "#discovering-extensions"
+          name: discovering-extensions
+        - title: Enabling Command Line Tool for Your Users
+          href: "#enabling-command-line-tool-for-your-users"
+          name: enabling-command-line-tool-for-your-users
+        - title: Invoking Extensions
+          href: "#invoking-extensions"
+          name: invoking-extensions
+        - title: Handling Errors from Extensions
+          href: "#handling-errors-from-extensions"
+          name: handling-errors-from-extensions          
+        - title: Runtime and Management APIs
+          href: "#runtime-and-management-apis"
+          name: runtime-and-management-apis
+        - title: Monitoring and Diagnostics
+          href: "#monitoring-and-diagnostics"
+          name: monitoring-and-diagnostics
+        - title: Middleware
+          href: "#middleware"
+          name: middleware                                                  
+
+    - title: Operations Guide
+      name: operations-guide          
+      href: /extend/docs/operations-guide
+      items:
+        - title: Enabling External Logging
+          href: "#enabling-external-logging"
+          name: enabling-external-logging
+        - title: Customizing Behavior with Settings
+          href: "#customizing-behavior-with-settings"
+          name: customizing-behavior-with-settings
+        - title: Image Customization
+          href: "#image-customization"
+          name: image-customization
+
+    - title: Support
+      name: support
+      href: /extend/docs/support
+
+- title: API
+  href: /extend/docs/api/http-api
+  subcategories:
+    - title: HTTP API
+      name: http-api
+      href: /extend/docs/api/http-api
+      items:
+        - title: Webtask Creation
+          href: "#webtask-creation"
+          name: webtask-creation
+
+        - title: Webtask Listing
+          href: "#webtask-listing"
+          name: webtask-listing
+
+        - title: Webtask Deletion
+          href: "#webtask-deletion"
+          name: webtask-deletion
+
+        - title: Webtask Storage
+          href: "#webtask-storage"
+          name: webtask-storage
+
+        - title: Webtask Cache
+          href: "#webtask-cache"
+          name: webtask-cache
+
+        - title: Creating Webtask Tokens
+          href: "#creating-webtask-tokens"
+          name: creating-webtask-tokens
+
+        - title: Revoking Webtask Tokens
+          href: "#revoking-webtask-tokens"
+          name: revoking-webtask-tokens
+
+        - title: Inspecting Webtask Tokens
+          href: "#inspecting-webtask-tokens"
+          name: inspecting-webtask-tokens                                                                                           
+
+    - title: Testing with Postman
+      name: testing-with-postman
+      href: /extend/docs/api/testing-with-postman
+
+- title: Libraries
+  href: /extend/docs/libraries/extend-editor
+  subcategories:
+    - title: Extend Editor
+      name: extend-editor
+      href: /extend/docs/libraries/extend-editor
+      items:
+        - title: Hosting the Editor in Your Web Site
+          href: "#hosting-the-editor-in-your-web-site"
+          name: hosting-the-editor-in-your-web-site
+        - title: Configuring Extend Editor
+          href: "#configuring-extend-editor"
+          name: configuring-extend-editor
+        - title: Using Extend Editor as a Stand Alone Web App
+          href: "#using-extend-editor-as-a-stand-alone-web-app"
+          name: using-extend-editor-as-a-stand-alone-web-app 
+        - title: Playground
+          href: "#playground"
+          name: playground 
+
+    - title: Logs Viewer
+      name: logs-viewer
+      href: /extend/docs/libraries/logs-viewer                     
+            
+    - title: Sandboxjs
+      name: sandboxjs
+      href: /extend/docs/libraries/sandboxjs
+      items:
+        - title: Setup
+          href: "#setup"
+          name: setup
+        - title: Create and run a webtask
+          href: "#create-and-run-a-webtask"
+          name: create-and-run-a-webtask
+        - title: Create a webtask and get the URL
+          href: "#create-a-webtask-and-get-the-url"
+          name: create-a-webtask-and-get-the-url
+        - title: Update an existing webtask
+          href: "#update-an-existing-webtask"
+          name: update-an-existing-webtask                    

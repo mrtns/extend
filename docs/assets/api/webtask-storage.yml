@@ -1,0 +1,84 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Webtask API
+
+host: webtask.it.auth0.com
+
+schemes:
+- https
+
+paths:
+  /api/webtask/{webtask_container}/{webtask_name}/data:
+    get:
+      description:
+        Exporting data
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: webtask_container
+        description: Your webtask container
+        required: true
+        type: string
+      - in: path
+        name: webtask_name
+        description: The name of the webtask
+        required: true
+        type: string        
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string
+      responses:
+        200:
+          description: The data associated to your webtask
+        403:
+          description: The webtask token is not submitted with the request or does not grant sufficient permissions.
+                    
+    put:
+      description:
+        Importing data
+      produces:
+        - application/json  
+      consumes:
+        - application/json 
+      parameters:
+      - in: path
+        name: webtask_container
+        description: Your webtask container
+        required: true
+        type: string
+      - in: path
+        name: webtask_name
+        description: The name of the webtask
+        required: true
+        type: string        
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string 
+      - in: body
+        name: Storage
+        required: true
+        type: object
+        schema:
+          $ref: '#/definitions/Storage'      
+      responses:
+        200:
+          description: The data associated to your webtask        
+        400:
+          description: Bad request
+        403:
+          description: The webtask token is not submitted with the request or does not grant sufficient permissions.
+
+definitions:
+  Storage:
+    type: object
+    properties:
+      etag:
+        type: string
+      data:
+        type: object       

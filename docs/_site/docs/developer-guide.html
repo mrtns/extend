@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    
+
+      <head>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Developer Guide</title>
+  <meta name="fragment" content="!">
+  <meta name="description" content="Better platform extensibility for your SaaS">
+  <meta name="twitter:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:src" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta name="twitter:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta name="twitter:title" content="Auth0 Extend">
+  <meta name="twitter:creator" content="@auth0">
+  <meta name="twitter:site" content="@auth0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:secure_url" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:image" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:url" content="https://auth0.com/extend">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta property="og:site_name" content="Auth0 Extend">
+  <meta property="og:title" content="Auth0 Extend">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/swagger-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/development/core.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/_main.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/assets/contact-form.css">
+  <link rel="canonical" href="http://localhost:4000/extend/docs/developer-guide">
+  <link rel="alternate" type="application/rss+xml" title="Auth0 Extend - Docs" href="/extend/feed.xml">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-32x32.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/jquery.sticky.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/materialize.js"></script>  
+  <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js"></script>  
+  <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js"></script>
+
+        
+      <script src="http://127.0.0.1:5678/livereload.js"></script></head>
+
+      <body>
+
+        <header class="site-header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="/extend/">
+            <div class="logo-extend"><img src="https://cdn.auth0.com/website/auth0-extend/images/auth0-extend-logo.svg" alt="Auth0 Extend">
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+            <li class="li-docs no-basic"><a href="/extend/pricing">Pricing</a></li>
+            <li class="li-docs no-basic">
+              <a href="/extend/docs">Documentation</a>
+            </li>
+            <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+            <li class="li-docs no-basic"><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_header_sales&quot;);" rel="external">Talk to Sales</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right pre-signup">
+            <li><a class="signin-button login js-login" style="cursor: pointer;">Login</a>
+            </li>
+            <li><a class="signin-button signup js-signup" style="cursor: pointer;">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            <div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      
+        
+        <li class="nav-tab active">
+          <a href="/extend/docs" class="active">Articles</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/api/http-api" class="">API</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/libraries/extend-editor" class="">Libraries</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>             
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  <div class="sidebar">
+  
+    
+      <div class="section-title">Articles</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="what-is-auth0-extend" class="js-subcategory " href="/extend/docs">What is Auth0 Extend</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#platform-extensibility">Platform Extensibility</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#how-auth0-extend-helps-you">How Auth0 Extend Can Help You</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#relationship-to-auth0-webtasks">Relationship to Auth0 Webtasks</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="developer-guide" class="js-subcategory active" href="/extend/docs/developer-guide">Developer Guide</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#overview">Overview</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#running-the-sample-application">Running the Sample Application</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#identify-extensibility-points">Identify Extensibility Points</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#choose-programming-models">Choose Programming Models</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#nodejs-programming-model">Node.js programming model</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#nodejs-modules-and-dependencies">Node.js Modules And Dependencies</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#choose-the-extension-authoring-experience">Choose the Extension Authoring Experience</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#isolation-requirements">Isolation Requirements</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#key-auth0-extend-concepts">Key Auth0 Extend Concepts</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#creating-extensions">Creating Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#discovering-extensions">Discovering Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#enabling-command-line-tool-for-your-users">Enabling Command Line Tool for Your Users</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#invoking-extensions">Invoking Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#handling-errors-from-extensions">Handling Errors from Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#runtime-and-management-apis">Runtime and Management APIs</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#monitoring-and-diagnostics">Monitoring and Diagnostics</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#middleware">Middleware</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="operations-guide" class="js-subcategory " href="/extend/docs/operations-guide">Operations Guide</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#enabling-external-logging">Enabling External Logging</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#customizing-behavior-with-settings">Customizing Behavior with Settings</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#image-customization">Image Customization</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="support" class="js-subcategory " href="/extend/docs/support">Support</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+            </ul>
+          </li>
+        
+        </div>
+      </ul>
+    
+  
+    
+  
+    
+  
+</div>
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <article class="docs-content">
+                      <div class="sticky-title">
+  <h1>Developer Guide</h1>
+</div>
+
+<div id="overview" class="layout scrollspy">
+  <h2 id="overview">Overview</h2>
+
+  <p>There are to main areas to consider when integrating Auth0 Extend into your SaaS product: providing users of your product with extension authoring experience, and invoking the extensions at runtime.</p>
+
+  <p>This guide starts off with extension execution considerations. At the high level, extension execution is very much like calling a web hook from within a product: all extensions are exposed as an HTTP endpoint with a protocol contract you define. Part of the integration process focuses on providing a usable programming model on top of the protocol, securing the extension endpoints to ensure they can only be called from within your product, and designing isolation scopes for code execution.</p>
+
+  <p>The second part of this guide talks about providing users of your product with Auth0 Extend authoring experience of extensions. You will see how you can embed Webtask Editor into your site and customize its look &amp; feel, and allow your users to use the wt-cli command line tool.</p>
+
+  <p>Let’s get started.</p>
+
+</div>
+
+<div id="running-the-sample-application" class="layout scrollspy">
+  <h2 id="running-the-sample-application">Running the sample application</h2>
+
+  <p>The ZeroCRM sample application at <a href="https://github.com/auth0/extend">auth0/extend</a> is a working example of integrating Auth0 Extend into a hypothetical CRM system. As different integration aspects are discussed in this guide, you will see references to specific locations in the source code that demonstrate implementation details.</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/24642275/29822bee-18bb-11e7-943d-2aa9d5b272b1.png" alt="ZeroCRM" /></p>
+
+  <p>To run the ZeroCRM application you will need the following configuration details:</p>
+
+  <ul>
+    <li><strong>{host_url}</strong>: The HTTPS URL for your Auth0 Extend instance.</li>
+    <li><strong>{master_webtask_token}</strong>. This is the main webtask token you were provided with to manage your installation.</li>
+    <li><strong>{webtask_container}</strong>. This is the main webtask container.</li>
+  </ul>
+
+  <p>If you are an existing Auth0 Extend customer, you were provided these as part of the onboarding process. If you are new to Auth0 Extend and want to try it out for free, you can get these parameters from the <a href="https://auth0.com/extend/try">Try Auth0 Extend</a> page.</p>
+
+  <p>To install the application, run the following:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/auth0/extend.git
+<span class="nb">cd </span>extend/samples/zerocrm
+npm i
+cat &gt; .env <span class="sh">&lt;&lt;EOF
+MASTER_WEBTASK_TOKEN={master_webtask_token}
+HOST_URL={host_url}
+WEBTASK_CONTAINER={webtask_container}
+ZEROCRM_TENANT={webtask_container}
+EOF
+</span></code></pre>
+  </div>
+
+  <p>Auth0 Extend has been designed to support code-based extensibility in multi-tenant systems. Normally the concept of a tenant is implied from the authentication context. For the sake of simplicity, the ZeroCRM sample application assumes the tenant name will be provided via an environment variable when you start the application. This can be provided by modifying the local .env file you create above and overriding <code class="highlighter-rouge">ZEROCRM_TENANT</code> with the tenant name.</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nv">ZEROCRM_TENANT</span><span class="o">=</span>tenant1
+</code></pre>
+  </div>
+
+  <p><strong>NOTE</strong> if you are using the <a href="https://auth0.com/extend/try">free trial of Auth0 Extend</a>, your account is <strong>single-tenant</strong> and cannot be used with arbitrary tenant names. In this case, please leave the ZEROCRM_TENANT environment variable set to the default value.</p>
+
+  <h4 id="walkthrough">Walkthrough</h4>
+  <p>Here is a quick walkthrough of using ZeroCRM.</p>
+
+  <ul>
+    <li>Run the app with the command: <code class="highlighter-rouge">DEBUG=zerocrm npm start</code></li>
+    <li>Open your browser to <code class="highlighter-rouge">http://localhost:3000</code>. You’ll see a screen for creating leads.</li>
+  </ul>
+
+  <p><kbd>
+  <img src="https://cloud.githubusercontent.com/assets/141124/24431998/1972e72a-13d4-11e7-832e-f37f1fcf64c4.png" />
+</kbd></p>
+
+  <ul>
+    <li>Enter the name <code class="highlighter-rouge">Customer</code> and put the value <code class="highlighter-rouge">5000</code>.</li>
+    <li>Click <code class="highlighter-rouge">Create Lead</code> and you’ll notice that a JSON result is returned showing the lead has been created.</li>
+  </ul>
+
+  <p><kbd>
+  <img src="https://cloud.githubusercontent.com/assets/141124/24432002/22b281e2-13d4-11e7-8707-83b82afca115.png" />
+</kbd></p>
+
+  <ul>
+    <li>Zero CRM uses Auth0 Extend to execute custom user actions on creation of the lead. The <code class="highlighter-rouge">Settings</code> screen is where you do this configuration.</li>
+    <li>Right click on the ‘Settings` link and open it in a new tab.</li>
+  </ul>
+
+  <p><kbd>
+  <img src="https://cloud.githubusercontent.com/assets/141124/24432017/32a5895a-13d4-11e7-8667-699cafd707ec.png" />
+</kbd></p>
+
+  <ul>
+    <li>Click on the <code class="highlighter-rouge">Edit</code> button for <code class="highlighter-rouge">On new lead</code>. You will see the <code class="highlighter-rouge">Extend Editor</code> appear with the following code:</li>
+  </ul>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// This code will execute whenever a new lead is created.</span>
+<span class="c1">// Use 1000+ Node.js modules here. </span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'On new lead:'</span><span class="p">,</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+  
+  <span class="kd">var</span> <span class="nx">lead</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nx">lead</span><span class="p">.</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Send e-mail to manager</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+
+  <span class="c1">// lead.profile = getProfileFromFullContact(lead.email);</span>
+  <span class="nx">lead</span><span class="p">.</span><span class="nx">profile</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">vip</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">comment</span><span class="p">:</span> <span class="s1">'This was added by custom code'</span>
+  <span class="p">};</span>
+ 
+  <span class="c1">// return the newly created lead</span>
+  <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">lead</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>The code for the action was created on “Edit” for illustration, in a real system you would likely have a different default template. This code first writes out to the console when a new lead is created. It then checks to see if the lead value is greater than $1000 and has a placeholder for sending an email. Finally, it tacks on additional profile information to the returned lead.</p>
+
+  <p>Before continuing, click the “Logs” button second from the right in the upper toolbar.</p>
+
+  <p><kbd>
+  <img src="https://cloud.githubusercontent.com/assets/141124/24432055/6d88ce74-13d4-11e7-8b12-c9a0369116c8.png" />
+</kbd>
+<br /><br /></p>
+
+  <p>This will allow you to view real time logs as the action is invoked.</p>
+
+  <ul>
+    <li>Go back to the “Leads” tab and hit <code class="highlighter-rouge">Create New Lead</code> again.</li>
+    <li>This time after the lead is created, you will see the profile information which has been appended.</li>
+  </ul>
+
+  <p><kbd>
+  <img src="https://cloud.githubusercontent.com/assets/141124/24432229/90e01804-13d5-11e7-843b-f2bb83dc6480.png" />
+</kbd></p>
+
+  <ul>
+    <li>Go back to the “Settings” tab.</li>
+    <li>You’ll see that the log shows that your new lead was created.</li>
+  </ul>
+
+  <p><kbd>
+  <img src="https://cloud.githubusercontent.com/assets/141124/24432235/9a2e5b5a-13d5-11e7-8c8e-017732f00451.png" />
+</kbd></p>
+
+  <p><br /><br /></p>
+
+  <p>This is just the beginning of what is possible with Auth0 Extend! You’ll learn much more throughout the rest of the Extend User’s Guide.</p>
+
+</div>
+
+<div id="identify-extensibility-points" class="layout scrollspy">
+  <h2 id="identify-extensibility-points">Identify Extensibility Points</h2>
+
+  <p>Making your platform extensible starts with identifying the places within the product that your customers will be able to extend or customize. If you are already using web hooks today, you can reuse your list of web hooks as a starting point.</p>
+
+  <p>Some examples of extensibility points in a hypothetical CRM system could be:</p>
+
+  <ul>
+    <li>new lead has been created,</li>
+    <li>account information was modified,</li>
+    <li>an e-mail must be composed before it is sent,</li>
+    <li>payment status must be verified.</li>
+  </ul>
+
+  <p>The first decision you need to make with respect to every extensibility point is about the call pattern it needs to support. Is this a one-way, asynchronous notification or do you expect a synchronous response that may alter further processing within your product?</p>
+
+  <p>For example, creation of a new lead may generate a simple invocation of the extension that sends a Slack message or adjusts state of some external system. While this happens processing within your product can continue since it has no dependency on the outcome of extension execution:</p>
+
+  <p>&lt;img src=”https://cloud.githubusercontent.com/assets/822369/23878647/ee8ed444-0805-11e7-86f6-2e91e4861927.png” alt=”Asynchronous extension” width=400&gt;</p>
+
+  <p>In contrast, an extension that formats an e-mail body must complete execution and return the result to your product before processing can continue:</p>
+
+  <p>&lt;img src=”https://cloud.githubusercontent.com/assets/822369/23878665/04f5c6e8-0806-11e7-9cad-98949bdc03d3.png” alt=”Synchronous extension” width=470&gt;</p>
+
+  <p>The second design decision you need to make is related to the data format and schema for the data your product will sent to and accept as a response from each of the extensibility points. Auth0 Extend supports a high fidelity with the HTTP protocol and allows you full flexibility in deciding what data format to use. Having said that, vast majority or extensibility cases will be well served with JSON format of both the request and response, and JSON will be assumed for the rest of this guide.</p>
+
+</div>
+
+<div id="choose-programming-models" class="layout scrollspy">
+  <h2 id="choose-programming-models">Choose Programming Models</h2>
+
+  <p>Once you have decided about the synchronous/asynchronous call pattern and the specific data format and schema to use for each of the extensibility points, the next step is to select the programming model your users will use to implement the logic of the extension, accept the input data, and send data back to your product.</p>
+</div>
+
+<div id="nodejs-programming-model" class="layout scrollspy">
+  <h2 id="nodejs-programming-model">Node.Js programming model</h2>
+
+  <p>Auth0 Extend allows your users to write Node.js code to implement extension logic. Each extension is a Node.js module that exports a single JavaScript function. Three basic function signatures are supported out of the box as documented in the <a href="https://webtask.io/docs/model">Webtask Programming Model</a>. However, Auth0 Extend allows you to step outside of these built-in Webtask programming models to allow extension authoring using arbitrary JavaScript function signatures, domain specific languages like T-SQL or Mustache templates, or to inject middleware services that offer a range of customizations of the programming model. These advanced topics are described in the <a href="#middleware">Middleware</a> section.</p>
+
+  <p>In the most common case that satisfies vast majority of extensibility scenarios, an extension would accept JSON on input, and return JSON on output. For this use case, the following built-in function signature is adequate:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// JSON object sent in the body of the request is parsed</span>
+  <span class="c1">// and stored in ctx.body</span>
+  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="c1">// The result JavaScript object will be serialized as JSON in the response body</span>
+  <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>In more advanced cases where you want to process non-JSON data formats (for example have the extension return a PNG image), you need to use the low-level programming model that supports the full flexibility of the HTTP protocol:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'image/png'</span><span class="p">});</span>
+  <span class="kd">var</span> <span class="nx">imageData</span><span class="p">;</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">imageData</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>In this low level programming model the extension is provided with the raw request and response object representing the <a href="https://nodejs.org/dist/latest-v6.x/docs/api/http.html">HTTP request and response in Node.js</a>. Note that the extension code in this case is responsible for reading in and parsing the request body, which provides it with the flexibility to accept arbitrary data formats.</p>
+
+  <p>Instead of using one of the programming models that comes with Auth0 Extend, you can choose to design your own. For example, if you have an “on account changed” extension in your system that accepts information about the account, account representative, and contact history, and allows for a modified account to be returned, you can choose to offer a tailored programming model for your users:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="nx">representative</span><span class="p">,</span> <span class="nx">history</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// make changes in account info</span>
+  <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">account</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Supporting advanced scenarios like this that require custom programming models, DSLs, and more, is addressed in the <a href="#middleware">Middleware</a> section.</p>
+
+</div>
+
+<div id="nodejs-modules-and-dependencies" class="layout scrollspy">
+  <h2 id="nodejs-modules-and-dependencies">Node.js Modules and Dependencies</h2>
+
+  <p>The Node.js code your customers write to extend your platform can utilize all built-in Node.js modules as well as a large number of most popular modules from public NPM registry. No special declaration of modules is necessary, the code can simply <code class="highlighter-rouge">require</code> them, e.g:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mongo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongodb'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span> <span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>The list of available modules is always growing, you can check current module availability <a href="https://tehsis.github.io/webtaskio-canirequire/">here</a>. Some modules are available in multiple versions, you can require a specific version with:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mongo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mondbodb@2.0.33'</span><span class="p">);</span>
+</code></pre>
+  </div>
+
+  <p>Apart from selected public NPM modules, your installation of Auth0 Extend can also offer your users modules from your private NPM repository, or even modules you manage outside of NPM. <a href="#support">Contact support</a> if you are interested in this capability.</p>
+</div>
+
+<div id="choose-the-extension-authoring-experience" class="layout scrollspy">
+  <h2 id="choose-the-extension-authoring-experience">Choose the Extension Authoring Experience</h2>
+
+  <p>One of the key benefits of Auth0 Extend is the advanced extension authoring experience you can offer users of your platform. You have a range of options.</p>
+
+  <p>The most streamlined authoring experience you can offer is based on the Auth0 Extend web-based editor. Your users can use their browser to edit the code of the extension, define secret parameters (e.g. API keys for external systems) their code uses, test their code with an integrated runner, access real-time logs for debugging, and more. The web-based editor can be used as a stand-alone web application you can direct your users to, or it can be embedded as a component into your own web site. The <a href="#hosting-the-editor">Hosting the editor</a> section explains both options in detail.</p>
+
+  <p>In addition to the web-based editor, Auth0 Extend platform comes with a lower level command line tool called <a href="https://webtask.io/docs/wt-cli">wt-cli</a>. You can offer your users the option of managing extensions using this tool or one you derive from it with functionality specialized for your domain. Using wt-cli requires an additional layer of expertise and familiarity with Webtask concepts from your users and as such is only suitable for a more advanced audience than the web-based editor targets. If you choose the allow your users to use wt-cli, you will need to provide them with instructions on configuring the tool with settings specific to their own account in your system. This is addressed in detail in the <a href="#enabling-command-line-tool-for-your-users">Enabling Command Line Tool for Your Users</a> section.</p>
+
+  <p>The lowest level experience for managing extensions in your system involves calling the <a href="https://webtask.io/docs/101">Auth0 Webtask management APIs</a> of your Auth0 Extend installation directly over HTTPS. This level of interaction is adequate if you plan to build custom tools or management experiences for your users that do not leverage the Auth0 Extend editor or wt-cli. To interact with the Auth0 Webtask management APIs you can use any standard HTTP library specific to your environment. If you are calling the APIs from Node.js, you can also use the <a href="https://github.com/auth0/sandboxjs">Node.js SDK</a> Auth0 Extend supports.</p>
+
+</div>
+
+<div id="isolation-requirements" class="layout scrollspy">
+  <h2 id="isolation-requirements">Isolation Requirements</h2>
+
+  <p>If you are operating a multi-tenant SaaS platform and use Auth0 Extend to allow your customers to extend your product with custom code, one key decision you need to make is related to the scope of isolation for executing extensions. Scope of isolation implies the following guarnatees in the Auth0 Extend system:</p>
+
+  <ol>
+    <li>
+      <p>Two extensions executing in different scopes of isolation are guaranteed to be isolated in terms of in-memory state, access to disk, and execution integrity (e.g. one extension cannot affect the processing of the other extension). They are also guaranteed their fair share of computing resources (CPU, memory).</p>
+    </li>
+    <li>
+      <p>Two extensions execution within the same scope of isolation may or may not share in-memory state, access to disk, and be able to affect each other’s processing. This allows for a level of processing optimization between extensions (e.g. in-memory connection polling to external systems), but it cannot be relied upon as a guarantee.</p>
+    </li>
+  </ol>
+
+  <p>For example, if user A and user B of your system both author extension code, you will typically want Auth0 Extend to execute these extensions isolated from one another. This way code of user A cannot access any data or affect processing of user B. On the other hand, if user A authors multiple extensions in your system, it may be not only reasonable but desired to execute both extensions with no isolation so that they can share in-memory data or optimize connection management to external systems.</p>
+
+  <p>The question you need to ask yourself in the context of your platform is: what is the concept in my platform which defines a trust or isolation boundary for data and processing? Here are a few possible answers and considerations:</p>
+
+  <ol>
+    <li>
+      <p><strong>Tenant</strong>. For majority of multi-tenant SaaS platforms, a tenant of the platform is at the same time the most granular trust and isolation boundary. A tenant can be a subscriber, an account, an organziation, or even an individual user. As long as all configuration and secret data can be shared across code working on behalf of a specific tenant, but not shared with code working on behalf of other tenants, a tenant is likely your desired scope of isolation for Auth0 Extend extensions.</p>
+    </li>
+    <li>
+      <p><strong>User</strong>. In some multi-tenant systems, a tenant represents a high level account or organization, and there are many users or administrators who are part of it. If your system allows all those users to create their own extensions, and it is important that they are isolated from one another, a user may be the desired scope of isolation.</p>
+    </li>
+    <li>
+      <p><strong>Staging vs production</strong>. If your system differentiates between extensions that execute in a staging vs production environment, it is likely desirable for the execution contexts of these extensions to be isolated. This way a bug that affects processing in the staging environment will not affect execution of extensions in production.</p>
+    </li>
+    <li>
+      <p><strong>Single extension</strong>. In an extreme case, you can say that every extension in the system must be completely isolated from any other extension, without regard for the fact that security of the system may not require that level of granularity. One reason to require this level of isolation is optimizing for stability: ensuring that execution of one extension will never affect execution of other extensions (for example due to an uncaught exception). One disadvantage of this approach is that it prevents optomizations that rely on sharing in-memory data between extensions. Another is related to scalabiltiy of the system (see below).</p>
+    </li>
+  </ol>
+
+  <p>Choice of the scope of isolation has impact on the scalability and performance of the system: the more granular scope of isolation, the fewer extensions per second you will be able to process given a specific size of an Auth0 Extend deployment. Supporting more isolated environments for extension execution requires more system resources. Scope of isolation set at the tenant level will consume fewer resources than scope of isolation set at user or extension level, assuming there are many users or extensions per tenant.</p>
+
+  <p>In most cases, scope of isolation set at tenant level is adequate.</p>
+</div>
+
+<div id="key-auth0-extend-concepts" class="layout scrollspy">
+  <h2 id="key-auth0-extend-concepts">Key Auth0 Extend Concepts</h2>
+
+  <p>Previous sections of this guide focused on collecting and defining extensibility requirements in the context of your platform. Before moving on to implementing the actual integration to satisfy these requirements, you need to understand the core concepts of Auth0 Extend and the underlying Webtask technology.</p>
+
+  <ol>
+    <li>
+      <p><strong>Webtask URL</strong>. As part of the onboarding process to Auth0 Extend, you received a Webtask URL, which may look like <code class="highlighter-rouge">https://wt-yourcompany.it.auth0.com</code>. This is the base URL you will use to invoke management APIs and execute your extensions.</p>
+    </li>
+    <li>
+      <p><strong>Webtask token</strong>. Webtask tokens are used to authorize calls to Auth0 Extend management APIs. Each token has specific set of permissions and intended use. One of the management APIs allows you to create derived webtask tokens with scoped down permissions within your Auth0 Extend deployment. You can read more about the security model and webtask tokens in the <a href="#mapping-isolation-requirements-onto-webtask-okens">next section</a>. Here are the two types of tokens that will be used throughout this guide:</p>
+
+      <ul>
+        <li>
+          <p><strong>Master webtask token</strong>. This is the webtask token you were given during the onboarding process into Auth0 Extend. This token gives you complete control over your Auth0 Extend deployment. You can use it to authorize calls to management APIs without any restrictions. <strong>NOTE</strong> you should never disclose your master webtask token to any of your customers or tenants.</p>
+        </li>
+        <li>
+          <p><strong>Tenant webtask token</strong>. This token is scoped down to allow management of all extensions within a single <a href="#isolation-requirements">scope of isolation</a> in your platform (typically a single tenant). You can create tenant webtask tokens using your master webtask token. Tenant webtask tokens should only be shared with the relevant tenant.</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Extension or webtask</strong>. These terms will be used interchangably in this guide to describe the same concept: the atomic unit of custom logic authored by your users that can be separately managed and invoked by your platform. Logically an extension is similar to a single web hook. Extensions are defined by a combination of custom code, secret configuration, and metadata.</p>
+    </li>
+    <li>
+      <p><strong>Extension code</strong>. This is a script that implements custom logic and is authored by users of your platform. In a typical case, it is a single JavaScript function in Node.js. However, with the use of <a href="#middleware">middleware</a> you can allow your users to author extension code that is written in custom, domain specific languages and scripts, e.g. T-SQL for querying your data or a Mustach template for formatting the body of an e-mail.</p>
+    </li>
+    <li>
+      <p><strong>Extension secrets</strong>. These are key/value pairs that your user can define for a particular extension via the Extension Editor, wt-cli, or HTTP APIs. Secrets allow for a secure mechanism to provision exension code with sensitive parameters, e.g. API keys or database connection strings. Auth0 Extend provides a convenient, secure, built-in mechanism for encrypted storage of secrets at rest, and only makes them available to executing extension code in decrypted form at runtime.</p>
+    </li>
+    <li>
+      <p><strong>Extension metadata</strong>. These are key/value pairs that can be used to associate arbitrary metadata with a particular extension. Their primary use is annotating extensions to enable platform-specific functionality written by you (as opposed to your users) in order to provide management experience tailored to your platform. For example, you can use metadata to classify extensions (e.g. “on-new-lead”, “format-email”), or indicate which of them are active vs disabled. Metadata can be used as search criteria when listing available extensions, which is a convenient way to determine whether an extension to call exists at runtime.</p>
+    </li>
+    <li>
+      <p><strong>Webtask container</strong>. Webtask container is a logical, named entity that represents scope of isolation in Auth0 Extend as described in the <a href="#isolation-requirements">Isolation requirements</a> section. Extensions executing in different webtask containers are guaranteed to be isolated. Extensions executing in the same webtask container may or may not run in the same address space (process) and therefore share the same state and resources. Webtask containers do not need to be explicitly created or registered - they are created by Auth0 Extend on demand as needed.</p>
+    </li>
+    <li>
+      <p><strong>Webtasks vs webtask containers</strong>. Webtasks are named entities that are created in the context of a specific webtask container. Webtasks must have unique names within their respective containers, but there may be identically named webtasks in different containers. To execute a webtask both the webtask container name and webtask name are needed.</p>
+    </li>
+  </ol>
+
+</div>
+
+<div id="mapping-isolation-requirements-onto-webtask-tokens" class="layout scrollspy">
+  <h2 id="mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</h2>
+
+  <p>After you have <a href="#isolation-requirements">identified the desired isolation scope</a> in your system, you can use the webtask containers along with webtask tokens as way of implementing support for it.</p>
+
+  <p>At the high level, each isolation scope should be assigned a unique, single webtask container to create and execute extensions in. For each webtask container you will also use the master webtask token to create a unique, derived webtask token with permissions scoped down to just that webtask container.</p>
+
+  <p>For illustration, let’s assume your desired isolation scope is a tenant (a subscription or account in your multi-tenant system). Every tenant would then be assigned a unique webtask container name within which all their extensions will execute. Webtask container name can be either derived from the tenant name in your system, or a random, unique name can be used as long as you maintain the association between your notion of a tenant and that webtask container name in Auth0 Extend.</p>
+
+  <p>Once the webtask container name for a given tenant is decided, you must use your master webtask token to create a tenant webtask token with permissions scoped down to allow managing only that single webtask container assigned to the tenant. The purpose of the tenant webtask token is to share it with your customer who owns specific tenant. They will use this token with Auth0 Extend editor, wt-cli, or HTTP management APIs of Auth0 Extend to manage their extensions. At the same time, the token does not provide them with permissions to manage extensions of other tenants.</p>
+
+  <p>A convenient moment to create a tenant webtask token is during your own tenant provisioning process. Alternatively, you can implement lazy provisioning of tenant webtask tokens (e.g. only when a tenant chooses to add an extension to your system). Regardless when you create the tenant webtask token, you must then durably store the token alongside your tenant (e.g. in your “customers” database) to ensure that you use the same token for a particular tenant every time.</p>
+
+  <p>The webtask management API to use to issue a tenant webtask token is <a href="https://webtask.io/docs/api_issue">POST /api/tokens/issue</a>. The call must be authorized with your master webtask token. The API allows you to specify a number of restrictions for the new token which are outlined in the documentation. The most important to specify is the <code class="highlighter-rouge">ten</code> restriction, which limits the management permissions of the new webtask token to the webtask container with a matching name:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>POST <span class="o">{</span>host_url<span class="o">}</span>/api/tokens/issue
+Content-Type: application/json
+Authorization: Bearer <span class="o">{</span>master_webtask_token<span class="o">}</span>
+
+<span class="o">{</span>
+  <span class="s2">"ten"</span>: <span class="s2">"{webtask_container_name}"</span>
+<span class="o">}</span>
+</code></pre>
+  </div>
+
+  <p>The response to this API call contains the tenant webtask token in the body. Store it alongside your tenant information in your system for future use (or alongside whichever isolation scope you chose to use if other than tenant).</p>
+
+  <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/lib/extend.js#L9">See mapTenantToIsolationScope function</a>.</p>
+
+</div>
+
+<div id="creating-extensions" class="layout scrollspy">
+  <h2 id="creating-extensions">Creating Extensions</h2>
+
+  <p>Before your users can edit extensions using Auth0 Extend editor, your platform must pre-create them on their behalf. This is typically done lazily: if a specific extension does not yet exist, your platform must create it immediately before launching the Auth0 Extend editor. You can check if a particular extension already exist by <a href="#discovering-extensions">discovering extensions</a>.</p>
+
+  <p>Each extension is a webtask that has a name unique within the webtask container, consists of code, secrets, and metadata, and will be callable via HTTPS at a specic URL once created. As such, you must consider the following when pre-creating extensions for your users to edit:</p>
+
+  <ol>
+    <li>
+      <p><strong>Name</strong>. In simple cases, webtask name can act as an identifier of a specific extension type (e.g. “on-new-lead”). Your platform can quickly look up an extension for a specific extensibility point to edit or call based on that name and the webtask container name which is implied by the execution context (e.g. the current tenant).</p>
+    </li>
+    <li>
+      <p><strong>Code</strong>. What is the code of the newly created, “empty” extension? It is a good practice to define this code to have no side effects by default, and contain some minimal documentation in the form of comments that will get your users started when they edit it. For example:</p>
+
+      <div class="language-javascript highlighter-rouge"><pre class="highlight"><code> <span class="cm">/**
+ @param ctx.body - new lead information
+ @param ctx.body.name - name of new lead
+ */</span>
+ <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">extra_info</span> <span class="o">=</span> <span class="p">{};</span>
+   <span class="c1">// Add extra information to the lead entry:</span>
+   <span class="c1">// extra_info.campaign = 'blog';</span>
+   <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">extra_info</span><span class="p">);</span>
+ <span class="p">};</span>
+</code></pre>
+      </div>
+    </li>
+    <li>
+      <p><strong>Secrets</strong>. Secrets are typically only needed when the extension code is accessing protected downstream resources. As such the initial list of secrets for an emtpy extension would not specify any application specific secrets. Your users will add them as needed, depending on what their code does.</p>
+    </li>
+    <li>
+      <p><strong>Metadata</strong>. Your platform may rely on metadata for several uses. They are covered in other sections of this guide as needed. Typically, when creating an “empty” extension you will want to add three metadata properties:</p>
+
+      <ul>
+        <li>
+          <p>One that is specific to your platform and declares what the type of the extension is (e.g. “on-new-lead”), which later allows you to search for this extension in order to execute it. <strong>NOTE</strong> as mentioned before, in simple cases, instead of using this metadata property, you can rely on a convention of naming the extensions in a way that implies their type.</p>
+        </li>
+        <li>
+          <p>Two properties that taken together enable the call to the extension URL to be authorized as originating from your platform. See below.</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Authorization</strong>. Once created, extension URLs are public. As such it is necessary to ensure that only calls originating from your platform are authorized to call the extension. There are many mechanisms that can be used to achieve this. One simple pattern relies on the extension code requiring that the request specifies a secret token that is only known to your platform and the extension itself. To facilitate this pattern, you must associate a special <a href="#middleware">middleware</a> with the newly created extension. The middleware enforces the authorization decision without requiring any changes to the code your user writes.</p>
+    </li>
+  </ol>
+
+  <p>To create a webtask that implements an extension following all the considerations above, you can use the <a href="https://webtask.io/docs/webtask_upsert">PUT /api/webtask/{container}/{name}</a> API as follows:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>PUT /api/webtask/<span class="o">{</span>webtask_container<span class="o">}</span>/<span class="o">{</span>webtask_name<span class="o">}</span>
+Content-Type: application/json
+Authorization: Bearer <span class="o">{</span>tenant_webtask_token<span class="o">}</span>
+
+<span class="o">{</span>
+  <span class="s2">"code"</span>: <span class="s2">"{code}"</span>,
+  <span class="s2">"secrets"</span>: <span class="o">{</span>
+    <span class="s2">"auth0-extension-secret"</span>: <span class="s2">"{secret}"</span>
+  <span class="o">}</span>,
+  <span class="s2">"meta"</span>: <span class="o">{</span>
+    <span class="s2">"auth0-extension-secret"</span>: <span class="s2">"{secret}"</span>,
+    <span class="s2">"auth0-extension-type"</span>: <span class="s2">"{extensibility_point_name}"</span>,
+    <span class="s2">"wt-compiler"</span>: <span class="s2">"auth0-ext-compilers/generic"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+  </div>
+
+  <p>The following parameters must be provided in this call:</p>
+
+  <ul>
+    <li>
+      <p><strong>{webtask_container}</strong>: name of the webtask container associated with the isolation scope (e.g. tenant) as determined in <a href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>.</p>
+    </li>
+    <li>
+      <p><strong>{webtask_name}</strong>: the name of the webtask; in simple cases this uniquely identifies the extensibility point in your platform.</p>
+    </li>
+    <li>
+      <p><strong>{tenant_webtask_token}</strong>: tenant-specific webtask token derived from the master webtask token as described in <a href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>.</p>
+    </li>
+    <li>
+      <p><strong>{code}</strong>: the source code of the “empty” extension as described above.</p>
+    </li>
+    <li>
+      <p><strong>{secret}</strong>: a randomly generated secret key that will be used for authorizing calls to the webtask. This should have enough entropy to act as a strong cryptographic key. This can for example be hex encoded 32 byte long array generated with a random number generator. Note the same value must be specified both in metadata and secrets.</p>
+    </li>
+    <li>
+      <p><strong>{extensibility_point_name}</strong>: a unique name of this extensibility point type within your platform, e.g. “on-new-lead”. Auth0 Extend does not require this property or associate any semantics with its value. Specifying it is part of a usage pattern that makes it convenient for you to later query and find all extensions defined by your users.</p>
+    </li>
+    <li>
+      <p><strong>wt_compiler</strong>: this metadata property specifies a <a href="https://webtask.io/docs/webtask-compilers">webtask compiler</a> the extension will use. The <strong>auth0-ext-compilers/generic</strong> compiler (<a href="https://github.com/auth0/auth0-ext-compilers/blob/master/lib/compilers/generic.js">check the source code</a>) is part of the Auth0 Extend platform, and its purpose is to authorize all calls to this webtask by ensuring that the Bearer credential specified in the <code class="highlighter-rouge">Authorization</code> header of the request matches the value of the <strong>auth0-extension-secret</strong> secret. This means your platform will need to correctly formulate the <code class="highlighter-rouge">Authorization</code> header when making calls to execute extensions, which is explained in the <a href="#invoking-extensions">Invoking Extensions</a> section.</p>
+    </li>
+  </ul>
+
+  <p>A successful response to this API call will contain the <code class="highlighter-rouge">Location</code> HTTP response header with the webtask URL of the extension. You can choose to store it in your database, but it is not necessary to later find out if the user defined an extension for a specific extensibilty point. Thanks to the metadata properties you associated with the extension above, you can use Auth0 Extend management APIs to discover defined extensions.</p>
+
+  <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L35">See ensureExtensionExists function</a>.</p>
+</div>
+
+<div id="discovering-extensions" class="layout scrollspy">
+  <h2 id="discovering-extensions">Discovering Extensions</h2>
+
+  <p>There are at least two situations in which you need to determine if a specific tenant in your system has an existing extension of a specific extensibility point:</p>
+
+  <ul>
+    <li>at runtime, when you need to <a href="#invoking-extensions">invoke the extension</a>,</li>
+    <li>at development time, to determine if the extension <a href="#creating-extensions">needs to be pre-created</a> before you redirect your user to the Auth0 Extend editor.</li>
+  </ul>
+
+  <p>The same <a href="https://webtask.io/docs/webtask_list">GET /api/webtask/{container}</a> Auth0 Extend management API can be used in both cases. The API allows you to list all extensions that exist in a specific webtask container, and allows you to optionally specify further filtering criteria. You can use this capability to filter the list down to extensions with a specific value of the <em>auth0-extension-type</em> metadata property that stores the name of the extensibility point in your system.</p>
+
+  <p>To find out all extensions defined in a specific webtask container (i.e. for a particular tenant), issue:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>GET <span class="o">{</span>host_url<span class="o">}</span>/api/webtask/<span class="o">{</span>webtask_container<span class="o">}</span>
+Authorization: Bearer <span class="o">{</span>tenant_webtask_token<span class="o">}</span>
+</code></pre>
+  </div>
+
+  <p>To find out all extensions associated with a specific extensibility point in your platform, issue:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>GET <span class="o">{</span>host_url<span class="o">}</span>/api/webtask/<span class="o">{</span>webtask_container<span class="o">}</span>?meta<span class="o">=</span>auth0-extension-type:<span class="o">{</span>extensibility_point_name<span class="o">}</span>
+Authorization: Bearer <span class="o">{</span>tenant_webtask_token<span class="o">}</span>
+</code></pre>
+  </div>
+
+  <p>The following parameters must be provided in these call:</p>
+
+  <ul>
+    <li>
+      <p><strong>{webtask_container}</strong>: name of the webtask container associated with the isolation scope (e.g. tenant) as determined in <a href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>.</p>
+    </li>
+    <li>
+      <p><strong>{tenant_webtask_token}</strong>: tenant-specific webtask token derived from the master webtask token as described in <a href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>.</p>
+    </li>
+    <li>
+      <p><strong>{extensibility_point_name}</strong>: a unique name of this extensibility point type within your platform, e.g. “on-new-lead”, you are interested if finding defined extensions for. You have specified this platform-specific identifier when <a href="#creating-extensions">pre-creating the extension</a>.</p>
+    </li>
+  </ul>
+
+  <p>A successful response to these API calls will contain a JSON array with objects representing matching extensions. For each extension, you will get:</p>
+
+  <ul>
+    <li>
+      <p><strong>name</strong>: the name of the webtask implementing this extension.</p>
+    </li>
+    <li>
+      <p><strong>host_url</strong>: the HTTPS URL for your Auth0 Extend instance.</p>
+    </li>
+    <li>
+      <p><strong>meta</strong>: an object representing all metadata properties of this webtask associated with it at creation time.</p>
+    </li>
+  </ul>
+
+  <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L86">See browser discoverExtensions function</a>.<br />
+<a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/lib/extend.js#L57">See Node.js discoverExtensions function</a>.</p>
+
+</div>
+
+<div id="enabling-command-line-tool-for-your-users" class="layout scrollspy">
+  <h2 id="enabling-command-line-tool-for-your-users">Enabling Command Line Tool for Your Users</h2>
+
+  <p>Auth0 Extend comes with a command line tool <a href="https://webtask.io/docs/wt-cli">wt-cli</a> that allows for creating and managing webtasks, access to real-time logs from an Auth0 Extend installation, and more. This is a low level tool targeting more sophisticated users (developers and administrators). To use the tool effectively for managing extensions requires your users to have a similar level of understanding of key concepts as presented in this guide.</p>
+
+  <p>If you choose to enable your users to use wt-cli, you will need to provide them with instructions for setting up a wt-cli profile specific to the tenant they are allowed to manage. The wt-cli profile is a concept that exists at the level of the wt-cli tool only: it is a combination of configuration paramaters that allows wt-cli to connect to the correct Auth0 Extend installation and invoke management APIs on it. A user of wt-cli can define several named profiles, and select the profile to use when invoking individual commands. A profile consists of:</p>
+
+  <ul>
+    <li>
+      <p><strong>host_url</strong>: the HTTPS URL for your Auth0 Extend instance.</p>
+    </li>
+    <li>
+      <p><strong>webtask_token</strong>: this should be the tenant webtask token you have created to allow management of extensions at tenant scope. <strong>NOTE</strong> never disclose your master webtask token to your users.</p>
+    </li>
+    <li>
+      <p><strong>webtask_container</strong>: this should be the webtask container name you assigned to the specific tenant - the same container name the tenant webtask token is authorized to perform management operations on.</p>
+    </li>
+  </ul>
+
+  <p>As you can see, the profile your users will need to set up is tenant-specific. The command your users need to run to set up that profile after installing wt-cli looks like this:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>wt init -p <span class="o">{</span>profile-name<span class="o">}</span> <span class="se">\</span>
+  --url <span class="o">{</span>host_url<span class="o">}</span> <span class="se">\</span>
+  --token <span class="o">{</span>tenant_webtask_token<span class="o">}</span> <span class="se">\</span>
+  --container <span class="o">{</span>webtask_container<span class="o">}</span>
+</code></pre>
+  </div>
+
+  <p>If the configured <strong>{profile-name}</strong> is <code class="highlighter-rouge">makaron</code>, your users would then be able to create a hypothetical on-new-lead extensions with:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>EXTENSION_SECRET=$(openssl rand 32 -hex)
+wt create on-new-lead.js -p makaraon \
+  --secret auth0-extension-secret=$EXTENSION_SECRET \
+  --meta auth0-extension-secret=$EXTENSION_SECRET \
+  --meta auth0-extension-type=on-new-lead \
+  --meta wt-compiler=auth0-ext-compilers/generic
+</code></pre>
+  </div>
+
+  <p>The example above corresponds to the management API call to <a href="#creating-extensions">pre-create an extension</a>.</p>
+
+  <p>The wt-cli is <a href="https://github.com/auth0/wt-cli">open source and available on GitHub</a>. You can use it as an inspiration and basis for a higher level command line tool that is specific to your platform, similarly to what we have done to support managing <a href="https://auth0.com/docs/hooks/cli">Auth0 Hooks</a> in the Auth0 Identity platform <a href="https://github.com/auth0/wt-cli/blob/master/bin/auth0">here</a>.</p>
+</div>
+
+<div id="invoking-extensions" class="layout scrollspy">
+  <h2 id="invoking-extensions">Invoking Extensions</h2>
+
+  <p>This section explains what you need to do when your platform reaches the point of processing when you need to invoke extension logic.</p>
+
+  <p>In all instances, invocation of an extension occurs during an operation or transaction which makes the following parameters implicit:</p>
+
+  <ul>
+    <li>
+      <p><strong>{webtask_container}</strong>: name of the webtask container associated with the isolation scope (e.g. tenant) of the current operation or transactionas as determined in <a href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>. For example, if your scope of isolation is a tenant of your system, and you are processing a transaction on behalf of that tenant, the webtask container name of the extension to run is already known.</p>
+    </li>
+    <li>
+      <p><strong>{extensibility_point_name}</strong>: a unique name of the extensibility point type you want to invoke, e.g. “on-new-lead”.</p>
+    </li>
+  </ul>
+
+  <p>With this information, you can <a href="#discovering-extensions">discover</a> if an extension is defined for a given extensibility point and isolation scope. The discovery process leads to the determination of the following two parameters, both of which are necessary to invoke the extension:</p>
+
+  <ul>
+    <li>
+      <p><strong>{host_url}</strong>: this is the url to the specific extension instance to call.</p>
+    </li>
+    <li>
+      <p><strong>{extension_secret}</strong>: this is the value of the <code class="highlighter-rouge">auth0-extension-secret</code> metadata property you will need to authorize the call.</p>
+    </li>
+  </ul>
+
+  <p><strong>NOTE</strong> invoking the discovery logic every time you need to execute an extension in your system may be impractical from performance perspective, depending on the frequency of extension execution. Consider applying caching mechanism to reduce the overhead of repeated Auth0 Extend management API calls related to discovery.</p>
+
+  <p>In addition to the parameters above, you need a payload to supply to the extension, which you defined as part of <a href="#identify-extensibility-points">identifying the extensibility points in your platform</a>.</p>
+
+  <p>Auth0 Extend supports creating extensions that leverage full flexibility of HTTP, including support for different verbs and content types. In the most common case of using JSON to submit payload to the extension, an invocation of the extension would look like this:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>POST {host_url}
+Content-Type: application/json
+Authorization: Bearer {extension_secret}
+
+{payload}
+</code></pre>
+  </div>
+
+  <p>A typical success response would have HTTP 200 status code and contain a JSON response body generated by the extension code. Your platform is reponsible for performing any necessary validation of the status code, and payload.</p>
+
+  <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/lib/extend.js#L68">See invokeExtension function</a>.</p>
+
+  <p>The errors you may receive from calling Auth0 Extend extensions fall into several catergories and are described in <a href="#handling-errors-from-extensions">Handling Errors from Extensions</a>.</p>
+
+  <p>One of the implementation decisions you need to make when invoking the extensions is related to their synchronous or asynchronous semantics, which you determined when <a href="#identify-extensibility-points">identifying the extensibility points in your platform</a>. 
+When invoking synchronous extensions you must wait for the HTTPS request to complete before your platform can continue processing, because it has a dependency on the data the extension will respond with. In such cases you should consider enforing a timeout on the overall duration of extension execution to ensure users of your platform have a good experience.</p>
+
+  <p>When invoking asynchronous extensions, transaction processing in your platform will continue as soon as the HTTPS request to the invoke the extension has been issued. One consideration you should make in this case is related to handling of errors and output from asynchronous extensions. To aid in troubleshooting and monitoring, it may be reasonable to capture and log the outcome of asynchronous extension execution, even though it does not affect the processing of the transaction that triggered it.</p>
+
+</div>
+
+<div id="handling-errors-from-extensions" class="layout scrollspy">
+  <h2 id="handling-errors-from-extensions">Handling Errors from Extensions</h2>
+
+  <p>Successful execution of an extension typically results in a HTTP 200 response with extension-specific payload in the response body. If you receive a non-200 response, the following information will guide you in understanding the error condition.</p>
+
+  <p>All responses from calling extension URLs contain the <code class="highlighter-rouge">x-wt-response-source</code> HTTP header. It indicates the component of the Auth0 Extend stack that generated the response. Given this information, the response status code, and the response payload, you can decide how to handle it. These are the possible values of <code class="highlighter-rouge">x-wt-response-source</code>:</p>
+
+  <ul>
+    <li>
+      <p><strong>webtask</strong>: the response was generated as a result of executing the code of the extension. You will see this value when the extension completed successfuly but also when it returned an error object through the callback function, or the code of the extension generated an uncaught exception. You can differentiate between success and failure using the status code of the response and the content of the response body.</p>
+    </li>
+    <li>
+      <p><strong>compiler</strong>: the code of the extension could not be compiled. The most likely cause is a syntax error in the code. In those cases the body of the response contains more information about the location of the error.</p>
+    </li>
+    <li>
+      <p><strong>proxy</strong>, <strong>network</strong>: these uncommon values indicate an error that occured in Auth0 Extend infrastructure before the execution of the extension code. Typically there will be more details in the body of the response.</p>
+    </li>
+  </ul>
+
+  <p>Below are the most common cases of responses you will see.</p>
+
+  <h3 id="successful-response">Successful Response</h3>
+
+  <p>An extension that returns a valid response can look like this:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span> <span class="na">valid</span><span class="p">:</span> <span class="s1">'response'</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>The response you will see when calling this extension is:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Content-type: application/json
+x-wt-response-source: webtask
+
+{"valid":"response"}
+</code></pre>
+  </div>
+
+  <h3 id="application-level-error">Application Level Error</h3>
+
+  <p>An extension that explicitly returns an application error:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">cb</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Some error'</span><span class="p">));</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>The response you will see when calling this extension is:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 400 Bad Request
+Content-type: application/json
+x-wt-response-source: webtask
+
+{
+  "code": 400,
+  "error": "Script returned an error.",
+  "details": "Error: Some error",
+  "name": "Error",
+  "message": "Some error",
+  "stack": "..."
+}
+
+</code></pre>
+  </div>
+
+  <h3 id="application-level-error-with-custom-status-code">Application Level Error with Custom Status Code</h3>
+
+  <p>An extension that explicitly returns an application error can override the default HTTP 400 status code with a custom status code value:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">error</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Some error'</span><span class="p">);</span>
+  <span class="nx">error</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">401</span><span class="p">;</span>
+  <span class="nx">cb</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Response:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 401 Unauthorized
+Content-type: application/json
+x-wt-response-source: webtask
+
+{
+  "code": 401,
+  "error": "Script returned an error.",
+  "details": "Error: Some error",
+  "name": "Error",
+  "message": "Some error",
+  "stack": "..."
+}
+</code></pre>
+  </div>
+
+  <h3 id="syntax-error-in-extension-code">Syntax Error in Extension Code</h3>
+
+  <p>An extension that cannot be compiled due to a syntax error:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">random</span> <span class="nx">text</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Response:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 400 Bad Request
+Content-type: application/json
+x-wt-response-source: compiler
+
+{
+  "code": 400,
+  "message": "Compilation failed: Unexpected identifier",
+  "error": "Unexpected identifier",
+  "stack": "SyntaxError: Unexpected identifier\n    at ...""
+}
+</code></pre>
+  </div>
+
+  <h3 id="uncaught-synchronous-exception-in-extension-code">Uncaught Synchronous Exception in Extension Code</h3>
+
+  <p>An extension that generates an uncaught synchronous exception:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Some error'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Response:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 500 Internal Server Error
+Content-type: application/json
+x-wt-response-source: webtask
+
+{
+  "code": 500,
+  "error": "Script generated an unhandled synchronous exception.",
+  "details": "Error: Some error",
+  "name": "Error",
+  "message": "Some error",
+  "stack": "..."
+}
+</code></pre>
+  </div>
+
+  <h3 id="uncaught-asynchronous-exception-in-extension-code">Uncaught Asynchronous Exception in Extension Code</h3>
+
+  <p>Uncaught asynchronous exceptions thrown by extension code require careful consideration. Such exceptions lead to the termination of the process in which the extension is running. Depending on the isolation scope you have selected, there may be other extensions executing in that process at the same time. For example, if a single tenant defined multiple extensions, and there are multiple concurrent transactions of that tenant which require execution of extensions, an uncaught exception generated by one execution will termite the execution of all other concurrently executing extensions in the same process. Given that, if you receive the “Uncaught asynchronous exception” error, it may as well indicate a problem in the code or exection of another extension.</p>
+
+  <p>This is an extension that generates an uncaught asynchronous exception:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Some error'</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Response:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 500 Internal Server Error
+Content-type: application/json
+x-wt-response-source: webtask
+
+{
+  "code": 500,
+  "error": "Script generated an unhandled asynchronous exception.",
+  "details": "Error: Some error",
+  "name": "Error",
+  "message": "Some error",
+  "stack": "..."
+}
+</code></pre>
+  </div>
+</div>
+
+<div id="runtime-and-management-apis" class="layout scrollspy">
+  <h2 id="runtime-and-management-apis">Runtime and Management APIs</h2>
+
+  <p>Auth0 Extend exposes the following APIs for Runtime and Management.</p>
+
+  <ul>
+    <li><a href="https://webtask.io/docs/api_run">Run</a> - Used for executing dynamic and named Webtasks</li>
+    <li>Webtask - Used for creating and managing named Webtasks
+      <ul>
+        <li><a href="https://webtask.io/docs/webtask_upsert">Create or update a webtask</a></li>
+        <li><a href="https://webtask.io/docs/webtask_list">List webtasks</a></li>
+        <li><a href="https://webtask.io/docs/webtask_delete">Delete webtasks</a></li>
+      </ul>
+    </li>
+    <li><a href="https://webtask.io/docs/webtask_storage">Storage</a> - Used for setting and getting Webtask storage.</li>
+    <li><a href="https://webtask.io/docs/webtask_cache">Cache</a> - Stores pre-compiled artifacts for the task</li>
+    <li>Tokens - Used for creating and managing Webtask tokens
+      <ul>
+        <li><a href="https://webtask.io/docs/api_issue">Token Issuance</a> - Issue new tokens</li>
+        <li><a href="https://webtask.io/docs/api_revoke">Token Revocation</a> - Revoke an existing tokens</li>
+        <li><a href="https://webtask.io/docs/api_inspect">Token Inspection</a> - Inspect the contents of a token</li>
+      </ul>
+    </li>
+    <li><a href="https://webtask.io/docs/api_limits">Limits</a> - Used for querying and resetting token rate limits</li>
+    <li><a href="https://webtask.io/docs/api_logs">Logs</a> - Used for accessing real-time logs</li>
+  </ul>
+</div>
+
+<div id="monitoring-and-diagnostics" class="layout scrollspy">
+  <h2 id="monitoring-and-diagnostics">Monitoring and Diagnostics</h2>
+
+  <p>There are several tools and practices to achieve the level of monitoring for Auth0 Extend which provides you with insight into how your users are using extensions and enable you to offer them support, as well as allow them to diagnose issues themselves.</p>
+
+  <p>Your Auth0 Extend installation can be configured to export logging information to your own <a href="https://aws.amazon.com/kinesis/firehose/">AWS Firehose</a> service. This provides you with the capability to store and analyze logs generated by your users’ extensions in Amazon S3, Amazon ElasticSearch, Amazon Kinesis Analytics, or Amazon Redshift. The logging information contains all output generated by your user’s extension code to standard output, as well as selected infrastructure events generated by Auth0 Extend itself. Contact <a href="#support">support</a> if you are interested in configuring this capability.</p>
+
+  <p>For development and ongoing support of your customers, you can leverage access to <a href="https://webtask.io/docs/api_logs">real-time logs</a>. These logs can be made available to your customers via the Extend editor to support their debugging and development by enabling the <a href="https://webtask.io/docs/editor/logs">logging panel</a> via the <code class="highlighter-rouge">allowAccessingLogs</code> setting.</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/141124/24432235/9a2e5b5a-13d5-11e7-8c8e-017732f00451.png" alt="logging" /></p>
+
+  <p>One way to conveniently stream real time logging information is to use the <a href="https://webtask.io/docs/wt-cli">wt-cli</a> command line tool. Before you can use it, you need to configure a profile based on your master webtask token - this will allow you to connect to the webtask container of any of your customers:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>wt init -p master <span class="se">\</span>
+  --url <span class="o">{</span>host_url<span class="o">}</span> <span class="se">\</span>
+  --token <span class="o">{</span>master_webtask_token<span class="o">}</span> <span class="se">\</span>
+  --container master
+</code></pre>
+  </div>
+
+  <p>You can then use the <code class="highlighter-rouge">wt logs</code> command to attach to any webtask container and stream logging information generated by any of the extensions running in it:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>wt logs -p master --container {tenant_webtask_container}
+</code></pre>
+  </div>
+
+  <p>The wt-cli tool can also be used to inspect the source code of the extensions your customers have created. Depening on the level of support you choose to provide your customers, this may be a capability that can save your support team a lot time and effort. To list extensions defined in a specific webtask container, run:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>wt ls -p master --container {tenant_webtask_container}
+</code></pre>
+  </div>
+
+  <p>(note that the result is paged).</p>
+
+  <p>Next, to obtain the code of a specific extension from the list, run:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>wt inspect -p master --container {tenant_webtask_container} {webtask_name} --fetch-code
+</code></pre>
+  </div>
+
+  <p><strong>NOTE</strong> never share the master webtask token with your customers.</p>
+
+  <p>There are a few good practices practices to follow to improve your diagnostics capabilities when integrating Auth0 Extend into your platform; these include:</p>
+
+  <ul>
+    <li>
+      <p><strong>Log extension invocations</strong>. Every time you <a href="#invoking-extensions">invoke Auth0 Extend extension</a>, it is worthwhile to capture the following information in the logs of your platform:</p>
+
+      <ul>
+        <li>The overal execution time of the extension.</li>
+        <li>The response status code.</li>
+        <li>The following response headers: <code class="highlighter-rouge">x-wt-response-source</code>, <code class="highlighter-rouge">x-auth0-proxy-stats</code>, <code class="highlighter-rouge">s-auth0-stats</code></li>
+        <li>Consider if and which parts of the response to capture in logs, since there may be sensitive information embedded in the response.</li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Log extension discovery calls</strong>. Every time you call the <a href="#discovering-extensions">extension discovery</a>, it is worthwhile to capture the entire response in your logs (after removing any sensitive information, e.g. webtask tokens).</p>
+    </li>
+  </ul>
+</div>
+
+<div id="middleware" class="layout scrollspy">
+  <h2 id="middleware">Middleware</h2>
+
+  <p>Auth0 Extend middleware is custom Node.js code you control that executes right before the extension code your users write. It allows you to augment the default extension execution logic supported by Auth0 Extend without requiring any changes in the code of your users.</p>
+
+  <p>Most common situations where middleware is useful include:</p>
+
+  <ol>
+    <li>
+      <p><strong>Custom programming models</strong>. With middleware, you can transform and adapt webtask function signatures to offer custom programming models for your users. For example, the on-new-lead extension could offer a <code class="highlighter-rouge">function (new_lead, history, context, callback)</code> function signature that is specific to the domain it addresses. However, this adaptation is not limited to JavaScript: you can as well support writing extensions using domain specific languages like T-SQL or a templating engine.</p>
+    </li>
+    <li>
+      <p><strong>Authorization</strong>. Middleware allows you to implement authorization and access control logic for calls to extension endpoints. For example, the <a href="#creating-extensions">Creating Extensions</a> section recommends using a pattern of securing extension endpoints that builds on middleware.</p>
+    </li>
+    <li>
+      <p><strong>Logging</strong>. Middleware allows you to build a custom logging solution. For example, you can intercept and capture all calls to <code class="highlighter-rouge">console.log</code> made by extension code to filter or export it to an external system.</p>
+    </li>
+    <li>
+      <p><strong>Context enhancement</strong>. You can use middleware to provide extension code with additional data or functionality beyond what Auth0 Extend provides by default. For example, you can pre-fetch data from a database or make a function that fetches data available for calling from the extension code.</p>
+    </li>
+  </ol>
+
+  <p>Middleware for an extension is determined via the <code class="highlighter-rouge">wt-compiler</code> metadata property of a webtask, which sets a <em>webtask compiler</em> for the webtask. Normally it is specified at the time the <a href="#creating-extensions">extension is created</a>. You can read more about creating and setting custom webtask compilers <a href="https://webtask.io/docs/webtask-compilers">here</a>.</p>
+
+  <p><strong>NOTE</strong> The <a href="#creating-extensions">Creating Extensions</a> section recommends using the <code class="highlighter-rouge">auth0-ext-ompilers/generic</code> for the value of <code class="highlighter-rouge">wt-compiler</code> metadata property. This middleware enforces a simple authorization scheme to ensure that only your platform can execute extensions. If you choose to set your own middleware, you need to make sure adequate replacement for that authorization mechanism is in place. You can refer to the code of the <code class="highlighter-rouge">auth0-ext-compilers/generic</code> implementation <a href="https://github.com/auth0/auth0-ext-compilers/blob/master/lib/compilers/generic.js">here</a>.</p>
+
+  <p>Let’s look at an example of a custom middleware that introduces a domain specific programming model and enforces the same authorization mechanism as <code class="highlighter-rouge">auth0-ext-compilers/generic</code>. Imagine you want your users to be able to modify the logic of creating a new lead in a hypothetical CRM system. When a new lead is created they will be notified and get a chance to add extra attributes to the new lead record.</p>
+
+  <p>The body of the request to this extension would be a JSON object that looks like this:</p>
+
+  <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jon Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+  </div>
+
+  <p>The expected body of the response would contain a JSON object with new attributes to add to the record, e.g.:</p>
+
+  <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"newAttributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"vip"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+  </div>
+
+  <p>Out of the box, this is the programming model of an Auth0 Extend extensions given this schema:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newAttributes</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">newAttributes</span><span class="p">.</span><span class="nx">vip</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">newAttributes</span><span class="p">:</span> <span class="nx">newAttributes</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Now assume you want to provide your users with a much more friendly and self-exlanatory programming model:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newAttributes</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">newAttributes</span><span class="p">.</span><span class="nx">vip</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">newAttributes</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>The way to achieve this is to implement a <a href="https://webtask.io/docs/webtask-compilers">webtask compiler</a> which adjusts between the two programming models:</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// First compile the user-supplied extension code into a function</span>
+    <span class="nx">options</span><span class="p">.</span><span class="nx">nodejsCompiler</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">script</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="c1">// Now return a function that uses the (ctx, cb) programming model</span>
+      <span class="c1">// supported natively by Webtasks, and adjusts the programming models</span>
+      <span class="c1">// when called</span>
+      <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// First, enforce authorization check similar to auth0-ext-compilers/generic.</span>
+        <span class="kd">var</span> <span class="nx">match</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'authorization'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">''</span><span class="p">).</span><span class="nx">trim</span><span class="p">().</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^bearer </span><span class="se">(</span><span class="sr">.+</span><span class="se">)</span><span class="sr">$/i</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">match</span> <span class="o">||</span> <span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">secrets</span><span class="p">[</span><span class="s1">'auth0-extension-secret'</span><span class="p">])</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">error</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Unauthorized call'</span><span class="p">);</span>
+          <span class="nx">error</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">401</span><span class="p">;</span>
+          <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Extract inputs from request body into stand-along arguments,</span>
+        <span class="c1">// wrap callback to transform response format.</span>
+        <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">func</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+          <span class="c1">// Transform the response format</span>
+          <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">newAttributes</span><span class="p">:</span> <span class="nx">response</span>
+          <span class="p">});</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>You need to host the code of the compiler at a place where it can be obtained over HTTPS, say https://cdn.mycompany.com/on-new-lead-compiler.js.</p>
+
+  <p>Now, when <a href="#creating-extensions">creating a new on-new-lead extension</a>, you can refer to this compiler instead of the <code class="highlighter-rouge">auth0-ext-compilers/generic</code> one:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>PUT /api/webtask/{webtask_container}/{webtask_name}
+Content-Type: application/json
+Authorization: Bearer {tenant_webtask_token}
+
+{
+  "code": "{code}",
+  "secrets": {
+    "auth0-extension-secret": "{secret}"
+  },
+  "meta": {
+    "auth0-extension-secret": "{secret}",
+    "auth0-extension-type": "on-new-lead",
+    "wt-compiler": "https://cdn.mycompany.com/on-new-lead-compiler.js"
+  }
+}
+</code></pre>
+  </div>
+</div>
+
+<div class="feedback-footer" style="margin-top: 34px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'Developer Guide' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        <footer>
+  <div class="footer-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+        <li><a href="/extend/pricing">Pricing</a>
+        </li>
+        <li><a href="/extend/docs">Documentation</a>
+        </li>
+        <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        </li>
+      </ul>
+      <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-information">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="https://auth0.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li><a href="https://auth0.com/terms" target="_blank">Terms of Service</a>
+        </li>
+      </ul>
+      <div class="copyright">© 2013-2017 Auth0 Inc. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
+    });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
+  });
+</script>
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: 'Developer Guide' }),
+          dataType: 'json'
+        });
+      </script>
+    
+  
+    
+  
+    
+  
+</html>
