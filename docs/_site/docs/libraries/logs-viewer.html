@@ -140,6 +140,10 @@
             <ul class="sidebar-item-list sidebar-item-list-depth1 ">
             
               <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#integration-options">Integration Options</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
                 <a class="js-subcategory-item " href="#hosting-the-editor-in-your-web-site">Hosting the Editor in Your Web Site</a>
               </li>
             
@@ -149,10 +153,6 @@
             
               <li class="sidebar-item sidebar-item-depth1 ">
                 <a class="js-subcategory-item " href="#using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</a>
-              </li>
-            
-              <li class="sidebar-item sidebar-item-depth1 ">
-                <a class="js-subcategory-item " href="#playground">Playground</a>
               </li>
             
             </ul>
@@ -165,6 +165,14 @@
 
             <a id="logs-viewer" class="js-subcategory active" href="/extend/docs/libraries/logs-viewer">Logs Viewer</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#embedding-the-logs-viewer">Embedding the Logs Viewer</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuration-options">Confiuration Options</a>
+              </li>
             
             </ul>
           </li>
@@ -204,14 +212,17 @@
                 </div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content">
-                      <div class="sticky-title">
-  <h1>Logs viewer</h1>
-</div>
+                    <div class="sticky-title">
+                      <h1>Logs Viewer</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="embedding-the-logs-viewer" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="embedding-the-logs-viewer">Embedding the Logs Viewer</h2>
 
-<p>The logs viewer component is one of the parts of the Extend Editor. It provides an easy way to add a real-time logs viewer to your application.</p>
+  <p>The logs viewer component is one of the parts of the Extend Editor. It provides an easy way to add a real-time logs viewer to your application.</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.auth0.com/auth0-extend/components/1/extend-editor-logs.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -226,50 +237,55 @@
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
-</div>
+  </div>
 
-<p>The minimal configuration above will display the real-time logs viewer using all the default options:</p>
+  <p>The minimal configuration above will display the real-time logs viewer using all the default options:</p>
 
-<p><img src="https://cloud.githubusercontent.com/assets/302314/26527300/4aed909e-4367-11e7-983f-95d356a17c82.png" alt="Logs viewer" /></p>
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26527300/4aed909e-4367-11e7-983f-95d356a17c82.png" alt="Logs viewer" /></p>
 
-<h2 id="configuration-options">Configuration Options</h2>
+</section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Option</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>token</td>
-      <td>The webtask token the Logs viewer will use to authorize calls to Auth0 Extend management APIs. This token is specific to the <a href="#mapping-isolation-requirements-onto-webtask-tokens">selected isolation scope</a>. In the most common case it is a tenant webtask token.</td>
-    </tr>
-    <tr>
-      <td>theme</td>
-      <td>The enumeration that allows you to customize the look &amp; feel of the Logs viewer. We provide two themes to choose from out of the box: <code class="highlighter-rouge">light</code> and <code class="highlighter-rouge">dark</code>.</td>
-    </tr>
-    <tr>
-      <td>height</td>
-      <td>The height of the component.</td>
-    </tr>
-    <tr>
-      <td>filter</td>
-      <td>Determines how the logs viewer will filter the incoming log events. Example: <code class="highlighter-rouge">^(new|finished)</code>.</td>
-    </tr>
-    <tr>
-      <td>onClose</td>
-      <td>This event will be called once the user closes the logs viewer.</td>
-    </tr>
-    <tr>
-      <td>onError</td>
-      <td>This event will be called if an error occurred with the connection between the logs viewer and the logs API.</td>
-    </tr>
-  </tbody>
-</table>
+<section id="configuration-options" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="configuration-options">Configuration Options</h2>
 
-<div class="feedback-footer" style="margin-top: 34px;">
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>token</td>
+        <td>The webtask token the Logs viewer will use to authorize calls to Auth0 Extend management APIs. This token is specific to the <a href="#mapping-isolation-requirements-onto-webtask-tokens">selected isolation scope</a>. In the most common case it is a tenant webtask token.</td>
+      </tr>
+      <tr>
+        <td>theme</td>
+        <td>The enumeration that allows you to customize the look &amp; feel of the Logs viewer. We provide two themes to choose from out of the box: <code class="highlighter-rouge">light</code> and <code class="highlighter-rouge">dark</code>.</td>
+      </tr>
+      <tr>
+        <td>height</td>
+        <td>The height of the component.</td>
+      </tr>
+      <tr>
+        <td>filter</td>
+        <td>Determines how the logs viewer will filter the incoming log events. Example: <code class="highlighter-rouge">^(new|finished)</code>.</td>
+      </tr>
+      <tr>
+        <td>onClose</td>
+        <td>This event will be called once the user closes the logs viewer.</td>
+      </tr>
+      <tr>
+        <td>onError</td>
+        <td>This event will be called if an error occurred with the connection between the logs viewer and the logs API.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<div class="feedback-footer" style="margin-top: 200px;">
   <div class="feedback-title">Was this article helpful?</div>
   <div class="feedback-buttons">
     <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">

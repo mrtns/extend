@@ -2,8 +2,6 @@
 
 Several aspects of the Extend Editor can be controlled through the options object passed to it on initialization.[See how Extend Editor is configured in the sample application](https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L3).  
 
-Below is explanation of the options. 
-
 ### Configuration Options
 
 Option | Description

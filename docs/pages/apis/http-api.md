@@ -1,11 +1,10 @@
 ---
-title:  Overview
+title: HTTP API
 layout: default
 root: true
 permalink: docs/api/http-api
 collection: "API"
 --- 
-{% include sticky-title.html title="HTTP API" %}
 
 {% include swagger.html name="webtask-creation" %}
 
@@ -22,3 +21,5 @@ collection: "API"
 {% include swagger.html name="revoking-webtask-tokens" %}
 
 {% include swagger.html name="inspecting-webtask-tokens" %}
+
+{% include feedback.html src="http-api" %}

@@ -140,6 +140,10 @@
             <ul class="sidebar-item-list sidebar-item-list-depth1 ">
             
               <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#integration-options">Integration Options</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
                 <a class="js-subcategory-item " href="#hosting-the-editor-in-your-web-site">Hosting the Editor in Your Web Site</a>
               </li>
             
@@ -149,10 +153,6 @@
             
               <li class="sidebar-item sidebar-item-depth1 ">
                 <a class="js-subcategory-item " href="#using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</a>
-              </li>
-            
-              <li class="sidebar-item sidebar-item-depth1 ">
-                <a class="js-subcategory-item " href="#playground">Playground</a>
               </li>
             
             </ul>
@@ -165,6 +165,14 @@
 
             <a id="logs-viewer" class="js-subcategory " href="/extend/docs/libraries/logs-viewer">Logs Viewer</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#embedding-the-logs-viewer">Embedding the Logs Viewer</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuration-options">Confiuration Options</a>
+              </li>
             
             </ul>
           </li>
@@ -204,14 +212,12 @@
                 </div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content">
-                      <div class="sticky-title">
-  <h1>Sandboxjs</h1>
-</div>
-
-<p>The Auth0 Sandboxjs is a node.js package that allows you to sandbox your code and run it on the public webtask.io cluster. It supports returning Promises and/or invoking node-style callbacks.</p>
-
-<div id="setup" class="layout scrollspy">
+                    <div class="sticky-title">
+                      <h1>Sandboxjs</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="setup" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="setup">Setup</h2>
 
   <p>To install sandboxjs open a terminal and run the following:</p>
@@ -235,9 +241,9 @@ wt init
 
   <p>In order to configure a webtask profile you need to provide an email or phone number. You will receive a verification code there which you will have to input to the terminal.
 Now that you have a profile setup, let’s work on some simple examples.</p>
-</div>
+</section>
 
-<div id="create-and-run-a-webtask" class="layout scrollspy">
+<section id="create-and-run-a-webtask" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="create-and-run-a-webtask-using-sandboxjs">Create and run a webtask using sandboxjs</h2>
 
   <p>The code snippet below creates a new webtask and runs it using Sandbox. The webtask code is defined as module.exports = function (ctx, cb) { cb(null, “hello world”); } and the Sandbox.fromToken method is used to create a Sandbox instance from your webtask token. The token in this example is retrieved from the environment variable WEBTASK_TOKEN. Once the Sandbox instance (profile) is defined, the instance method run is used. This method is a shortcut to create and run a Webtask from the given options. The method’s structure is sandbox.run([codeOrUrl], [options], [cb]), where [codeOrUrl] is the code or the URL for the webtask (in our example the code variable holds the webtask code), [options] is the set of options (for example, secrets) used to create the webtask (omitted in our example), and [cb] is the optional callback function for node-style callbacks. In our example the callback function uses Assert to display:</p>
@@ -264,9 +270,9 @@ Now that you have a profile setup, let’s work on some simple examples.</p>
 <span class="p">});</span>
 </code></pre>
   </div>
-</div>
+</section>
 
-<div id="create-a-webtask-and-get-the-url" class="layout scrollspy">
+<section id="create-a-webtask-and-get-the-url" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="create-a-webtask-and-get-the-url">Create a webtask and get the URL</h2>
 
   <p>Our second example creates a webtask but instead of running it, returns the URL as output. Making requests to this url will run the specified custom code in a node.js sandbox and will give it access to your secrets in the firstargument of your exported webtask function. In this example we are utilizing the [options] argument and use it to set a secret: auth0: ‘rocks’.</p>
@@ -284,9 +290,9 @@ Now that you have a profile setup, let’s work on some simple examples.</p>
 <span class="p">});</span>
 </code></pre>
   </div>
-</div>
+</section>
 
-<div id="update-an-existing-webtask" class="layout scrollspy">
+<section id="update-an-existing-webtask" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="update-the-code-of-an-existing-webtask">Update the code of an existing webtask</h2>
 
   <p>Our third example retrieves an existing named webtask and updates its code. Let’s say that you already have a webtask named my-webtask and it prints Hello world. We will update its code to print Hello there instead. The code snippet uses the method sandbox.updateWebtask(options, [cb]) to update the webtask’s code. This function can also be used to update a webtask’s secrets or other claims. Note that this method should be used with caution as there is the potential for a race condition where another agent updates the webtask between the time that the webtask details and claims are resolved and when the webtask update is issued.</p>
@@ -303,9 +309,9 @@ Now that you have a profile setup, let’s work on some simple examples.</p>
 <span class="p">});</span>
 </code></pre>
   </div>
-</div>
+</section>
 
-<div class="feedback-footer" style="margin-top: 34px;">
+<div class="feedback-footer" style="margin-top: 200px;">
   <div class="feedback-title">Was this article helpful?</div>
   <div class="feedback-buttons">
     <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">

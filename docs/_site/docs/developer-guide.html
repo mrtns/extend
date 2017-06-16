@@ -260,6 +260,22 @@
             <a id="support" class="js-subcategory " href="/extend/docs/support">Support</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 ">
             
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#slack">Slack</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#forums">Forums</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#email">Email</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#premium-support">Premium Support</a>
+              </li>
+            
             </ul>
           </li>
         
@@ -275,12 +291,12 @@
                 </div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content">
-                      <div class="sticky-title">
-  <h1>Developer Guide</h1>
-</div>
-
-<div id="overview" class="layout scrollspy">
+                    <div class="sticky-title">
+                      <h1>Developer Guide</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="overview" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="overview">Overview</h2>
 
   <p>There are to main areas to consider when integrating Auth0 Extend into your SaaS product: providing users of your product with extension authoring experience, and invoking the extensions at runtime.</p>
@@ -291,9 +307,9 @@
 
   <p>Let’s get started.</p>
 
-</div>
+</section>
 
-<div id="running-the-sample-application" class="layout scrollspy">
+<section id="running-the-sample-application" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="running-the-sample-application">Running the sample application</h2>
 
   <p>The ZeroCRM sample application at <a href="https://github.com/auth0/extend">auth0/extend</a> is a working example of integrating Auth0 Extend into a hypothetical CRM system. As different integration aspects are discussed in this guide, you will see references to specific locations in the source code that demonstrate implementation details.</p>
@@ -424,9 +440,9 @@ EOF
 
   <p>This is just the beginning of what is possible with Auth0 Extend! You’ll learn much more throughout the rest of the Extend User’s Guide.</p>
 
-</div>
+</section>
 
-<div id="identify-extensibility-points" class="layout scrollspy">
+<section id="identify-extensibility-points" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="identify-extensibility-points">Identify Extensibility Points</h2>
 
   <p>Making your platform extensible starts with identifying the places within the product that your customers will be able to extend or customize. If you are already using web hooks today, you can reuse your list of web hooks as a starting point.</p>
@@ -452,15 +468,15 @@ EOF
 
   <p>The second design decision you need to make is related to the data format and schema for the data your product will sent to and accept as a response from each of the extensibility points. Auth0 Extend supports a high fidelity with the HTTP protocol and allows you full flexibility in deciding what data format to use. Having said that, vast majority or extensibility cases will be well served with JSON format of both the request and response, and JSON will be assumed for the rest of this guide.</p>
 
-</div>
+</section>
 
-<div id="choose-programming-models" class="layout scrollspy">
+<section id="choose-programming-models" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="choose-programming-models">Choose Programming Models</h2>
 
   <p>Once you have decided about the synchronous/asynchronous call pattern and the specific data format and schema to use for each of the extensibility points, the next step is to select the programming model your users will use to implement the logic of the extension, accept the input data, and send data back to your product.</p>
-</div>
+</section>
 
-<div id="nodejs-programming-model" class="layout scrollspy">
+<section id="nodejs-programming-model" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="nodejs-programming-model">Node.Js programming model</h2>
 
   <p>Auth0 Extend allows your users to write Node.js code to implement extension logic. Each extension is a Node.js module that exports a single JavaScript function. Three basic function signatures are supported out of the box as documented in the <a href="https://webtask.io/docs/model">Webtask Programming Model</a>. However, Auth0 Extend allows you to step outside of these built-in Webtask programming models to allow extension authoring using arbitrary JavaScript function signatures, domain specific languages like T-SQL or Mustache templates, or to inject middleware services that offer a range of customizations of the programming model. These advanced topics are described in the <a href="#middleware">Middleware</a> section.</p>
@@ -501,9 +517,9 @@ EOF
 
   <p>Supporting advanced scenarios like this that require custom programming models, DSLs, and more, is addressed in the <a href="#middleware">Middleware</a> section.</p>
 
-</div>
+</section>
 
-<div id="nodejs-modules-and-dependencies" class="layout scrollspy">
+<section id="nodejs-modules-and-dependencies" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="nodejs-modules-and-dependencies">Node.js Modules and Dependencies</h2>
 
   <p>The Node.js code your customers write to extend your platform can utilize all built-in Node.js modules as well as a large number of most popular modules from public NPM registry. No special declaration of modules is necessary, the code can simply <code class="highlighter-rouge">require</code> them, e.g:</p>
@@ -521,9 +537,9 @@ EOF
   </div>
 
   <p>Apart from selected public NPM modules, your installation of Auth0 Extend can also offer your users modules from your private NPM repository, or even modules you manage outside of NPM. <a href="#support">Contact support</a> if you are interested in this capability.</p>
-</div>
+</section>
 
-<div id="choose-the-extension-authoring-experience" class="layout scrollspy">
+<section id="choose-the-extension-authoring-experience" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="choose-the-extension-authoring-experience">Choose the Extension Authoring Experience</h2>
 
   <p>One of the key benefits of Auth0 Extend is the advanced extension authoring experience you can offer users of your platform. You have a range of options.</p>
@@ -534,9 +550,9 @@ EOF
 
   <p>The lowest level experience for managing extensions in your system involves calling the <a href="https://webtask.io/docs/101">Auth0 Webtask management APIs</a> of your Auth0 Extend installation directly over HTTPS. This level of interaction is adequate if you plan to build custom tools or management experiences for your users that do not leverage the Auth0 Extend editor or wt-cli. To interact with the Auth0 Webtask management APIs you can use any standard HTTP library specific to your environment. If you are calling the APIs from Node.js, you can also use the <a href="https://github.com/auth0/sandboxjs">Node.js SDK</a> Auth0 Extend supports.</p>
 
-</div>
+</section>
 
-<div id="isolation-requirements" class="layout scrollspy">
+<section id="isolation-requirements" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="isolation-requirements">Isolation Requirements</h2>
 
   <p>If you are operating a multi-tenant SaaS platform and use Auth0 Extend to allow your customers to extend your product with custom code, one key decision you need to make is related to the scope of isolation for executing extensions. Scope of isolation implies the following guarnatees in the Auth0 Extend system:</p>
@@ -572,9 +588,9 @@ EOF
   <p>Choice of the scope of isolation has impact on the scalability and performance of the system: the more granular scope of isolation, the fewer extensions per second you will be able to process given a specific size of an Auth0 Extend deployment. Supporting more isolated environments for extension execution requires more system resources. Scope of isolation set at the tenant level will consume fewer resources than scope of isolation set at user or extension level, assuming there are many users or extensions per tenant.</p>
 
   <p>In most cases, scope of isolation set at tenant level is adequate.</p>
-</div>
+</section>
 
-<div id="key-auth0-extend-concepts" class="layout scrollspy">
+<section id="key-auth0-extend-concepts" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="key-auth0-extend-concepts">Key Auth0 Extend Concepts</h2>
 
   <p>Previous sections of this guide focused on collecting and defining extensibility requirements in the context of your platform. Before moving on to implementing the actual integration to satisfy these requirements, you need to understand the core concepts of Auth0 Extend and the underlying Webtask technology.</p>
@@ -615,9 +631,9 @@ EOF
     </li>
   </ol>
 
-</div>
+</section>
 
-<div id="mapping-isolation-requirements-onto-webtask-tokens" class="layout scrollspy">
+<section id="mapping-isolation-requirements-onto-webtask-tokens" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</h2>
 
   <p>After you have <a href="#isolation-requirements">identified the desired isolation scope</a> in your system, you can use the webtask containers along with webtask tokens as way of implementing support for it.</p>
@@ -646,9 +662,9 @@ Authorization: Bearer <span class="o">{</span>master_webtask_token<span class="o
 
   <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/lib/extend.js#L9">See mapTenantToIsolationScope function</a>.</p>
 
-</div>
+</section>
 
-<div id="creating-extensions" class="layout scrollspy">
+<section id="creating-extensions" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="creating-extensions">Creating Extensions</h2>
 
   <p>Before your users can edit extensions using Auth0 Extend editor, your platform must pre-create them on their behalf. This is typically done lazily: if a specific extension does not yet exist, your platform must create it immediately before launching the Auth0 Extend editor. You can check if a particular extension already exist by <a href="#discovering-extensions">discovering extensions</a>.</p>
@@ -744,9 +760,9 @@ Authorization: Bearer <span class="o">{</span>tenant_webtask_token<span class="o
   <p>A successful response to this API call will contain the <code class="highlighter-rouge">Location</code> HTTP response header with the webtask URL of the extension. You can choose to store it in your database, but it is not necessary to later find out if the user defined an extension for a specific extensibilty point. Thanks to the metadata properties you associated with the extension above, you can use Auth0 Extend management APIs to discover defined extensions.</p>
 
   <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L35">See ensureExtensionExists function</a>.</p>
-</div>
+</section>
 
-<div id="discovering-extensions" class="layout scrollspy">
+<section id="discovering-extensions" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="discovering-extensions">Discovering Extensions</h2>
 
   <p>There are at least two situations in which you need to determine if a specific tenant in your system has an existing extension of a specific extensibility point:</p>
@@ -803,9 +819,9 @@ Authorization: Bearer <span class="o">{</span>tenant_webtask_token<span class="o
   <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L86">See browser discoverExtensions function</a>.<br />
 <a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/lib/extend.js#L57">See Node.js discoverExtensions function</a>.</p>
 
-</div>
+</section>
 
-<div id="enabling-command-line-tool-for-your-users" class="layout scrollspy">
+<section id="enabling-command-line-tool-for-your-users" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="enabling-command-line-tool-for-your-users">Enabling Command Line Tool for Your Users</h2>
 
   <p>Auth0 Extend comes with a command line tool <a href="https://webtask.io/docs/wt-cli">wt-cli</a> that allows for creating and managing webtasks, access to real-time logs from an Auth0 Extend installation, and more. This is a low level tool targeting more sophisticated users (developers and administrators). To use the tool effectively for managing extensions requires your users to have a similar level of understanding of key concepts as presented in this guide.</p>
@@ -847,9 +863,9 @@ wt create on-new-lead.js -p makaraon \
   <p>The example above corresponds to the management API call to <a href="#creating-extensions">pre-create an extension</a>.</p>
 
   <p>The wt-cli is <a href="https://github.com/auth0/wt-cli">open source and available on GitHub</a>. You can use it as an inspiration and basis for a higher level command line tool that is specific to your platform, similarly to what we have done to support managing <a href="https://auth0.com/docs/hooks/cli">Auth0 Hooks</a> in the Auth0 Identity platform <a href="https://github.com/auth0/wt-cli/blob/master/bin/auth0">here</a>.</p>
-</div>
+</section>
 
-<div id="invoking-extensions" class="layout scrollspy">
+<section id="invoking-extensions" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="invoking-extensions">Invoking Extensions</h2>
 
   <p>This section explains what you need to do when your platform reaches the point of processing when you need to invoke extension logic.</p>
@@ -901,9 +917,9 @@ When invoking synchronous extensions you must wait for the HTTPS request to comp
 
   <p>When invoking asynchronous extensions, transaction processing in your platform will continue as soon as the HTTPS request to the invoke the extension has been issued. One consideration you should make in this case is related to handling of errors and output from asynchronous extensions. To aid in troubleshooting and monitoring, it may be reasonable to capture and log the outcome of asynchronous extension execution, even though it does not affect the processing of the transaction that triggered it.</p>
 
-</div>
+</section>
 
-<div id="handling-errors-from-extensions" class="layout scrollspy">
+<section id="handling-errors-from-extensions" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="handling-errors-from-extensions">Handling Errors from Extensions</h2>
 
   <p>Successful execution of an extension typically results in a HTTP 200 response with extension-specific payload in the response body. If you receive a non-200 response, the following information will guide you in understanding the error condition.</p>
@@ -1083,9 +1099,9 @@ x-wt-response-source: webtask
 }
 </code></pre>
   </div>
-</div>
+</section>
 
-<div id="runtime-and-management-apis" class="layout scrollspy">
+<section id="runtime-and-management-apis" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="runtime-and-management-apis">Runtime and Management APIs</h2>
 
   <p>Auth0 Extend exposes the following APIs for Runtime and Management.</p>
@@ -1111,9 +1127,9 @@ x-wt-response-source: webtask
     <li><a href="https://webtask.io/docs/api_limits">Limits</a> - Used for querying and resetting token rate limits</li>
     <li><a href="https://webtask.io/docs/api_logs">Logs</a> - Used for accessing real-time logs</li>
   </ul>
-</div>
+</section>
 
-<div id="monitoring-and-diagnostics" class="layout scrollspy">
+<section id="monitoring-and-diagnostics" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="monitoring-and-diagnostics">Monitoring and Diagnostics</h2>
 
   <p>There are several tools and practices to achieve the level of monitoring for Auth0 Extend which provides you with insight into how your users are using extensions and enable you to offer them support, as well as allow them to diagnose issues themselves.</p>
@@ -1172,9 +1188,9 @@ x-wt-response-source: webtask
       <p><strong>Log extension discovery calls</strong>. Every time you call the <a href="#discovering-extensions">extension discovery</a>, it is worthwhile to capture the entire response in your logs (after removing any sensitive information, e.g. webtask tokens).</p>
     </li>
   </ul>
-</div>
+</section>
 
-<div id="middleware" class="layout scrollspy">
+<section id="middleware" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h2 id="middleware">Middleware</h2>
 
   <p>Auth0 Extend middleware is custom Node.js code you control that executes right before the extension code your users write. It allows you to augment the default extension execution logic supported by Auth0 Extend without requiring any changes in the code of your users.</p>
@@ -1304,9 +1320,9 @@ Authorization: Bearer {tenant_webtask_token}
 }
 </code></pre>
   </div>
-</div>
+</section>
 
-<div class="feedback-footer" style="margin-top: 34px;">
+<div class="feedback-footer" style="margin-top: 200px;">
   <div class="feedback-title">Was this article helpful?</div>
   <div class="feedback-buttons">
     <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">

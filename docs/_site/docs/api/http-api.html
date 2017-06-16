@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Overview</title>
+  <title>HTTP API</title>
   <meta name="fragment" content="!">
   <meta name="description" content="Better platform extensibility for your SaaS">
   <meta name="twitter:image:height" content="630">
@@ -181,6 +181,22 @@
             <a id="testing-with-postman" class="js-subcategory " href="/extend/docs/api/testing-with-postman">Testing with Postman</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 ">
             
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#installing-the-collection">Installing the Collection</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuring-the-postman-environment">Configuring Postman</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#executing-a-request">Executing a Request</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#storing-tokens-in-postman-variables">Storing Tokens in Postman Variables</a>
+              </li>
+            
             </ul>
           </li>
         
@@ -194,12 +210,11 @@
                 </div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content">
-                      <div class="sticky-title">
-  <h1>HTTP API</h1>
-</div>
-
-<div id="webtask-creation" class="layout scrollspy js-swagger">
+                    <div class="sticky-title">
+                      <h1>HTTP API</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      <div id="webtask-creation" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Webtask creation</h3>
   
   <p>
@@ -255,7 +270,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="webtask-listing" class="layout scrollspy js-swagger">
+<div id="webtask-listing" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Webtask listing</h3>
   
   <p>
@@ -308,7 +323,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="webtask-deletion" class="layout scrollspy js-swagger">
+<div id="webtask-deletion" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Webtask deletion</h3>
   
   <p>
@@ -361,7 +376,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="webtask-storage" class="layout scrollspy js-swagger">
+<div id="webtask-storage" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Webtask storage</h3>
   
   <p>
@@ -417,7 +432,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="webtask-cache" class="layout scrollspy js-swagger">
+<div id="webtask-cache" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Webtask cache</h3>
   
   <p>
@@ -473,7 +488,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="creating-webtask-tokens" class="layout scrollspy js-swagger">
+<div id="creating-webtask-tokens" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Creating webtask tokens</h3>
   
   <div>
@@ -582,7 +597,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="revoking-webtask-tokens" class="layout scrollspy js-swagger">
+<div id="revoking-webtask-tokens" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Revoking webtask tokens</h3>
   
   <p>
@@ -638,7 +653,7 @@ This endpoint gives you an easy way to get started creating and updating named w
   </script>
 </div>
 
-<div id="inspecting-webtask-tokens" class="layout scrollspy js-swagger">
+<div id="inspecting-webtask-tokens" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
   <h3 style="text-transform: capitalize;">Inspecting webtask tokens</h3>
   
   <p>
@@ -693,6 +708,46 @@ Inspecting tokens is useful when you are storing derived tokens on behalf of you
     }, 1);
   </script>
 </div>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'HTTP API' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
 
                     </article>
                   </div>
@@ -798,7 +853,7 @@ Inspecting tokens is useful when you are storing derived tokens on behalf of you
           type: "POST",
           url: url,
           contentType: 'application/json',
-          data: JSON.stringify({ source: 'Overview' }),
+          data: JSON.stringify({ source: 'HTTP API' }),
           dataType: 'json'
         });
       </script>

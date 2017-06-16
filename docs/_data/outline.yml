@@ -91,6 +91,19 @@
     - title: Support
       name: support
       href: /extend/docs/support
+      items:
+        - title: Slack
+          href: "#slack"
+          name: slack
+        - title: Forums
+          href: "#forums"
+          name: forums
+        - title: Email
+          href: "#email"
+          name: email
+        - title: Premium Support
+          href: "#premium-support"
+          name: premium-support
 
 - title: API
   href: /extend/docs/api/http-api
@@ -134,6 +147,19 @@
     - title: Testing with Postman
       name: testing-with-postman
       href: /extend/docs/api/testing-with-postman
+      items:
+        - title: Installing the Collection
+          href: "#installing-the-collection"
+          name: installing-the-collection
+        - title: Configuring Postman
+          href: "#configuring-the-postman-environment"
+          name: configuring-the-postman-environment
+        - title: Executing a Request
+          href: "#executing-a-request"
+          name: executing-a-request
+        - title: Storing Tokens in Postman Variables
+          href: "#storing-tokens-in-postman-variables"
+          name: storing-tokens-in-postman-variables
 
 - title: Libraries
   href: /extend/docs/libraries/extend-editor
@@ -142,6 +168,9 @@
       name: extend-editor
       href: /extend/docs/libraries/extend-editor
       items:
+        - title: Integration Options
+          href: "#integration-options"
+          name: integration-options
         - title: Hosting the Editor in Your Web Site
           href: "#hosting-the-editor-in-your-web-site"
           name: hosting-the-editor-in-your-web-site
@@ -151,13 +180,17 @@
         - title: Using Extend Editor as a Stand Alone Web App
           href: "#using-extend-editor-as-a-stand-alone-web-app"
           name: using-extend-editor-as-a-stand-alone-web-app 
-        - title: Playground
-          href: "#playground"
-          name: playground 
 
     - title: Logs Viewer
       name: logs-viewer
-      href: /extend/docs/libraries/logs-viewer                     
+      href: /extend/docs/libraries/logs-viewer 
+      items:
+        - title: Embedding the Logs Viewer
+          href: "#embedding-the-logs-viewer"
+          name: embedding-the-logs-viewer
+        - title: Confiuration Options
+          href: "#configuration-options"
+          name: configuration-options                   
             
     - title: Sandboxjs
       name: sandboxjs

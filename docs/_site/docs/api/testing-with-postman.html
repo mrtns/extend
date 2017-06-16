@@ -181,6 +181,22 @@
             <a id="testing-with-postman" class="js-subcategory active" href="/extend/docs/api/testing-with-postman">Testing with Postman</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
             
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#installing-the-collection">Installing the Collection</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuring-the-postman-environment">Configuring Postman</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#executing-a-request">Executing a Request</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#storing-tokens-in-postman-variables">Storing Tokens in Postman Variables</a>
+              </li>
+            
             </ul>
           </li>
         
@@ -194,64 +210,112 @@
                 </div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content">
-                      <div class="sticky-title">
-  <h1>Using the Webtask API with Postman</h1>
-</div>
+                    <div class="sticky-title">
+                      <h1>Testing with Postman</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="installing-the-collection" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="installing-the-collection">Installing the Collection</h2>
 
-<h2 id="installing-the-collection">Installing the Collection</h2>
+  <p>To install the Postman Collection you will need to have installed the Postman App for Windows, Mac or Chrome. You can download any of these from the <a href="https://www.getpostman.com/apps">Postman Apps page</a>.</p>
 
-<p>To install the Postman Collection you will need to have installed the Postman App for Windows, Mac or Chrome. You can download any of these from the <a href="https://www.getpostman.com/apps">Postman Apps page</a>.</p>
+  <p>Once you have Postman installed, go to <code class="highlighter-rouge">Import</code> menu and select <code class="highlighter-rouge">Import from link</code>. Then, paste the following url:</p>
 
-<p>Once you have Postman installed, go to <code class="highlighter-rouge">Import</code> menu and select <code class="highlighter-rouge">Import from link</code>. Then, paste the following url:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>https://cdn.auth0.com/auth0-extend/docs/assets/webtask-collection.json
+  <div class="highlighter-rouge"><pre class="highlight"><code>https://cdn.auth0.com/auth0-extend/docs/assets/webtask-collection.json
 </code></pre>
+  </div>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-import.png" alt="" /></p>
+
+  <p>After clicking on <code class="highlighter-rouge">Import</code>, Postman will open the collection.</p>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-collection.png" alt="" /></p>
+</section>
+
+<section id="configuring-the-postman-environment" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="configuring-the-postman-environment">Configuring the Postman Environment</h2>
+
+  <p>The Webtask Postman collection make use of environment variables to customize the requests being sent. More information on managing Postman environments can be found at <a href="https://www.getpostman.com/docs/environments">Setting up an environment with variables</a></p>
+
+  <p>You will need to create an environment and configure the following variables:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">webtask_container</code>: Should contain your webtask container, e.g. <strong>my-containter</strong>.</li>
+    <li><code class="highlighter-rouge">webtask_token</code>: Should contain the token needed when making calls to the Webtask API.</li>
+    <li><code class="highlighter-rouge">webtask_name</code>: Should contain the name of the webtask that you want to work with.</li>
+  </ul>
+
+  <p>In the screenshot below you can see a Postman environment configured with both the <code class="highlighter-rouge">webtask_container</code>, <code class="highlighter-rouge">webtask_token</code> and <code class="highlighter-rouge">webtask_name</code> variables defined:</p>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-environment.png" alt="" /></p>
+</section>
+
+<section id="executing-a-request" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="executing-a-request">Executing a request</h2>
+
+  <p>Once the environment is configured, you can follow theses steps to execute an Webtask API method:</p>
+
+  <ol>
+    <li>Select the environment you want to work with</li>
+    <li>Select the relevant API method in the collection folder</li>
+    <li>Click the send button</li>
+  </ol>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-sample.png" alt="" /></p>
+
+  <p>You man also optionally have to configure query parameters or the JSON method body, depending on the API call. For more information please refer to the <a href="https://www.getpostman.com/docs/requests">Sending Requests</a> document on the Postman website.</p>
+</section>
+
+<section id="storing-tokens-in-postman-variables" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="storing-tokens-in-postman-variables">Storing tokens in Postman variables</h2>
+
+  <p>We do need to point out that storing tokens in Postman as environment variables could pose a potential security risk.  If you are signed in to the Postman application it will automatically try and <a href="https://www.getpostman.com/docs/sync_overview">synchronize some entities such as Collections and Environments with the Postman servers</a>. This means that a token, which could allow someone else to gain access to your Management API, is leaving the privacy of your computer and uploaded Postman’s servers.</p>
+
+  <p>It also has to be said that Postman has taken measures to ensure that this information is encrypted, and indeed encourages users to store this sort of information in Environment Variables. You can <a href="https://www.getpostman.com/docs/security">read more about this on their website</a>.</p>
+
+  <p>If you feel that this still poses too much of a risk for you, then you will need to sign out of Postman to ensure that environment variables are not synchronized.</p>
+</section>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
 </div>
 
-<p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-import.png" alt="" /></p>
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
 
-<p>After clicking on <code class="highlighter-rouge">Import</code>, Postman will open the collection.</p>
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
 
-<p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-collection.png" alt="" /></p>
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'Testing with Postman' }),
+      dataType: 'json'
+    });
+  }
+</script>
 
-<h2 id="configuring-the-postman-environment">Configuring the Postman Environment</h2>
-
-<p>The Webtask Postman collection make use of environment variables to customize the requests being sent. More information on managing Postman environments can be found at <a href="https://www.getpostman.com/docs/environments">Setting up an environment with variables</a></p>
-
-<p>You will need to create an environment and configure the following variables:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">webtask_container</code>: Should contain your webtask container, e.g. <strong>my-containter</strong>.</li>
-  <li><code class="highlighter-rouge">webtask_token</code>: Should contain the token needed when making calls to the Webtask API.</li>
-  <li><code class="highlighter-rouge">webtask_name</code>: Should contain the name of the webtask that you want to work with.</li>
-</ul>
-
-<p>In the screenshot below you can see a Postman environment configured with both the <code class="highlighter-rouge">webtask_container</code>, <code class="highlighter-rouge">webtask_token</code> and <code class="highlighter-rouge">webtask_name</code> variables defined:</p>
-
-<p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-environment.png" alt="" /></p>
-
-<h2 id="executing-a-request">Executing a request</h2>
-
-<p>Once the environment is configured, you can follow theses steps to execute an Webtask API method:</p>
-
-<ol>
-  <li>Select the environment you want to work with</li>
-  <li>Select the relevant API method in the collection folder</li>
-  <li>Click the send button</li>
-</ol>
-
-<p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-sample.png" alt="" /></p>
-
-<p>You man also optionally have to configure query parameters or the JSON method body, depending on the API call. For more information please refer to the <a href="https://www.getpostman.com/docs/requests">Sending Requests</a> document on the Postman website.</p>
-
-<h2 id="a-word-about-storing-tokens-in-postman-variables">A word about storing tokens in Postman variables</h2>
-
-<p>We do need to point out that storing tokens in Postman as environment variables could pose a potential security risk.  If you are signed in to the Postman application it will automatically try and <a href="https://www.getpostman.com/docs/sync_overview">synchronize some entities such as Collections and Environments with the Postman servers</a>. This means that a token, which could allow someone else to gain access to your Management API, is leaving the privacy of your computer and uploaded Postman’s servers.</p>
-
-<p>It also has to be said that Postman has taken measures to ensure that this information is encrypted, and indeed encourages users to store this sort of information in Environment Variables. You can <a href="https://www.getpostman.com/docs/security">read more about this on their website</a>.</p>
-
-<p>If you feel that this still poses too much of a risk for you, then you will need to sign out of Postman to ensure that environment variables are not synchronized.</p>
 
                     </article>
                   </div>

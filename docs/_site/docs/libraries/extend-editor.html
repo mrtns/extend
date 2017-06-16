@@ -140,6 +140,10 @@
             <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
             
               <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#integration-options">Integration Options</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
                 <a class="js-subcategory-item " href="#hosting-the-editor-in-your-web-site">Hosting the Editor in Your Web Site</a>
               </li>
             
@@ -149,10 +153,6 @@
             
               <li class="sidebar-item sidebar-item-depth1 ">
                 <a class="js-subcategory-item " href="#using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</a>
-              </li>
-            
-              <li class="sidebar-item sidebar-item-depth1 ">
-                <a class="js-subcategory-item " href="#playground">Playground</a>
               </li>
             
             </ul>
@@ -165,6 +165,14 @@
 
             <a id="logs-viewer" class="js-subcategory " href="/extend/docs/libraries/logs-viewer">Logs Viewer</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#embedding-the-logs-viewer">Embedding the Logs Viewer</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuration-options">Confiuration Options</a>
+              </li>
             
             </ul>
           </li>
@@ -204,18 +212,22 @@
                 </div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content">
-                      <div class="sticky-title">
-  <h1>Extend Editor</h1>
-</div>
+                    <div class="sticky-title">
+                      <h1>Extend Editor</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="integration-options" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="integration-options">Integration Options</h2>
 
-<p>The Extend Editor can be integrated into your product to provide your users with a first-class, web-based development experience for extensions. There are two ways to expose the Extend Editor to your users: you can host it as part of your own web site, or you can link to it and open it up as a stand-alone web application.</p>
+  <p>The Extend Editor can be integrated into your product to provide your users with a first-class, web-based development experience for extensions. There are two ways to expose the Extend Editor to your users: you can host it as part of your own web site, or you can link to it and open it up as a stand-alone web application.</p>
 
-<p><img src="https://camo.githubusercontent.com/e359a3721463fafdd3380ef1477533fa0a0ab1d2/68747470733a2f2f63646e2e61757468302e636f6d2f626c6f672f657874656e642d776562686f6f6b732f73657474696e67732d656469742d636f64652e706e67" alt="Extend Editor" /></p>
+  <p><img src="https://camo.githubusercontent.com/e359a3721463fafdd3380ef1477533fa0a0ab1d2/68747470733a2f2f63646e2e61757468302e636f6d2f626c6f672f657874656e642d776562686f6f6b732f73657474696e67732d656469742d636f64652e706e67" alt="Extend Editor" /></p>
 
-<p>In either mode of integration, Extend Editor supports a range of configuration options to allow you to tailor it’s behavior.</p>
+  <p>In either mode of integration, Extend Editor supports a range of configuration options to allow you to tailor it’s behavior.</p>
+</section>
 
-<div id="hosting-the-editor-in-your-web-site" class="layout scrollspy">
+<section id="hosting-the-editor-in-your-web-site" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h4 id="hosting-extend-editor-in-your-web-site">Hosting Extend Editor in Your Web Site</h4>
 
   <p>Extend Editor can be hosted within your own web site and customized to provide your users with the most streamlined, built-in experience. Extend Editor can be added with just a few lines of script:</p>
@@ -250,14 +262,12 @@
   <p>The minimal configuration above will display the Extend Editor using all the default options:</p>
 
   <p><img src="https://cloud.githubusercontent.com/assets/302314/26526687/e34688aa-4358-11e7-8f17-9f3f222e3541.png" alt="Default Extend Editor" /></p>
-</div>
+</section>
 
-<div id="configuring-extend-editor" class="layout scrollspy">
+<section id="configuring-extend-editor" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h4 id="configuring-extend-editor">Configuring Extend Editor</h4>
 
   <p>Several aspects of the Extend Editor can be controlled through the options object passed to it on initialization.<a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L3">See how Extend Editor is configured in the sample application</a>.</p>
-
-  <p>Below is explanation of the options.</p>
 
   <h3 id="configuration-options">Configuration Options</h3>
 
@@ -1071,9 +1081,9 @@
   <ul>
     <li>https://cdn.auth0.com/auth0-extend/develop/extend-editor.js</li>
   </ul>
-</div>
+</section>
 
-<div id="using-extend-editor-as-a-stand-alone-web-app" class="layout scrollspy">
+<section id="using-extend-editor-as-a-stand-alone-web-app" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
   <h4 id="using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</h4>
 
   <p>You can run the Extend Editor as a stand alone web application instead of embedding it within your web site. Hosted version of the Extend Editor is already part of your Auth0 Extend installation, and you can provide individual <a href="">configuration parameters</a> within the URL itself as follows:</p>
@@ -1085,40 +1095,9 @@
   <p>The <strong>{host_url}</strong>, <strong>{webtask_container}</strong>, <strong>{webtask_token}</strong>, and <strong>{webtask_name}</strong> parameters are the same as you would otherwise specify when <a href="#hosting-extend-editor-in-your-web-site">hosting the editor in your web site</a>. You can specify any other parameters of the configuration object as corresponding params of the URL hash.</p>
 
   <p><strong>NOTE:</strong> The URL contains the webtask token in the hash params, and as such care must be taken when sharing this URL. There is nothing that would prevent a security-unaware user from passing this URL around and therefore disclosing their webtask token.</p>
-</div>
+</section>
 
-<div id="playground">
-  <h2>Playground</h2>
-
-  <p>
-    The playground will help you to understand what can be customized and how it will looks like before using it at your application. 
-    Before starting with the playground, navigate to <a target="_blank" href="https://auth0.com/extend/try">extend/try</a> and copy your Extend Token.
-    Then paste it at the <i>configuration options</i>.
-  </p>
-
-  <div id="webtask-editor-playground"></div>
-
-  <script type="text/javascript" src="https://cdn.auth0.com/auth0-extend/1/extend-editor.js"></script>
-
-  <script type="text/javascript" src="https://cdn.auth0.com/webtask-editor/playground/develop/wt-editor-playground.js"></script>
-
-  <script type="text/javascript">
-      WebtaskEditorPlayground.create(document.getElementById('webtask-editor-playground'), {
-        editor: window.ExtendEditor,
-        initialConfig: {},  
-        readOnly: {},
-        hide: {
-          createIfNotExists: true,
-          defaultEditor: true,
-          loader: true,
-          allowHashParams: true
-        }
-      })
-    </script>
-
-</div>
-
-<div class="feedback-footer" style="margin-top: 34px;">
+<div class="feedback-footer" style="margin-top: 200px;">
   <div class="feedback-title">Was this article helpful?</div>
   <div class="feedback-buttons">
     <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
