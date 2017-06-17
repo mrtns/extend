@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    
+
+      <head>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Operations Guide</title>
+  <meta name="fragment" content="!">
+  <meta name="description" content="Better platform extensibility for your SaaS">
+  <meta name="twitter:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:src" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta name="twitter:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta name="twitter:title" content="Auth0 Extend">
+  <meta name="twitter:creator" content="@auth0">
+  <meta name="twitter:site" content="@auth0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:secure_url" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:image" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:url" content="https://auth0.com/extend">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta property="og:site_name" content="Auth0 Extend">
+  <meta property="og:title" content="Auth0 Extend">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/swagger-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/development/core.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/_main.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/assets/contact-form.css">
+  <link rel="canonical" href="http://localhost:4000/extend/docs/operations-guide">
+  <link rel="alternate" type="application/rss+xml" title="Auth0 Extend - Docs" href="/extend/feed.xml">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-32x32.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/jquery.sticky.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/materialize.js"></script>  
+  <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js"></script>  
+  <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js"></script>
+
+        
+      <script src="http://127.0.0.1:5678/livereload.js"></script></head>
+
+      <body>
+
+        <header class="site-header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="/extend/">
+            <div class="logo-extend"><img src="https://cdn.auth0.com/website/auth0-extend/images/auth0-extend-logo.svg" alt="Auth0 Extend">
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+            <li class="li-docs no-basic"><a href="/extend/pricing">Pricing</a></li>
+            <li class="li-docs no-basic">
+              <a href="/extend/docs">Documentation</a>
+            </li>
+            <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+            <li class="li-docs no-basic"><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_header_sales&quot;);" rel="external">Talk to Sales</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right pre-signup">
+            <li><a class="signin-button login js-login" style="cursor: pointer;">Login</a>
+            </li>
+            <li><a class="signin-button signup js-signup" style="cursor: pointer;">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            <div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      
+        
+        <li class="nav-tab active">
+          <a href="/extend/docs" class="active">Articles</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/api/http-api" class="">API</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/libraries/extend-editor" class="">Libraries</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>             
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  <div class="sidebar">
+  
+    
+      <div class="section-title">Articles</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="what-is-auth0-extend" class="js-subcategory " href="/extend/docs">What is Auth0 Extend</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#platform-extensibility">Platform Extensibility</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#the-value-of-auth0-extend">The Value of Auth0 Extend</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#relationship-to-auth0-webtasks">Relationship to Auth0 Webtasks</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="developer-guide" class="js-subcategory " href="/extend/docs/developer-guide">Developer Guide</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#overview">Overview</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#running-the-sample-application">Running the Sample Application</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#identify-extensibility-points">Identify Extensibility Points</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#choose-programming-models">Choose Programming Models</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#nodejs-programming-model">Node.js programming model</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#nodejs-modules-and-dependencies">Node.js Modules And Dependencies</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#choose-the-extension-authoring-experience">Choose the Extension Authoring Experience</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#isolation-requirements">Isolation Requirements</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#key-auth0-extend-concepts">Key Auth0 Extend Concepts</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#mapping-isolation-requirements-onto-webtask-tokens">Mapping Isolation Requirements onto Webtask Tokens</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#creating-extensions">Creating Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#discovering-extensions">Discovering Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#enabling-command-line-tool-for-your-users">Enabling Command Line Tool for Your Users</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#invoking-extensions">Invoking Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#handling-errors-from-extensions">Handling Errors from Extensions</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#runtime-and-management-apis">Runtime and Management APIs</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#monitoring-and-diagnostics">Monitoring and Diagnostics</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#middleware">Middleware</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="operations-guide" class="js-subcategory active" href="/extend/docs/operations-guide">Operations Guide</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#enabling-external-logging">Enabling External Logging</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#customizing-behavior-with-settings">Customizing Behavior with Settings</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#image-customization">Image Customization</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="support" class="js-subcategory " href="/extend/docs/support">Support</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#slack">Slack</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#forums">Forums</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#email">Email</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#premium-support">Premium Support</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+        </div>
+      </ul>
+    
+  
+    
+  
+    
+  
+</div>
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <div class="sticky-title">
+                      <h1>Operations Guide</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="enabling-external-logging" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="enabling-external-logging">Enabling External Logging</h2>
+
+  <p>Your Auth0 Extend installation can be configured to export logging information to your own <a href="https://aws.amazon.com/kinesis/firehose/">AWS Firehose</a> service. This provides you with the capability to store and analyze logs generated by your users’ extensions in Amazon S3, Amazon ElasticSearch, Amazon Kinesis Analytics, or Amazon Redshift. The logging information contains all output generated by your user’s extension code to standard output, as well as selected infrastructure events generated by Auth0 Extend itself. Contact <a href="#support">support</a> if you are interested in configuring this capability in your installation.</p>
+
+  <p>Auth0 Extend uses <a href="https://github.com/trentm/node-bunyan">bunyan</a> to format the logs exported to AWS Firehose. Logs are a stream of individual JSON objects separated with a newline.</p>
+
+  <p>The fields contained in every JSON record vary, but some of the most important ones include:</p>
+
+  <ul>
+    <li>
+      <p><strong>time</strong>: server time of the event.</p>
+    </li>
+    <li>
+      <p><strong>level</strong>: log level: 30 - info, 40 - warning, 50 - error.</p>
+    </li>
+    <li>
+      <p><strong>msg</strong>: description of the event.</p>
+    </li>
+    <li>
+      <p><strong>req_id</strong>, <strong>deployment_key</strong>: A unique request ID of the execution request within your Auth0 Extend installation. If you are contacting support with an issue to investigate, this information will help zero-in on the transaction in question.</p>
+    </li>
+  </ul>
+</section>
+
+<section id="customizing-behavior-with-settings" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="customizing-behavior-with-settings">Customizing Behavior with Settings</h2>
+
+  <p>Behavior of your Auth0 Extend installation is controlled with a large number of installation-wide settings. The most commonly adjusted settings are listed below. If you are interested in customizing settings of your installation, or explore more advanced configuration options, please contact <a href="#support">support</a>.</p>
+
+  <ul>
+    <li>
+      <p><strong>inactivity_timeout</strong> (default: 30 seconds): time after which a webtask container with no new incoming execution requests is subject to recycling. This setting also implies the longest lifetime of any single webtask execution you are guaranteed. You may want to increase this if your webtasks take longer than 30 seconds to run.</p>
+    </li>
+    <li>
+      <p><strong>life_timeout</strong> (default: 20 minutes): maximum time after which any webtask container (active or not) is subject to recycling. You may want to decrese this timeout as a mitigation of unintended leaks in your users’ code or any of the modules they depend on.</p>
+    </li>
+    <li>
+      <p><strong>max_code_length</strong> (default: 100KB): Maximum length of webtask code. You may want to increase this to accommodate larger webtasks.</p>
+    </li>
+    <li>
+      <p><strong>quarantine_timeout</strong> (default: 5 seconds): Time span during which a container that was inorderly terminated by the webtask code (e.g. due to uncaught exception) is put under quarantine. During this time all requests targeting subject container are be rejected with HTTP 429. This timeout prevents badly written user code that executes frequently from exhausting system resources.</p>
+    </li>
+    <li>
+      <p><strong>tripwire_timeout</strong> (default: 2 seconds): Maximum time user code is allowed to block Node.js event loop before it is considered run-away and terminated. This prevents run-away user code from exhausting computing resources. You may want to increase this in specialized cases of CPU-intensive workloads. <strong>NOTE</strong> run-away code will put the container it is running in under quarantine when it is terminated.</p>
+    </li>
+    <li>
+      <p><strong>cron_max_jobs_per_container</strong> (default: 10): Maximum number of CRON jobs that can be created in a single container.</p>
+    </li>
+  </ul>
+
+  <p>There are many more configuration options that address advanced scenarios and specialized workloads. Please <a href="#support">contact support</a> with questions.</p>
+
+</section>
+
+<section id="image-customization" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="image-customization">Image customization</h2>
+
+  <p>All extensions in an Auth0 Extend installation execute in a uniform execution environment. The environment includes built-in support for over <a href="https://tehsis.github.io/webtaskio-canirequire/">1000 most popular Node.js modules</a>. In cases when you need to add modules outside of that list, modules from private NPM repository, or custom native components, you can use the image customization feature. Please <a href="#support">contact support</a> with questions.</p>
+
+  <p>Image customization allows you to add custom components on top of a base Docker image we provide, and use the new Docker image as the execution environment for your extensions. The process involves the following steps:</p>
+
+  <ol>
+    <li>
+      <p>Auth0 provides you with access to an AWS ECR repository from which you can obtain the base Docker image (currently based on Ubuntu 16.04).</p>
+    </li>
+    <li>
+      <p>You customize the image by creating a derived Docker image with additional components and modules.</p>
+    </li>
+    <li>
+      <p>You push the new image to another AWS ECR repository Auth0 provides you access to.</p>
+    </li>
+    <li>
+      <p>Auth0 performs a set of validations on your new image to ensure integrity and puts it in production in your installation. This process does not involve any downtime.</p>
+    </li>
+  </ol>
+
+  <p>Please <a href="#support">contact support</a> if you are interesting in exploring this option.</p>
+</section>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'Operations Guide' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        <footer>
+  <div class="footer-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+        <li><a href="/extend/pricing">Pricing</a>
+        </li>
+        <li><a href="/extend/docs">Documentation</a>
+        </li>
+        <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        </li>
+      </ul>
+      <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-information">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="https://auth0.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li><a href="https://auth0.com/terms" target="_blank">Terms of Service</a>
+        </li>
+      </ul>
+      <div class="copyright">© 2013-2017 Auth0 Inc. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
+    });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
+  });
+</script>
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: 'Operations Guide' }),
+          dataType: 'json'
+        });
+      </script>
+    
+  
+    
+  
+    
+  
+</html>

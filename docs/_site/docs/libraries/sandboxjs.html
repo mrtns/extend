@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    
+  
+    
+  
+    
+
+      <head>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sandboxjs</title>
+  <meta name="fragment" content="!">
+  <meta name="description" content="Better platform extensibility for your SaaS">
+  <meta name="twitter:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:src" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta name="twitter:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta name="twitter:title" content="Auth0 Extend">
+  <meta name="twitter:creator" content="@auth0">
+  <meta name="twitter:site" content="@auth0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:secure_url" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:image" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:url" content="https://auth0.com/extend">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta property="og:site_name" content="Auth0 Extend">
+  <meta property="og:title" content="Auth0 Extend">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/swagger-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/development/core.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/_main.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/assets/contact-form.css">
+  <link rel="canonical" href="http://localhost:4000/extend/docs/libraries/sandboxjs">
+  <link rel="alternate" type="application/rss+xml" title="Auth0 Extend - Docs" href="/extend/feed.xml">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-32x32.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/jquery.sticky.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/materialize.js"></script>  
+  <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js"></script>  
+  <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js"></script>
+
+        
+      <script src="http://127.0.0.1:5678/livereload.js"></script></head>
+
+      <body>
+
+        <header class="site-header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="/extend/">
+            <div class="logo-extend"><img src="https://cdn.auth0.com/website/auth0-extend/images/auth0-extend-logo.svg" alt="Auth0 Extend">
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+            <li class="li-docs no-basic"><a href="/extend/pricing">Pricing</a></li>
+            <li class="li-docs no-basic">
+              <a href="/extend/docs">Documentation</a>
+            </li>
+            <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+            <li class="li-docs no-basic"><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_header_sales&quot;);" rel="external">Talk to Sales</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right pre-signup">
+            <li><a class="signin-button login js-login" style="cursor: pointer;">Login</a>
+            </li>
+            <li><a class="signin-button signup js-signup" style="cursor: pointer;">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            <div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs" class="">Articles</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/api/http-api" class="">API</a>
+        </li>
+      
+        
+        <li class="nav-tab active">
+          <a href="/extend/docs/libraries/extend-editor" class="active">Libraries</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>             
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  <div class="sidebar">
+  
+    
+  
+    
+  
+    
+      <div class="section-title">Libraries</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="extend-editor" class="js-subcategory " href="/extend/docs/libraries/extend-editor">Extend Editor</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#integration-options">Integration Options</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#hosting-the-editor-in-your-web-site">Hosting the Editor in Your Web Site</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuring-extend-editor">Configuring Extend Editor</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="logs-viewer" class="js-subcategory " href="/extend/docs/libraries/logs-viewer">Logs Viewer</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#embedding-the-logs-viewer">Embedding the Logs Viewer</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuration-options">Confiuration Options</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="sandboxjs" class="js-subcategory active" href="/extend/docs/libraries/sandboxjs">Sandboxjs</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#setup">Setup</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#create-and-run-a-webtask">Create and run a webtask</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#create-a-webtask-and-get-the-url">Create a webtask and get the URL</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#update-an-existing-webtask">Update an existing webtask</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+        </div>
+      </ul>
+    
+  
+</div>
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <div class="sticky-title">
+                      <h1>Sandboxjs</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="setup" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="setup">Setup</h2>
+
+  <p>To install sandboxjs open a terminal and run the following:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install sandboxjs
+</code></pre>
+  </div>
+
+  <p>To start using sandboxjs you have to get a webtask token using wt-cli . If you already use wt-cli use:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>wt profile ls
+</code></pre>
+  </div>
+
+  <p>If you don’t have a profile already, then you have to install wt-cli and initialize a new profile:</p>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install -g wt-cli
+wt init
+</code></pre>
+  </div>
+
+  <p>In order to configure a webtask profile you need to provide an email or phone number. You will receive a verification code there which you will have to input to the terminal.
+Now that you have a profile setup, let’s work on some simple examples.</p>
+</section>
+
+<section id="create-and-run-a-webtask" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="create-and-run-a-webtask-using-sandboxjs">Create and run a webtask using sandboxjs</h2>
+
+  <p>The code snippet below creates a new webtask and runs it using Sandbox. The webtask code is defined as module.exports = function (ctx, cb) { cb(null, “hello world”); } and the Sandbox.fromToken method is used to create a Sandbox instance from your webtask token. The token in this example is retrieved from the environment variable WEBTASK_TOKEN. Once the Sandbox instance (profile) is defined, the instance method run is used. This method is a shortcut to create and run a Webtask from the given options. The method’s structure is sandbox.run([codeOrUrl], [options], [cb]), where [codeOrUrl] is the code or the URL for the webtask (in our example the code variable holds the webtask code), [options] is the set of options (for example, secrets) used to create the webtask (omitted in our example), and [cb] is the optional callback function for node-style callbacks. In our example the callback function uses Assert to display:</p>
+
+  <ul>
+    <li>the error if the callback returns one</li>
+    <li>The webtask executed as expected if the status code returned by the webtask is 200</li>
+    <li>The webtask returned the expected string if the webtask returns the expected hello world</li>
+  </ul>
+
+  <p>You can read more on this method here.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Sandbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'sandboxjs'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">code</span> <span class="o">=</span> <span class="s1">'module.exports = function (ctx, cb) { cb(null, "hello world"); }'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">Sandbox</span><span class="p">.</span><span class="nx">fromToken</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">WEBTASK_TOKEN</span><span class="p">);</span>
+
+<span class="c1">// This library lets you create a webtask and run it in one step as a shortcut</span>
+<span class="nx">profile</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Assert</span><span class="p">.</span><span class="nx">ifError</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="nx">Assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'The webtask executed as expected'</span><span class="p">);</span>
+  <span class="nx">Assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="s1">'hello world'</span><span class="p">,</span> <span class="s1">'The webtask returned the expected string'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+  </div>
+</section>
+
+<section id="create-a-webtask-and-get-the-url" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="create-a-webtask-and-get-the-url">Create a webtask and get the URL</h2>
+
+  <p>Our second example creates a webtask but instead of running it, returns the URL as output. Making requests to this url will run the specified custom code in a node.js sandbox and will give it access to your secrets in the firstargument of your exported webtask function. In this example we are utilizing the [options] argument and use it to set a secret: auth0: ‘rocks’.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Sandbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'sandboxjs'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">code</span> <span class="o">=</span> <span class="s1">'module.exports = function (ctx, cb) { cb(null, "hello world"); }'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">Sandbox</span><span class="p">.</span><span class="nx">fromToken</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">WEBTASK_TOKEN</span><span class="p">);</span>
+
+<span class="c1">// This library lets you create a webtask and returns the URL:</span>
+<span class="nx">profile</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span> <span class="p">{</span> <span class="na">secrets</span><span class="p">:</span> <span class="p">{</span> <span class="na">auth0</span><span class="p">:</span> <span class="s1">'rocks'</span> <span class="p">}</span> <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">webtask</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Assert</span><span class="p">.</span><span class="nx">ifError</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">webtask</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+  </div>
+</section>
+
+<section id="update-an-existing-webtask" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="update-the-code-of-an-existing-webtask">Update the code of an existing webtask</h2>
+
+  <p>Our third example retrieves an existing named webtask and updates its code. Let’s say that you already have a webtask named my-webtask and it prints Hello world. We will update its code to print Hello there instead. The code snippet uses the method sandbox.updateWebtask(options, [cb]) to update the webtask’s code. This function can also be used to update a webtask’s secrets or other claims. Note that this method should be used with caution as there is the potential for a race condition where another agent updates the webtask between the time that the webtask details and claims are resolved and when the webtask update is issued.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Sandbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'sandboxjs'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">webtaskName</span> <span class="o">=</span> <span class="s1">'my-webtask'</span><span class="p">;</span> <span class="c1">//existing webtask name</span>
+<span class="kd">var</span> <span class="nx">webtaskCode</span> <span class="o">=</span> <span class="s1">'module.exports = function (ctx, cb) { cb(null, "Hello there"); }'</span><span class="p">;</span> <span class="c1">//updated code</span>
+<span class="kd">var</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">Sandbox</span><span class="p">.</span><span class="nx">fromToken</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">WEBTASK_TOKEN</span><span class="p">);</span>
+
+<span class="nx">profile</span><span class="p">.</span><span class="nx">updateWebtask</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">webtaskName</span><span class="p">,</span>
+  <span class="na">code</span><span class="p">:</span> <span class="nx">webtaskCode</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre>
+  </div>
+</section>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'Sandboxjs' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        <footer>
+  <div class="footer-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+        <li><a href="/extend/pricing">Pricing</a>
+        </li>
+        <li><a href="/extend/docs">Documentation</a>
+        </li>
+        <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        </li>
+      </ul>
+      <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-information">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="https://auth0.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li><a href="https://auth0.com/terms" target="_blank">Terms of Service</a>
+        </li>
+      </ul>
+      <div class="copyright">© 2013-2017 Auth0 Inc. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
+    });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
+  });
+</script>
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: 'Sandboxjs' }),
+          dataType: 'json'
+        });
+      </script>
+    
+  
+</html>

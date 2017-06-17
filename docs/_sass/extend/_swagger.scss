@@ -1,0 +1,364 @@
+.swagger-ui {
+  margin-top: 21px !important;
+
+  .CodeMirror.cm-s-default {
+    background: #4e575e;
+    color: #FFF;
+    font-family: "Roboto Mono";
+    font-size: 12px;
+    .cm-string {
+      color: #00fbca;
+
+      &.cm-property {
+        color: #FFF;
+      }
+    }
+  }
+
+  .CodeMirror-cursor {
+    border-left: 1px solid #fff;
+  }
+
+  .col.parameters-col_description {
+    select {
+      border: 1px solid #d9d9d9 !important;
+      color: #5C666F !important;
+      font-family: inherit !important;
+      font-weight: normal !important;
+    }
+  }
+
+  .opblock-description-wrapper {
+    .opblock-description {
+      p {
+        margin-bottom: 21px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .swagger-body {
+    display: flex;
+    flex-direction: column;
+
+    .col.parameters-col_name {
+      display: none;
+    }
+
+    .col.parameters-col_description {
+      padding: 34px !important;
+    }
+  }
+
+  .headerline {
+    color: #fff;
+    display: block;
+  }
+
+  .information-container, .scheme-container, .opblock-tag.no-desc, .try-out, .body-param-options {
+    display: none !important;
+  }
+
+  .wrapper {
+    padding: 0 !important;
+  }
+
+  .opblock-body {
+    .btn-group {
+      padding-left: 0;
+      padding-right: 20px;
+    } 
+  }
+
+  .opblock.opblock-get, .opblock.opblock-put, .opblock.opblock-delete, .opblock.opblock-post {
+    border: 0;
+    background: transparent !important;
+    box-shadow: none;
+  }
+  
+  .opblock-description-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    // margin-bottom: 8px !important;
+  }
+
+  .opblock-summary-path {
+    font-family: inherit !important;
+    font-weight: normal !important;
+    margin-left: 21px !important;
+  }
+
+  .opblock-summary.opblock-summary-get, .opblock-summary.opblock-summary-put, .opblock-summary.opblock-summary-delete, .opblock-summary.opblock-summary-post {
+    border: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    cursor: default;
+  }
+
+  textarea {
+    white-space: normal;
+    background: #4e575e;
+    font-family: 'Roboto Mono' !important;
+    font-weight: normal !important;
+    border-radius: 2px !important;
+    font-size: 13px !important;
+    min-height: 100px !important;
+    padding: 20px !important;
+    margin-bottom: 21px;
+    resize: none;
+  }
+
+  .body-param__example {
+    background: #4e575e;
+  }
+
+  .body-param {
+    textarea { 
+      min-height: 300px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  .opblock-summary-get {
+    .opblock-summary-method {
+      background: #44c7f4 !important;
+      color: #fff !important;
+      text-transform: uppercase !important;
+      font-size: 11px !important;
+      border-radius: 20px !important;
+      padding: 2px 10px !important;
+      display: inline-block !important;
+      text-shadow: none !important;
+      font-family: inherit !important;
+    }
+  }
+
+  .opblock-summary-put {
+    .opblock-summary-method {
+      background: #c5862b !important;
+      color: #fff !important;
+      text-transform: uppercase !important;
+      font-size: 11px !important;
+      border-radius: 20px !important;
+      padding: 2px 10px !important;
+      display: inline-block !important;
+      text-shadow: none !important;
+      font-family: inherit !important;
+    }
+  }
+
+  .opblock-summary-delete {
+    .opblock-summary-method {
+      color: #fff !important;
+      text-transform: uppercase !important;
+      font-size: 11px !important;
+      border-radius: 20px !important;
+      padding: 2px 10px !important;
+      display: inline-block !important;
+      text-shadow: none !important;
+      font-family: inherit !important;
+    }
+  }
+
+  .opblock-summary-post {
+    .opblock-summary-method {
+      color: #fff !important;
+      text-transform: uppercase !important;
+      font-size: 11px !important;
+      border-radius: 20px !important;
+      padding: 2px 10px !important;
+      display: inline-block !important;
+      text-shadow: none !important;
+      font-family: inherit !important;
+    }
+  }  
+
+  .opblock-section-header {
+    box-shadow: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 21px;
+
+    h4 {
+      font-size: 16px !important;
+      color: #5c666f !important;
+      font-weight: 500;
+      font-family: inherit !important;
+    }
+  }
+
+  .responses-wrapper {
+    .col.response-col_description {
+      ul {
+        display: none; 
+      }
+
+      pre {
+        margin-bottom: 21px;
+        background: #4e575e;
+        font-family: 'Roboto Mono';
+        font-weight: normal;
+        border-radius: 2px;
+        padding: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+    }
+
+    .opblock-section-header {
+      h4 {
+        font-size: 16px !important;
+        color: #5c666f !important;
+        font-weight: 500;
+        font-family: inherit !important;
+      }
+
+      label {
+        display: none !important;
+      }
+    }
+
+    .responses-inner {
+      padding-left: 0;
+      padding-right: 0;
+
+      h4, h5 {
+        font-size: 14px;
+        font-family: inherit;
+        color: #3b4151;
+        font-weight: normal;
+        margin-bottom: 21px;
+      }
+
+      .responses-table {
+        thead {
+          .responses-header {
+            display: none;
+          }
+        }
+
+        tbody {
+          .response {
+            border-bottom: 1px solid #e8eaeb;
+
+            .col.response-col_status {
+              padding: 0;
+              margin: 0;
+              padding-bottom: 13px;
+            }
+
+            .col.response-col_description {
+              padding: 0;
+
+              .response-col_description__inner {
+                div {
+                  span {
+                    background: transparent;
+                    color: #242525;
+                    font-style: normal;
+                    font-family: inherit;
+                    font-weight: normal;
+                    font-size: 14px;
+                    padding: 0;
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .execute-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .table-container {
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+
+    .parameters {
+      thead {
+        display: none;
+      }
+
+      tbody {
+        tr {
+          border-radius: 3px;
+          border: 1px solid #e8eaeb;
+          min-width: 0;
+          background: #f8f8f9;
+          color: #5c666f;
+          font-size: 14px;
+          margin-bottom: 21px !important;
+          display: flex;
+
+          .col.parameters-col_name {
+            padding: 34px;
+            min-width: 200px;
+            padding-top: 21px;
+            padding-bottom: 0;
+
+            .parameter__name {
+              font-size: 16px !important;
+              font-weight: 400 !important;
+              font-family: inherit !important;
+              color: #5c666f !important;
+
+              &.required {
+                &:after, span {
+                  display: none;
+                }
+              }
+            }
+
+            .parаmeter__type, .parameter__in {
+              color: #5c666f;
+              font-weight: normal;
+              padding: 2px 4px;
+              border-radius: 4px;
+              font-family: menlo;
+              border: 1px solid rgba(0,0,0,.07);
+              background: 0 0;
+              display: inline;
+              font-size: 11px;
+              font-style: normal;
+              margin-right: 8px;
+            }
+          }
+
+          .col.parameters-col_description {
+            padding: 21px;           
+            display: flex;
+            flex-direction: column-reverse; 
+            width: 100%;
+            padding-right: 34px;
+
+            input {
+              max-width: 100%;
+            }
+
+            p {
+              font-size: 12px;
+              margin: 0;
+              font-family: inherit;
+              color: rgb(92, 102, 111);
+            }
+          }
+        }
+      }
+    }
+  }
+}

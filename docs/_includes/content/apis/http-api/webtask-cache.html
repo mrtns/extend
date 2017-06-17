@@ -1,0 +1,6 @@
+<p>
+  Webtask runtime maintains in-memory cache of some webtask atrifacts that are normally durably persisted. This allows the runtime to reduce the latency of execution for frequently running webtasks. A good example of data that is cached is the compiled form of the webtask code itself. First execution of a given webtask requires the code to be fetched from the durable storage, but once that code is compiled into a JavaScript function, the function is cached in memory to speed up future invocations.
+</p>
+<p>
+  Webtask runtime takes care of purging the caches in certain situations to provide good developer experience. For example, when you update the code of a webtask, the previously compiled, cached versions of it are purged from the system. However, you can also explicitly request webtask cache to be purged using the HTTP APIs below.
+</p>

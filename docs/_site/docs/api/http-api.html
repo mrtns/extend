@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    
+  
+    
+
+      <head>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTTP API</title>
+  <meta name="fragment" content="!">
+  <meta name="description" content="Better platform extensibility for your SaaS">
+  <meta name="twitter:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:src" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta name="twitter:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta name="twitter:title" content="Auth0 Extend">
+  <meta name="twitter:creator" content="@auth0">
+  <meta name="twitter:site" content="@auth0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:secure_url" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:image" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:url" content="https://auth0.com/extend">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta property="og:site_name" content="Auth0 Extend">
+  <meta property="og:title" content="Auth0 Extend">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/swagger-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/development/core.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/_main.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/assets/contact-form.css">
+  <link rel="canonical" href="http://localhost:4000/extend/docs/api/http-api">
+  <link rel="alternate" type="application/rss+xml" title="Auth0 Extend - Docs" href="/extend/feed.xml">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-32x32.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/jquery.sticky.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/materialize.js"></script>  
+  <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js"></script>  
+  <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js"></script>
+
+        
+          <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/swagger-ui-bundle.js"></script>
+          <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/swagger-ui-standalone-preset.js"></script>
+        
+      <script src="http://127.0.0.1:5678/livereload.js"></script></head>
+
+      <body>
+
+        <header class="site-header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="/extend/">
+            <div class="logo-extend"><img src="https://cdn.auth0.com/website/auth0-extend/images/auth0-extend-logo.svg" alt="Auth0 Extend">
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+            <li class="li-docs no-basic"><a href="/extend/pricing">Pricing</a></li>
+            <li class="li-docs no-basic">
+              <a href="/extend/docs">Documentation</a>
+            </li>
+            <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+            <li class="li-docs no-basic"><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_header_sales&quot;);" rel="external">Talk to Sales</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right pre-signup">
+            <li><a class="signin-button login js-login" style="cursor: pointer;">Login</a>
+            </li>
+            <li><a class="signin-button signup js-signup" style="cursor: pointer;">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            <div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs" class="">Articles</a>
+        </li>
+      
+        
+        <li class="nav-tab active">
+          <a href="/extend/docs/api/http-api" class="active">API</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/libraries/extend-editor" class="">Libraries</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>             
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  <div class="sidebar">
+  
+    
+  
+    
+      <div class="section-title">API</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="http-api" class="js-subcategory active" href="/extend/docs/api/http-api">HTTP API</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-creation">Webtask Creation</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-listing">Webtask Listing</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-deletion">Webtask Deletion</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-storage">Webtask Storage</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-cache">Webtask Cache</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#creating-webtask-tokens">Creating Webtask Tokens</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#revoking-webtask-tokens">Revoking Webtask Tokens</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#inspecting-webtask-tokens">Inspecting Webtask Tokens</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="testing-with-postman" class="js-subcategory " href="/extend/docs/api/testing-with-postman">Testing with Postman</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#installing-the-collection">Installing the Collection</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuring-the-postman-environment">Configuring Postman</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#executing-a-request">Executing a Request</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#storing-tokens-in-postman-variables">Storing Tokens in Postman Variables</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+        </div>
+      </ul>
+    
+  
+    
+  
+</div>
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <div class="sticky-title">
+                      <h1>HTTP API</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      <div id="webtask-creation" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Webtask creation</h3>
+  
+  <p>
+Sometimes all you want to do is create a new named webtask and get to work right away. Understanding the nuances of webtask token claims is overkill in many circumstances.
+</p>
+<p>
+This endpoint gives you an easy way to get started creating and updating named webtasks.
+</p>
+
+  <div id="webtask-creation-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/webtask-creation.yml",
+      dom_id: '#webtask-creation-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['webtask-creation'] = setInterval(function () {
+      var $el = $('#webtask-creation.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['webtask-creation']);
+        delete window.SwaggerRenderers['webtask-creation'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="webtask-listing" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Webtask listing</h3>
+  
+  <p>
+  Over time, it is easy to lose track of all of your named webtasks. This API gives you an easy way to page through them.
+</p>
+
+  <div id="webtask-listing-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/webtask-listing.yml",
+      dom_id: '#webtask-listing-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['webtask-listing'] = setInterval(function () {
+      var $el = $('#webtask-listing.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['webtask-listing']);
+        delete window.SwaggerRenderers['webtask-listing'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="webtask-deletion" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Webtask deletion</h3>
+  
+  <p>
+  This endpoint allows you to delete named webtasks. Any accompanying storage will also be deleted. The request must be authenticated by specifying the A1 webtask token as the Authorization HTTP request header.
+</p>
+
+  <div id="webtask-deletion-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/webtask-deletion.yml",
+      dom_id: '#webtask-deletion-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['webtask-deletion'] = setInterval(function () {
+      var $el = $('#webtask-deletion.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['webtask-deletion']);
+        delete window.SwaggerRenderers['webtask-deletion'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="webtask-storage" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Webtask storage</h3>
+  
+  <p>
+  Sometimes your code needs just a little bit of persistent storage, and using a full database feels like too much. Webtask code can durably store a single JSON document up to 500KB in size using built-in storage. With simple get/set APIs and basic conflict detection, this is frequently all you need.
+</p>
+<p>
+  Storage APIs are only available from within named webtasks. They are not available from code submitted for execution as part of the HTTP POST request body.
+</p>
+
+  <div id="webtask-storage-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/webtask-storage.yml",
+      dom_id: '#webtask-storage-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['webtask-storage'] = setInterval(function () {
+      var $el = $('#webtask-storage.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['webtask-storage']);
+        delete window.SwaggerRenderers['webtask-storage'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="webtask-cache" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Webtask cache</h3>
+  
+  <p>
+  Webtask runtime maintains in-memory cache of some webtask atrifacts that are normally durably persisted. This allows the runtime to reduce the latency of execution for frequently running webtasks. A good example of data that is cached is the compiled form of the webtask code itself. First execution of a given webtask requires the code to be fetched from the durable storage, but once that code is compiled into a JavaScript function, the function is cached in memory to speed up future invocations.
+</p>
+<p>
+  Webtask runtime takes care of purging the caches in certain situations to provide good developer experience. For example, when you update the code of a webtask, the previously compiled, cached versions of it are purged from the system. However, you can also explicitly request webtask cache to be purged using the HTTP APIs below.
+</p>
+
+  <div id="webtask-cache-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/webtask-cache.yml",
+      dom_id: '#webtask-cache-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['webtask-cache'] = setInterval(function () {
+      var $el = $('#webtask-cache.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['webtask-cache']);
+        delete window.SwaggerRenderers['webtask-cache'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="creating-webtask-tokens" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Creating webtask tokens</h3>
+  
+  <div>
+  <p>The webtask token request endpoint is used to issue a new webtask token. Request provides the authenticating webtask token A1 and a JSON structure with token request parameters. Response contains newly issued token A2.</p>
+  <p>Issuing new tokens is useful when you want to provide your application or specific user with a restricted capability of running webtasks. For example, you can restrict the webtask token to only execute code from a specific URL, or specify secret parameters that will be passed to that code at execution time.</p>
+  <p>The request must be <strong>authenticated</strong> by specifying the A1 webtask token as the <code>key</code> URL query parameter or with the <code>Authorization</code> HTTP request header as described above. The content type of the request must be <code>application/json</code>. The body of the request must contain a JSON object representing the intended restrictions of the A2 token to be issued. The object can specify the following properties (all of them optional):</p>
+  
+  <h4>ten</h4>
+  <p>is a restriction on the webtask container name in which webtask requests using the newly issued token can execute code. You can provide a regular expression (e.g. <code>/^foo[0-9]$/</code>) or a comma-delimited list of string literals (e.g. <code>foo1,foo2</code>).</p>
+  
+  <h4>jtn</h4>
+  <p>is an optional name of the webtask to create. For requests that specify this parameter, webtask cluster will durably store the issued webtask token and assign it a logical name, or an alias, of the form <code>{ten}/{jtn}</code>. This allows later execution of this webtask using shorthand URLs of the form <code>https://{webtask_domain}/api/run/{ten}/{jtn}</code>. If <code>jtn</code> is specified, the <code>ten</code> parameter must be a simple string literal. </p>
+  
+  <h4>jtnm</h4>
+  <p>is an optional array of strings limiting the names of the webtasks the token can be used to perform management operations on. Tokens with <code>ten</code> and <code>jtnm</code> claims can be used to limit bearer's management capabilities within the scope of a single webtask container. </p>
+  
+  <h4>nbf</h4>
+  <p>is a not before time restriction in Unix time.</p>
+  
+  <h4>exp</h4>
+  <p>is a not after time restriction in Unix time.</p>
+  
+  <h4>host</h4>
+  <p>is the custom domain name webtasks can be called with. This parameter requires also the parameter <code>ten</code>, since you can only set a custom domain when creating tokens for a specific container. Setting a value for <code>host</code> while not setting <code>ten</code> will result in an error. When <code>host</code> is set, the webtask runtime will validate whether the caller owns the custom domain. This validation is done by checking if a TXT record exists in the DNS of the specified custom domain. This TXT record should list the webtask container name (the value of property <code>ten</code>) and is a statement from the domain owner, permitting webtasks called over that custom domain name to run in a specific webtask container. An example of how TXT records look like in <a href="https://www.cloudflare.com/">CloudFlare</a> DNS management system:</p>
+  <p><img src="https://webtask.io/images/docs/wt-host-txt.png" alt="cloudfare-dns-txt-records" /></p>
+  <p>In this example we have associated our custom domain (<code>host = serverless.host</code>) with two containers (<code>ten = auth0, tjanczuk</code>). So the syntax of the TXT record should be: <code>webtask:container:{ten}</code> , where <code>{ten}</code> is the same as the <code>ten</code> value specified in the token creation request.</p>
+  <p>If the ownership is not validated then an error will be displayed prompting the user to add a DNS record with type TXT and value <code>webtask:container:{ten}</code>.</p>
+  
+  <h4>meta</h4>
+  <p>is used to specify metadata (a set of string key / value pairs) for a token. The parameter can only be specified if the <code>jtn</code> parameter is also specified, which means a named webtask is being upserted.</p>
+  
+  <h4>pb</h4>
+  <p>is a flag indicating whether webtask runtime should automatically process request bodies of requests with <code>application/json</code> or <code>application/x-www-urlformencoded</code> content type. If set to 0, request body will not be parsed. If set to 1, request body will be processed and stored in the <code>context.body</code> attribute. </p>
+  <p>If set to 2 or left unset (default), request body will be processed depending on the arity of the webtask function: for <code>(context, cb)</code> function signature, request body will be parsed and stored in the <code>context.body</code> attribute, and for <code>(ctx, req, res)</code> function signature, requst body will be left unread. </p>
+  
+  <h4>mb</h4>
+  <p>is a flag indicating whether body data processed when <code>pb</code> is set to 1 should be merged into <code>context.data</code> in apition to being stored in <code>context.body</code>. If set to 1, and if the body of the request represents a JavaScript object, properties of that object will be aped to <code>context.data</code>, unless they already exist there. It only makes sense to set <code>mb</code> when <code>pb</code> is also set.</p>
+  
+  <h4>dd</h4>
+  <p>is the maximum depth of token issuance the issued token will be able to perform. If token T1 has depth 2, it means it can be used to issue token T2 with depth 1; token T2 can be used to issue token T3 with depth 0; and token T3 cannot be used to issue any more tokens. Default depth is 1. You cannot request value of <code>dd</code> that is equal or larger than the authenticating token.</p>
+  
+  <h4>dr</h4>
+  <p>is a flag indicating whether the issued token can revoke itself with a call to the <a href="/docs/api_revoke">revocation HTTP API</a>. If the <code>dr</code> flag is absent (the default) or set to 0, the issued token can revoke itself. Set <code>dr=1</code> to prevent the token from revoking itself. This may be useful if you plan to ship the issued token in multiple applications or to multiple users, some of whom cannot be trusted with the revocation decision.</p>
+  
+  <h4>pctx</h4>
+  <p></p>is an JSON object with string properties which specifies parameters that will be provided to the webtask code at the time of execution. The properties will be signed and protected from interference but not encrypted - anyone with access to the newly issued token A2 can read their value.
+  
+  <h4>ectx</h4>
+  <p></p>is an JSON object with string properties which specifies parameters that will be provided to the webtask code at the time of execution. The properties will be signed and encrypted, therefore making them tamper-proof and inaccessible from third parties, including anyone with access to the newly issued A2 token. This is a convenient mechanism to pass secrets to the webtask code.
+  
+  <h4>url</h4>
+  <p></p>is the URL of the webtask code to execute. Webtask requests authenticated with the newly issued A2 token that contains the url property must not specify the code to execute at all. The webtask cluster will obtain the code from the URL specified in url with HTTP GET. This is a mechanism you can use to fix the code a given token can execute. The <code>url</code>parameter is mutually exclusive with the <code>code</code> parameter.
+  
+  <h4>code</h4>
+  <p></p>is the literal code of the webtask to execute. Webtask cluster will store the webtask code using internal storage facilities and issue an A2 token that specifies the <code>url</code> property indicating its location. The <code>code</code> parameter is mutually exclusive with the <code>url</code> parameter.
+  
+  <h4>ls, lm, lh, ld, lw, lo</h4>
+  <p></p>are the per second, minute, hour, day, week, and month (respectively) rate limits applied <em>per webtask container</em>. Only limits that are specified are applied. All specified limits must be positive integers. When issuing tokens, container rate limits of the authenticating token are propagated to the issued token.
+  
+  <h4>lts, ltm, lth, ltd, ltw, lto</h4>
+  <p></p>are the per second, minute, hour, day, week, and month (respectively) rate limits applied <em>per webtask token</em>. Only limits that are specified are applied. All specified limits must be positive integers. Unlike in case of container limits, token limits are not propagated from the authenticating token to the issued token during token issuance. This means every token can have its own token rate limits that are determined by the immediate issuer. </div>
+
+  <div id="creating-webtask-tokens-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/creating-webtask-tokens.yml",
+      dom_id: '#creating-webtask-tokens-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['creating-webtask-tokens'] = setInterval(function () {
+      var $el = $('#creating-webtask-tokens.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['creating-webtask-tokens']);
+        delete window.SwaggerRenderers['creating-webtask-tokens'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="revoking-webtask-tokens" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Revoking webtask tokens</h3>
+  
+  <p>
+  A webtask token can be revoked in order to prevent its future use to execute webtasks. When a webtask token is revoked, all webtask tokens directly or indirectly issued using it are also revoked. Revocation cannot be undone.
+</p>
+<p>
+  <strong>NOTE:</strong> revoked tokens may still be accepted for a short time after revocation (by default 2 minutes) due to caching of revocation status in the webtask runtime.
+</p>
+
+  <div id="revoking-webtask-tokens-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/revoking-webtask-tokens.yml",
+      dom_id: '#revoking-webtask-tokens-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['revoking-webtask-tokens'] = setInterval(function () {
+      var $el = $('#revoking-webtask-tokens.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['revoking-webtask-tokens']);
+        delete window.SwaggerRenderers['revoking-webtask-tokens'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div id="inspecting-webtask-tokens" class="layout scrollspy js-swagger" style="padding-top:150px; margin-bottom:-140px">
+  <h3 style="text-transform: capitalize;">Inspecting webtask tokens</h3>
+  
+  <p>
+The webtask token inspect endpoint is used to inspect an existing webtask token. The request provides the authenticating webtask token A1 in the headers and the token for inspectionA2 in the query parameters.
+</p>
+<p>
+Inspecting tokens is useful when you are storing derived tokens on behalf of your users in a multi-tenant setup. Inspecting tokens provides a mechanism to securely inspect the code and/or secrets that are embedded in a webtask that would otherwise be impossible to determine.
+</p>
+
+  <div id="inspecting-webtask-tokens-swagger"></div>
+
+
+  <script>
+    SwaggerUIBundle({
+      url: "https://cdn.auth0.com/auth0-extend/docs/assets/api/inspecting-webtask-tokens.yml",
+      dom_id: '#inspecting-webtask-tokens-swagger',
+      presets: [
+        SwaggerUIBundle.presets.apis
+      ]
+    });
+    
+    if (!window.SwaggerRenderers) {
+      window.SwaggerRenderers = {}
+    }
+
+    window.SwaggerRenderers['inspecting-webtask-tokens'] = setInterval(function () {
+      var $el = $('#inspecting-webtask-tokens.js-swagger').html();
+
+      if ($el.indexOf('No spec provided.') !== -1) {
+        window.clearInterval(window.SwaggerRenderers['inspecting-webtask-tokens']);
+        delete window.SwaggerRenderers['inspecting-webtask-tokens'];
+        if (Object.keys(window.SwaggerRenderers).length === 0) {
+          setTimeout(function() {
+            var currentRef = window.location.href;
+            var flag = currentRef.split('#').length === 2;
+
+            if (flag) {
+              window.location.href = window.location.href;
+            }
+
+            setTimeout(function() {
+              $('p').filter(function() {
+                return $(this).text() === 'Your webtask token';
+              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+            }, 200);
+
+            $('.scrollspy')
+              .scrollSpy({ scrollOffset: 30 });
+          }, 500);
+        }
+      }
+    }, 1);
+  </script>
+</div>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'HTTP API' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        <footer>
+  <div class="footer-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+        <li><a href="/extend/pricing">Pricing</a>
+        </li>
+        <li><a href="/extend/docs">Documentation</a>
+        </li>
+        <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        </li>
+      </ul>
+      <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-information">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="https://auth0.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li><a href="https://auth0.com/terms" target="_blank">Terms of Service</a>
+        </li>
+      </ul>
+      <div class="copyright">© 2013-2017 Auth0 Inc. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
+    });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
+  });
+</script>
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: 'HTTP API' }),
+          dataType: 'json'
+        });
+      </script>
+    
+  
+    
+  
+</html>

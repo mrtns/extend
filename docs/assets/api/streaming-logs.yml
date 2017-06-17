@@ -1,0 +1,44 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Webtask API
+
+host: webtask.it.auth0.com
+
+schemes:
+- https
+
+paths:
+  /api/logs/tenant/{webtask_container}:
+    get:
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: webtask_container
+        description: Your webtask container 
+        required: true
+        type: string
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string
+      - in: query
+        name: max
+        description: Maximum number of messages to return. If not provided, there is no limit.
+        type: integer
+      - in: query
+        name: timeout
+        description: Inactivity timeout in milliseconds. If the timeout is exceeded without a message being sent, the server will close the response. If not provided, the server never closes the response.
+        type: integer
+      - in: query
+        name: f.msg
+        description: A regular expression to match the text of the log entry against. Only matching messages will be sent. If the value starts with ! only messages that do not match the regular expression are returned. Use !! to escape the starting exclamation mark.
+        type: string
+
+      responses:
+        200:
+          description: List all the named webtasks in your webtask container
+        403:
+          description: The webtask token is not submitted with the request or does not grant sufficient permissions.              

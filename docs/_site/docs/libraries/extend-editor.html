@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    
+  
+    
+  
+    
+
+      <head>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Extend Editor</title>
+  <meta name="fragment" content="!">
+  <meta name="description" content="Better platform extensibility for your SaaS">
+  <meta name="twitter:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:src" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta name="twitter:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta name="twitter:title" content="Auth0 Extend">
+  <meta name="twitter:creator" content="@auth0">
+  <meta name="twitter:site" content="@auth0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:secure_url" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:image" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:url" content="https://auth0.com/extend">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta property="og:site_name" content="Auth0 Extend">
+  <meta property="og:title" content="Auth0 Extend">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/swagger-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/development/core.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/_main.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/assets/contact-form.css">
+  <link rel="canonical" href="http://localhost:4000/extend/docs/libraries/extend-editor">
+  <link rel="alternate" type="application/rss+xml" title="Auth0 Extend - Docs" href="/extend/feed.xml">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-32x32.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/jquery.sticky.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/materialize.js"></script>  
+  <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js"></script>  
+  <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js"></script>
+
+        
+      <script src="http://127.0.0.1:5678/livereload.js"></script></head>
+
+      <body>
+
+        <header class="site-header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="/extend/">
+            <div class="logo-extend"><img src="https://cdn.auth0.com/website/auth0-extend/images/auth0-extend-logo.svg" alt="Auth0 Extend">
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+            <li class="li-docs no-basic"><a href="/extend/pricing">Pricing</a></li>
+            <li class="li-docs no-basic">
+              <a href="/extend/docs">Documentation</a>
+            </li>
+            <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+            <li class="li-docs no-basic"><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_header_sales&quot;);" rel="external">Talk to Sales</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right pre-signup">
+            <li><a class="signin-button login js-login" style="cursor: pointer;">Login</a>
+            </li>
+            <li><a class="signin-button signup js-signup" style="cursor: pointer;">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            <div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs" class="">Articles</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/api/http-api" class="">API</a>
+        </li>
+      
+        
+        <li class="nav-tab active">
+          <a href="/extend/docs/libraries/extend-editor" class="active">Libraries</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>             
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  <div class="sidebar">
+  
+    
+  
+    
+  
+    
+      <div class="section-title">Libraries</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="extend-editor" class="js-subcategory active" href="/extend/docs/libraries/extend-editor">Extend Editor</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#integration-options">Integration Options</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#hosting-the-editor-in-your-web-site">Hosting the Editor in Your Web Site</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuring-extend-editor">Configuring Extend Editor</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="logs-viewer" class="js-subcategory " href="/extend/docs/libraries/logs-viewer">Logs Viewer</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#embedding-the-logs-viewer">Embedding the Logs Viewer</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuration-options">Confiuration Options</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="sandboxjs" class="js-subcategory " href="/extend/docs/libraries/sandboxjs">Sandboxjs</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#setup">Setup</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#create-and-run-a-webtask">Create and run a webtask</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#create-a-webtask-and-get-the-url">Create a webtask and get the URL</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#update-an-existing-webtask">Update an existing webtask</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+        </div>
+      </ul>
+    
+  
+</div>
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <div class="sticky-title">
+                      <h1>Extend Editor</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="integration-options" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="integration-options">Integration Options</h2>
+
+  <p>The Extend Editor can be integrated into your product to provide your users with a first-class, web-based development experience for extensions. There are two ways to expose the Extend Editor to your users: you can host it as part of your own web site, or you can link to it and open it up as a stand-alone web application.</p>
+
+  <p><img src="https://camo.githubusercontent.com/e359a3721463fafdd3380ef1477533fa0a0ab1d2/68747470733a2f2f63646e2e61757468302e636f6d2f626c6f672f657874656e642d776562686f6f6b732f73657474696e67732d656469742d636f64652e706e67" alt="Extend Editor" /></p>
+
+  <p>In either mode of integration, Extend Editor supports a range of configuration options to allow you to tailor it’s behavior.</p>
+</section>
+
+<section id="hosting-the-editor-in-your-web-site" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h4 id="hosting-extend-editor-in-your-web-site">Hosting Extend Editor in Your Web Site</h4>
+
+  <p>Extend Editor can be hosted within your own web site and customized to provide your users with the most streamlined, built-in experience. Extend Editor can be added with just a few lines of script:</p>
+
+  <div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.auth0.com/auth0-extend/1/extend-editor.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"extend-editor"</span> <span class="na">style=</span><span class="s">"height: 400px; width: 600px"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">ExtendEditor</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'extend-editor'</span><span class="p">),</span> <span class="p">{</span>
+      <span class="na">hostUrl</span><span class="p">:</span> <span class="s1">'{host_url}'</span><span class="p">,</span>
+      <span class="na">webtaskContainer</span><span class="p">:</span> <span class="s1">'{webtask_container}'</span><span class="p">,</span>
+      <span class="na">token</span><span class="p">:</span> <span class="s1">'{webtask_token}'</span><span class="p">,</span>
+      <span class="na">webtakName</span><span class="p">:</span> <span class="s1">'webtask-sample'</span>
+    <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+  </div>
+
+  <p>In the typical situation, the Extend Editor would be presented to an authenticated user from the administration section of your web site, and the <strong>{webtask_container}</strong> and <strong>{webtask_token}</strong> would be specific to the tenant in your system they are managing. In a more general case, the <strong>{host_url}</strong>, <strong>{webtask_container}</strong>, and <strong>{webtask_token}</strong> are specific to the <a href="#mapping-isolation-requirements-onto-webtask-tokens">selected isolation scope</a>.</p>
+
+  <p><a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/routes/index.js#L22">See Express handler that renders the page with Extend Editor</a>.<br />
+<a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/views/settings.ejs#L86">See how the Extend Editor is embedded in the settings page</a>.</p>
+
+  <p><strong>NOTE</strong> When experimenting with the code snippet above, you can use the same parameters as you use for running the <a href="#sample-application">sample application</a>. However, remember to never disclose your {master_webtask_token} to customers.</p>
+
+  <p>The minimal configuration above will display the Extend Editor using all the default options:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526687/e34688aa-4358-11e7-8f17-9f3f222e3541.png" alt="Default Extend Editor" /></p>
+</section>
+
+<section id="configuring-extend-editor" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h4 id="configuring-extend-editor">Configuring Extend Editor</h4>
+
+  <p>Several aspects of the Extend Editor can be controlled through the options object passed to it on initialization.<a href="https://github.com/auth0/extend/blob/master/samples/zerocrm/public/javascripts/extend.js#L3">See how Extend Editor is configured in the sample application</a>.</p>
+
+  <h3 id="configuration-options">Configuration Options</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>token*</td>
+        <td>The webtask token the Extend Editor will use to authorize calls to Auth0 Extend management APIs. This token is specific to the <a href="#mapping-isolation-requirements-onto-webtask-tokens">selected isolation scope</a>. In the most common case it is a tenant webtask token.</td>
+      </tr>
+      <tr>
+        <td>webtaskContainer*</td>
+        <td>The webtask container the Extend Editor will use when managing extensions. Similarly to the token, the webtask container is specific to the <a href="#mapping-isolation-requirements-onto-webtask-tokens">selected isolation scope</a>. In the most common case it is specific to the tenant in your system.</td>
+      </tr>
+      <tr>
+        <td>webtaskName</td>
+        <td>The name of the extension (webtask) the Extend Editor will load to enable the user to edit. In the integration pattern described in this guide, extensions are <a href="#creating-extensions">created in code</a> before the Extend Editor is opened to edit them, which means you will always specify this parameter.</td>
+      </tr>
+      <tr>
+        <td>webtaskUrl</td>
+        <td>The base URL of the Auth0 Extend deployment to use. If you are an Auth0 Extend customer, this will be a URL that is unique to you. If you are trying out Auth0 Extend, you can get this parameter from <a href="https://auth0.com/extend/try">this page</a>. If not specified, defaults to <code class="highlighter-rouge">https://webtask.it.auth0.com</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="#theme-string">theme</a></td>
+        <td>The enumeration or URL to select the CSS that allows you to customize the look &amp; feel of the Extend Editor. We provide two themes to choose from out of the box: <code class="highlighter-rouge">light</code> and <code class="highlighter-rouge">dark</code>. Alternatively, you can specify a URL to custom CSS with overrides of the default styles.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowhashparams-boolean">allowHashParams</a></td>
+        <td>Determines whether individual configuration options can be overriden with hash parameters specified in the URL of the page where Extend Editor is hosted.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowcreating-boolean">allowCreating</a></td>
+        <td>Determines whether the user will be able to create new extensions. Setting this to <code class="highlighter-rouge">false</code> will only allow the user to edit the extension identified with <strong>webtaskName</strong>.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowswitching-boolean">allowSwitching</a></td>
+        <td>Determines whether the user will be able to switch the extension (webtask) being edited within the <strong>webtaskContainer</strong>. Set this to <code class="highlighter-rouge">false</code> if you want to only allow the user to edit a specific webtask.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowupdating-boolean">allowUpdating</a></td>
+        <td>Determines if changes the user makes can be saved.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowaccessinglogs-boolean">allowAccessingLogs</a></td>
+        <td>Determines whether the user can open the real-time logs panel to inspect the logs generated by code executing in their webtask container.</td>
+      </tr>
+      <tr>
+        <td><a href="#alloweditingsecrets-boolean">allowEditingSecrets</a></td>
+        <td>Determines whether the user can open the secrets panel to add, edit, or inspect the secret configuration parameters associated with the edited extension.</td>
+      </tr>
+      <tr>
+        <td><a href="#alloweditingmeta-boolean">allowEditingMeta</a></td>
+        <td>Determines whether the user can open the metadata panel to add, edit, or inspect the metadata  associated with the edited extension. Direct manipulation of metadata by end users is only required in advanced cases, so in most situations you will set this to <code class="highlighter-rouge">false</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="#alloweditingschedule-boolean">allowEditingSchedule</a></td>
+        <td>Determines whether the user can manage the execution schedule for the extension. Extensions with an associated execution schedule are CRON jobs - they are automaticaly executed by the Auth0 Extend runtime without having to be explicitly invoked from your platform.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowswitchingtemplates-boolean">allowSwitchingTemplates</a></td>
+        <td>Determines whether the user can switch to a different extension template when editing an existing extension. This is useful if you want to provide the user with a choice of extension templates, possibly addressing different use cases of using a specific extensibility point.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowcreatingfromtemplate-boolean">allowCreatingFromTemplate</a></td>
+        <td>Determines whether the user can use the list of templates you specified as a basis for new extensions that create. This setting is only effective if <strong>allowCreating</strong> is set to <code class="highlighter-rouge">true</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowrenaming-boolean">allowRenaming</a></td>
+        <td>Determines whether the user can rename a webtask or not.</td>
+      </tr>
+      <tr>
+        <td><a href="#allowdeleting-boolean">allowDeleting</a></td>
+        <td>Determines whether the user can delete a webtask or not.</td>
+      </tr>
+      <tr>
+        <td><a href="#alloweditingdependencies-boolean">allowEditingDependencies</a></td>
+        <td>Determines whether the user can edit <code class="highlighter-rouge">npm</code> dependencies or not.</td>
+      </tr>
+      <tr>
+        <td><a href="#preventclosingWindowifdirty-boolean">preventClosingWindowIfDirty</a></td>
+        <td>Determines if Extend editor should check for browser closing event.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="header-options">Header Options</h3>
+
+  <p>Controls how the header is displayed. You can set this property to <code class="highlighter-rouge">false</code> if you want to hide the header completely.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#headerenabled-boolean">enabled</a></td>
+        <td>Setting it to false will have the same effect as setting the <strong>header</strong> property itself to false: it will hide the header.</td>
+      </tr>
+      <tr>
+        <td><a href="#headerlogourl-string">logoUrl</a></td>
+        <td>URL to a logo to display on the header line. This allows you to white-label the Extend Editor to use your brand.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="toolbar-options">Toolbar Options</h3>
+
+  <p>Controls how the toolbar is displayed. You can set this property to <code class="highlighter-rouge">false</code> if you want to hide the toolbar completely.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#toolbarenabled-boolean">enabled</a></td>
+        <td>Setting it to false will have the same effect as setting the <strong>toolabr</strong> property itself to false: it will hide the toolbar.</td>
+      </tr>
+      <tr>
+        <td><a href="#toolbardisplayname-boolean">displayName</a></td>
+        <td>Setting this to false will hide the name of the edited extension (webtask).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="footer-options">Footer Options</h3>
+
+  <p>Controls how the footer is displayed. You can set this property to <code class="highlighter-rouge">false</code> if you want to hide the footer completely.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#footerenabled-boolean">enabled</a></td>
+        <td>Setting it to false will have the same effect as setting the <strong>footer</strong> property itself to false: it will hide the footer.</td>
+      </tr>
+      <tr>
+        <td><a href="#footerdisplaywebtaskurl-boolean">displayWebtaskUrl</a></td>
+        <td>Settings this to false will hide the url of the current webtask.</td>
+      </tr>
+      <tr>
+        <td><a href="#footerdisplaywebtaskweight-boolean">displayWebtaskWeight</a></td>
+        <td>Setting this to false will hide the weight metter.</td>
+      </tr>
+      <tr>
+        <td><a href="#footerallowcustomitems-boolean">allowCustomItems</a></td>
+        <td>Settings this to false will disallow editors to publish content to the footer.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="runner-options">Runner Options</h3>
+
+  <p>Determines whether and how the editor displays the runner pane for executing the extensions. Set to <code class="highlighter-rouge">false</code> to disable the runner, or to an object with options as outlined below.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#methods-array">methods</a></td>
+        <td>Array of HTTP methods the runner will allow the user to choose from.</td>
+      </tr>
+      <tr>
+        <td><a href="#explanation-string">explanation</a></td>
+        <td>A short description of the purpose of the request.</td>
+      </tr>
+      <tr>
+        <td><a href="#sample-string">sample</a></td>
+        <td>Sample request payload to pre-populate the runner with.</td>
+      </tr>
+      <tr>
+        <td><a href="expandlogs-boolean">expandLogs</a></td>
+        <td>Automatically show logs when pressing run.</td>
+      </tr>
+      <tr>
+        <td><a href="#methodselector-boolean">methodSelector</a></td>
+        <td>Derterminates if the method selector will be visible or not.</td>
+      </tr>
+      <tr>
+        <td><a href="#headerseditor-object">headersEditor</a></td>
+        <td>Determines whether and how the editor displays the HTTP request header section for executing the extensions. Set to <code class="highlighter-rouge">false</code> to disable the the ability to manipulate request headers, or to an object with options as outlined below.</td>
+      </tr>
+      <tr>
+        <td>headersEditor.defaultHeaders</td>
+        <td>A hash of header names to string header values or a function <code class="highlighter-rouge">(ctx) =&gt; 'strig'</code> that maps webtask runtime context to a header value.</td>
+      </tr>
+      <tr>
+        <td>headersEditor.expand</td>
+        <td>Automatically expand the headers section</td>
+      </tr>
+      <tr>
+        <td><a href="#paramseditor-object">paramsEditor</a></td>
+        <td>Determines whether to show the query parameter editor for users to specify custom request headers.</td>
+      </tr>
+      <tr>
+        <td>paramsEditor.defaultParams</td>
+        <td>A hash of params names to string params values.</td>
+      </tr>
+      <tr>
+        <td>paramsEditor.expand</td>
+        <td>Automatically expand the params section</td>
+      </tr>
+      <tr>
+        <td><a href="#bodyeditor-object">bodyEditor</a></td>
+        <td>Determines whether and how the editor displays the HTTP request body editor section for executing the extensions. Set to <code class="highlighter-rouge">false</code> to disable the the ability to manipulate request body, or to an object with options as outlined below.</td>
+      </tr>
+      <tr>
+        <td>bodyEditor.typeSelector</td>
+        <td>Determines whether to show the request body type selector.</td>
+      </tr>
+      <tr>
+        <td>bodyEditor.defaultType</td>
+        <td>Allowed types are <code class="highlighter-rouge">raw</code>, <code class="highlighter-rouge">json</code>, <code class="highlighter-rouge">x-www-form-urlencoded</code>.</td>
+      </tr>
+      <tr>
+        <td>bodyEditor.expand</td>
+        <td>Automatically expand the body section</td>
+      </tr>
+      <tr>
+        <td>bodyEditor.rawTypeOptions.defaultMode</td>
+        <td>Determines the default mode for editing raw request body. Allowed values are <code class="highlighter-rouge">json</code>, <code class="highlighter-rouge">xml</code>, or <code class="highlighter-rouge">text</code>.</td>
+      </tr>
+      <tr>
+        <td>bodyEditor.rawTypeOptions.enabled</td>
+        <td>Determines whether to allow the user to change the mode of editg the rawType option.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="expand-options">Expand Options</h3>
+
+  <p>Determines which panels will be expanded when Extend Editor is displayed.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#expandleft-string">left</a></td>
+        <td>Determines which panel will be expanded at left. Allowed values are <code class="highlighter-rouge">explorer</code>, <code class="highlighter-rouge">secrets</code>, <code class="highlighter-rouge">meta</code>, <code class="highlighter-rouge">dependencies</code>, <code class="highlighter-rouge">github</code>, <code class="highlighter-rouge">scheduler</code>, <code class="highlighter-rouge">templates</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="#expandright-string">right</a></td>
+        <td>Determiens which panel will be expanded at right. Allowed value <code class="highlighter-rouge">runner</code>.</td>
+      </tr>
+      <tr>
+        <td><a href="#expandbottom-string">bottom</a></td>
+        <td>Determines which panel will be expanded at bottom. Allowed value <code class="highlighter-rouge">logs</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="configuration-options-1">Configuration Options</h2>
+
+  <h3 id="theme-string">Theme {string}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">dark</code>,</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// Rendering Extend editor using light-theme. </span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">theme</span><span class="p">:</span> <span class="s1">'light'</span>
+<span class="p">}</span>
+
+<span class="c1">// Rendering Extend editor using dark-theme. </span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">theme</span><span class="p">:</span> <span class="s1">'dark'</span> <span class="c1">// Default value</span>
+<span class="p">}</span>
+
+<span class="c1">// Extend editor allows you to use a custom theme by pointing to a CSS file.</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">theme</span><span class="p">:</span> <span class="s1">'https://cdn.auth0.com/webtask-editor/styles/develop/auth0-theme.css'</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Examples of <code class="highlighter-rouge">theme</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26512155/ad165454-423b-11e7-8cff-a061bc958048.png" alt="" /></p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26512154/ad0dbde4-423b-11e7-888b-21d0da2df0bb.png" alt="" /></p>
+
+  <h3 id="allowhashparams-boolean">allowHashParams {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowHashParams</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowcreating-boolean">allowCreating {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowCreating</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowswitching-boolean">allowSwitching {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowSwitching</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Examples of <code class="highlighter-rouge">allowSwitching</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526678/b687324c-4358-11e7-9e5c-b200b672d539.png" alt="" /></p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526679/b68e68dc-4358-11e7-9e1a-141ad1a28085.png" alt="" /></p>
+
+  <h3 id="allowupdating-boolean">allowUpdating {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>,</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowUpdating</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowaccessinglogs-boolean">allowAccessingLogs {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowAccessingLogs</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">allowAccessingLogs</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515450/491ecda8-4251-11e7-924d-b3504667883d.png" alt="" /></p>
+
+  <h3 id="alloweditingsecrets-boolean">allowEditingSecrets {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowEditingSecrets</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Examples of <code class="highlighter-rouge">allowEditingSecrets</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515453/492a286a-4251-11e7-95ee-2dabefbb4109.png" alt="" /></p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515454/4931d6f0-4251-11e7-9aba-9fbd14c2ad15.png" alt="" /></p>
+
+  <h3 id="alloweditingmeta-boolean">allowEditingMeta {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowEditingMeta</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Examples of <code class="highlighter-rouge">allowEditingMeta</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515451/492248a2-4251-11e7-8824-b1cfcb8e77ae.png" alt="" /></p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515452/4926e222-4251-11e7-8eec-c22708dd57dd.png" alt="" /></p>
+
+  <h3 id="alloweditingschedule-boolean">allowEditingSchedule {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowEditingSchedule</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowswitchingtemplates-boolean">allowSwitchingTemplates {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowSwitchingTemplates</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowcreatingfromtemplate-boolean">allowCreatingFromTemplate {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowCreatingFromTemplate</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowrenaming-boolean">allowRenaming {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowRenaming</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="allowdeleting-boolean">allowDeleting {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowDeleting</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="alloweditingdependencies-boolean">allowEditingDependencies {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allowEditingDependencies</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Examples of <code class="highlighter-rouge">allowEditingDependencies</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526748/3a4aeb36-435a-11e7-939a-3248a218bd22.png" alt="" /></p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526749/3a525c5e-435a-11e7-9217-533066c57f33.png" alt="" /></p>
+
+  <h3 id="preventclosingwindowifdirty-boolean">preventClosingWindowIfDirty {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">preventClosingWindowIfDirty</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h2 id="header-options-1">Header Options</h2>
+
+  <h3 id="header-object">header {object}</h3>
+
+  <p>Header options are grouped in the <code class="highlighter-rouge">theme</code> property of the configuration object.</p>
+
+  <h3 id="headerenabled-boolean">header.enabled {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>;</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">header.enabled</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515598/8da5b076-4252-11e7-9736-a13787e3a0e4.png" alt="" /></p>
+
+  <h3 id="headerlogourl-string">header.logoUrl {string}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">logoUrl</span><span class="p">:</span> <span class="s1">'https://cdn.auth0.com/auth0-extend/assets/logo-dark.svg'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h2 id="toolbar-options-1">Toolbar Options</h2>
+
+  <h3 id="toolbar-object">toolbar {object}</h3>
+
+  <p>Toolbar options are grouped in the <code class="highlighter-rouge">toolbar</code> property of the configuration object.</p>
+
+  <h3 id="toolbarenabled-boolean">toolbar.enabled {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">toolbar</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+  </div>
+
+  <p>Examples of <code class="highlighter-rouge">toolbar.enabled</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515684/9859f418-4253-11e7-8d05-e0afecfafbc9.png" alt="" /></p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515685/985f960c-4253-11e7-81e8-cfe13fd125d7.png" alt="" /></p>
+
+  <h3 id="toolbardisplayname-boolean">toolbar.displayName {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">toolbar</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">displayName</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">toolbar.displayName</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26515686/98645a0c-4253-11e7-9037-fe5447958545.png" alt="" /></p>
+
+  <h2 id="footer-options-1">Footer Options</h2>
+
+  <h3 id="footer-object">footer {object}</h3>
+
+  <p>Footer options are grouped in the <code class="highlighter-rouge">footer</code> property of the configuration object.</p>
+
+  <h3 id="footerenabled-boolean">footer.enabled {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">footer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="footerdisplaywebtaskurl-boolean">footer.displayWebtaskUrl {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">footer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">displayWebtaskUrl</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">displayWebtaskUrl</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526972/55cb3dba-4360-11e7-827f-961429d29250.png" alt="" /></p>
+
+  <h3 id="footerdisplaywebtaskweight-boolean">footer.displayWebtaskWeight {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">footer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">displayWebtaskWeight</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">displayWebtaskWeight</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526973/55cdbca2-4360-11e7-853c-18064be4066c.png" alt="" /></p>
+
+  <h3 id="footerallowcustomitems-boolean">footer.allowCustomItems {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">footer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">allowCustomItems</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h2 id="runner-options-1">Runner Options</h2>
+
+  <h3 id="runner-object">runner {object}</h3>
+
+  <p>Runner options are grouped in the <code class="highlighter-rouge">runner</code> property of the configuration object.</p>
+
+  <h3 id="methods-array">methods {array}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">[</span><span class="s1">'POST'</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p><strong>NOTE:</strong> If there is only one method declared, the <code class="highlighter-rouge">methodSelector</code> prop will be set to <code class="highlighter-rouge">false</code>.</p>
+
+  <h3 id="methodselector-boolean">methodSelector {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">methodSelector</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <h3 id="explanation-string">explanation {string}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">empty</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">explanation</span><span class="p">:</span> <span class="s1">'Here you will be able to simulate an ....'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">explanation</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526622/72fbfc70-4357-11e7-87ae-60d881e62dcb.png" alt="" /></p>
+
+  <h3 id="sample-string">sample {string}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">empty</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">sample</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'{'</span><span class="p">,</span>
+      <span class="s1">' "key": "value"'</span><span class="p">,</span>
+      <span class="s1">'}'</span><span class="p">,</span>
+    <span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">'\n'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">sample</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526623/72ff1e82-4357-11e7-90ef-0590e9b6691e.png" alt="" /></p>
+
+  <h3 id="expandlogs-boolean">expandLogs {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">false</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">expandLogs</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <h3 id="enabled-boolean">enabled {boolean}</h3>
+
+  <p>The default value is <code class="highlighter-rouge">true</code>.</p>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <h3 id="headerseditor-object">headersEditor {object}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">headersEditor</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">defaultHeaders</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application-json'</span>
+      <span class="p">},</span>
+      <span class="na">expand</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">headersEditor</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526648/070d162e-4358-11e7-82c1-807f8008645d.png" alt="" /></p>
+
+  <h3 id="paramseditor-object">paramsEditor {object}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">paramsEditor</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">defaultParams</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'q'</span><span class="p">:</span> <span class="s1">'name=john'</span>
+      <span class="p">},</span>
+      <span class="na">expand</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">paramsEditor</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526649/0710a56e-4358-11e7-8311-e00e7b15d54a.png" alt="" /></p>
+
+  <h3 id="bodyeditor-object">bodyEditor {object}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">runner</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">bodyEditor</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">expand</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">typeSelector</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">defaultType</span><span class="p">:</span> <span class="s1">'raw'</span><span class="p">,</span>
+      <span class="na">rawTypeOptions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">defaultMode</span><span class="p">:</span> <span class="s1">'json'</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+  </div>
+
+  <p>Example of <code class="highlighter-rouge">bodyEditor</code>:</p>
+
+  <p><img src="https://cloud.githubusercontent.com/assets/302314/26526647/0709ea12-4358-11e7-9861-e9c4a2f8119e.png" alt="" /></p>
+
+  <h2 id="expand-options-1">Expand Options</h2>
+
+  <h3 id="expand-object">expand {object}</h3>
+
+  <p>Expand options are grouped in the <code class="highlighter-rouge">expand</code> property of the configuration object.</p>
+
+  <h3 id="expandleft-string">expand.left {string}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">expand</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">left</span><span class="p">:</span> <span class="s1">'secrets'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="expandright-string">expand.right {string}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">expand</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">right</span><span class="p">:</span> <span class="s1">'runner'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h3 id="expandbottom-string">expand.bottom {string}</h3>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">expand</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">bottom</span><span class="p">:</span> <span class="s1">'logs'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <h2 id="available-versions">Available versions</h2>
+
+  <h5 id="production">Production</h5>
+
+  <ul>
+    <li>https://cdn.auth0.com/auth0-extend/1/extend-editor.js</li>
+    <li>https://cdn.auth0.com/auth0-extend/1.1/extend-editor.js</li>
+    <li>https://cdn.auth0.com/auth0-extend/1.1.1/extend-editor.js</li>
+  </ul>
+
+  <h5 id="development">Development</h5>
+
+  <ul>
+    <li>https://cdn.auth0.com/auth0-extend/develop/extend-editor.js</li>
+  </ul>
+</section>
+
+<section id="using-extend-editor-as-a-stand-alone-web-app" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h4 id="using-extend-editor-as-a-stand-alone-web-app">Using Extend Editor as a Stand Alone Web App</h4>
+
+  <p>You can run the Extend Editor as a stand alone web application instead of embedding it within your web site. Hosted version of the Extend Editor is already part of your Auth0 Extend installation, and you can provide individual <a href="">configuration parameters</a> within the URL itself as follows:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">host_url</span><span class="p">}</span><span class="err">/edit/</span><span class="p">{</span><span class="err">webtask_container</span><span class="p">}</span><span class="err">#webtaskName=</span><span class="p">{</span><span class="err">webtask_name</span><span class="p">}</span><span class="err">&amp;token=</span><span class="p">{</span><span class="err">webtask_token</span><span class="p">}</span><span class="err">&amp;...</span><span class="w">
+</span></code></pre>
+  </div>
+
+  <p>The <strong>{host_url}</strong>, <strong>{webtask_container}</strong>, <strong>{webtask_token}</strong>, and <strong>{webtask_name}</strong> parameters are the same as you would otherwise specify when <a href="#hosting-extend-editor-in-your-web-site">hosting the editor in your web site</a>. You can specify any other parameters of the configuration object as corresponding params of the URL hash.</p>
+
+  <p><strong>NOTE:</strong> The URL contains the webtask token in the hash params, and as such care must be taken when sharing this URL. There is nothing that would prevent a security-unaware user from passing this URL around and therefore disclosing their webtask token.</p>
+</section>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'Extend Editor' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        <footer>
+  <div class="footer-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+        <li><a href="/extend/pricing">Pricing</a>
+        </li>
+        <li><a href="/extend/docs">Documentation</a>
+        </li>
+        <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        </li>
+      </ul>
+      <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-information">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="https://auth0.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li><a href="https://auth0.com/terms" target="_blank">Terms of Service</a>
+        </li>
+      </ul>
+      <div class="copyright">© 2013-2017 Auth0 Inc. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
+    });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
+  });
+</script>
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: 'Extend Editor' }),
+          dataType: 'json'
+        });
+      </script>
+    
+  
+</html>
