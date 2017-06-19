@@ -15,6 +15,17 @@
           href: "#relationship-to-auth0-webtasks"
           name: relationship-to-auth0-webtasks
 
+    - title: Getting Started
+      name: getting-started
+      href: /extend/docs/getting-started
+      items:
+        - title: Sample Application
+          href: "#sample-application"
+          name: sample-application
+        - title: Walkthrough
+          href: "#walkthrough"
+          name: walkthrough
+
     - title: Developer Guide
       name: developer-guide
       href: /extend/docs/developer-guide
@@ -22,9 +33,6 @@
         - title: Overview
           href: "#overview"
           name: overview
-        - title: Running the Sample Application
-          href: "#running-the-sample-application"
-          name: running-the-sample-application
         - title: Identify Extensibility Points
           href: "#identify-extensibility-points"
           name: identify-extensibility-points
