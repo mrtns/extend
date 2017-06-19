@@ -172,7 +172,7 @@ body {
 
       &.is-current {
         display: block;
-        max-height: 600px;
+        max-height: 1000px;
         transition: max-height .6s ease-in-out;
       }
 
@@ -210,7 +210,7 @@ body {
   }
 
   .is-current .sidebar-item-list-depth1 {
-    max-height: 600px;
+    max-height: 1000px;
     transition: max-height 600ms ease-in-out;
 
     @media (min-width: 992px) {
