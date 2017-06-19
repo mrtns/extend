@@ -10,8 +10,6 @@ collection: "Articles"
 
 {% include include-layout.html src="content/articles/developer-guide/overview.md" name="overview" %}
 
-{% include include-layout.html src="content/articles/developer-guide/running-the-sample-application.md" name="running-the-sample-application" %}
-
 {% include include-layout.html src="content/articles/developer-guide/identify-extensibility-points.md" name="identify-extensibility-points" %}
 
 {% include include-layout.html src="content/articles/developer-guide/choose-programming-models.md" name="choose-programming-models" %}
