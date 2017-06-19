@@ -1,0 +1,36 @@
+<div class="sidebar">
+  {% for collection in site.data.outline %}
+    {% if collection.title == page.collection %}
+      <div class="section-title">{{ collection.title }}</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        {% for subcategory in collection.subcategories %}
+          <li class="sidebar-item sidebar-item-depth0">
+            {% if page.url contains subcategory.name %}
+              {% assign isActive = "active" %}
+              {% assign isCurrent = "is-current" %}
+            {% else %}  
+              {% assign isActive = "" %}
+              {% assign isCurrent = "" %}
+            {% endif %}
+
+            {% if page.url == "/docs/" and subcategory.name == 'what-is-auth0-extend' %}
+              {% assign isActive = "active" %}
+              {% assign isCurrent = "is-current" %}
+            {% endif %}
+
+            <a id="{{ subcategory.name }}" class="js-subcategory {{ isActive }}" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 {{ isCurrent }}">
+            {% for item in subcategory.items %}
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item {{ isSubActive }}" href="{{ item.href }}">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+        </div>
+      </ul>
+    {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    
+  
+    
+
+      <head>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Testing with Postman</title>
+  <meta name="fragment" content="!">
+  <meta name="description" content="Better platform extensibility for your SaaS">
+  <meta name="twitter:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:src" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta name="twitter:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta name="twitter:title" content="Auth0 Extend">
+  <meta name="twitter:creator" content="@auth0">
+  <meta name="twitter:site" content="@auth0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:secure_url" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:image" content="https://cdn.auth0.com/website/auth0-extend/images/card.png">
+  <meta property="og:url" content="https://auth0.com/extend">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Put your customers in the driver's seat for extending your product. Auth0 Extend offers a unique in-product, white-labeled, developer experience that makes it easy for any developer to add new capabilities and write their own business logic.">
+  <meta property="og:site_name" content="Auth0 Extend">
+  <meta property="og:title" content="Auth0 Extend">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/swagger-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/core/development/core.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/styleguide/components/1.0.0/components.min.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/docs/assets/_main.css">
+  <link rel="stylesheet" href="https://cdn.auth0.com/auth0-extend/assets/contact-form.css">
+  <link rel="canonical" href="http://localhost:4000/extend/docs/api/testing-with-postman">
+  <link rel="alternate" type="application/rss+xml" title="Auth0 Extend - Docs" href="/extend/feed.xml">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="//auth0.com/extend/favicon-32x32.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/jquery.sticky.js"></script>
+  <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/materialize.js"></script>  
+  <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js"></script>  
+  <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js"></script>
+
+        
+          <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/swagger-ui-bundle.js"></script>
+          <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/swagger-ui-standalone-preset.js"></script>
+        
+      <script src="http://127.0.0.1:5678/livereload.js"></script></head>
+
+      <body>
+
+        <header class="site-header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="/extend/">
+            <div class="logo-extend"><img src="https://cdn.auth0.com/website/auth0-extend/images/auth0-extend-logo.svg" alt="Auth0 Extend">
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+            <li class="li-docs no-basic"><a href="/extend/pricing">Pricing</a></li>
+            <li class="li-docs no-basic">
+              <a href="/extend/docs">Documentation</a>
+            </li>
+            <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+            <li class="li-docs no-basic"><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_header_sales&quot;);" rel="external">Talk to Sales</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right pre-signup">
+            <li><a class="signin-button login js-login" style="cursor: pointer;">Login</a>
+            </li>
+            <li><a class="signin-button signup js-signup" style="cursor: pointer;">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            <div class="navigation-bar ">
+  <div class="container">
+    <ul class="navigation-bar-tabs nav nav-tabs">
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs" class="">Articles</a>
+        </li>
+      
+        
+        <li class="nav-tab active">
+          <a href="/extend/docs/api/http-api" class="active">API</a>
+        </li>
+      
+        
+        <li class="nav-tab ">
+          <a href="/extend/docs/libraries/extend-editor" class="">Libraries</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>             
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  <div class="sidebar">
+  
+    
+  
+    
+      <div class="section-title">API</div>
+      <ul class="sidebar-item-list sidebar-item-list-depth0">
+        <div class="mobile-dropdown-content scrollable">
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="http-api" class="js-subcategory " href="/extend/docs/api/http-api">HTTP API</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 ">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-creation">Webtask Creation</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-listing">Webtask Listing</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-deletion">Webtask Deletion</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-storage">Webtask Storage</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#webtask-cache">Webtask Cache</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#creating-webtask-tokens">Creating Webtask Tokens</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#revoking-webtask-tokens">Revoking Webtask Tokens</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#inspecting-webtask-tokens">Inspecting Webtask Tokens</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+          <li class="sidebar-item sidebar-item-depth0">
+            
+
+            
+
+            <a id="testing-with-postman" class="js-subcategory active" href="/extend/docs/api/testing-with-postman">Testing with Postman</a>
+            <ul class="sidebar-item-list sidebar-item-list-depth1 is-current">
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#installing-the-collection">Installing the Collection</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#configuring-the-postman-environment">Configuring Postman</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#executing-a-request">Executing a Request</a>
+              </li>
+            
+              <li class="sidebar-item sidebar-item-depth1 ">
+                <a class="js-subcategory-item " href="#storing-tokens-in-postman-variables">Storing Tokens in Postman Variables</a>
+              </li>
+            
+            </ul>
+          </li>
+        
+        </div>
+      </ul>
+    
+  
+    
+  
+</div>
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <div class="sticky-title">
+                      <h1>Testing with Postman</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      
+<section id="installing-the-collection" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="installing-the-collection">Installing the Collection</h2>
+
+  <p>To install the Postman Collection you will need to have installed the Postman App for Windows, Mac or Chrome. You can download any of these from the <a href="https://www.getpostman.com/apps">Postman Apps page</a>.</p>
+
+  <p>Once you have Postman installed, go to <code class="highlighter-rouge">Import</code> menu and select <code class="highlighter-rouge">Import from link</code>. Then, paste the following url:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>https://cdn.auth0.com/auth0-extend/docs/assets/webtask-collection.json
+</code></pre>
+  </div>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-import.png" alt="" /></p>
+
+  <p>After clicking on <code class="highlighter-rouge">Import</code>, Postman will open the collection.</p>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-collection.png" alt="" /></p>
+</section>
+
+<section id="configuring-the-postman-environment" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="configuring-the-postman-environment">Configuring the Postman Environment</h2>
+
+  <p>The Webtask Postman collection make use of environment variables to customize the requests being sent. More information on managing Postman environments can be found at <a href="https://www.getpostman.com/docs/environments">Setting up an environment with variables</a></p>
+
+  <p>You will need to create an environment and configure the following variables:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">webtask_container</code>: Should contain your webtask container, e.g. <strong>my-containter</strong>.</li>
+    <li><code class="highlighter-rouge">webtask_token</code>: Should contain the token needed when making calls to the Webtask API.</li>
+    <li><code class="highlighter-rouge">webtask_name</code>: Should contain the name of the webtask that you want to work with.</li>
+  </ul>
+
+  <p>In the screenshot below you can see a Postman environment configured with both the <code class="highlighter-rouge">webtask_container</code>, <code class="highlighter-rouge">webtask_token</code> and <code class="highlighter-rouge">webtask_name</code> variables defined:</p>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-environment.png" alt="" /></p>
+</section>
+
+<section id="executing-a-request" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="executing-a-request">Executing a request</h2>
+
+  <p>Once the environment is configured, you can follow theses steps to execute an Webtask API method:</p>
+
+  <ol>
+    <li>Select the environment you want to work with</li>
+    <li>Select the relevant API method in the collection folder</li>
+    <li>Click the send button</li>
+  </ol>
+
+  <p><img src="https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-sample.png" alt="" /></p>
+
+  <p>You man also optionally have to configure query parameters or the JSON method body, depending on the API call. For more information please refer to the <a href="https://www.getpostman.com/docs/requests">Sending Requests</a> document on the Postman website.</p>
+</section>
+
+<section id="storing-tokens-in-postman-variables" class="layout scrollspy" style="padding-top:150px; margin-bottom:-140px">
+  <h2 id="storing-tokens-in-postman-variables">Storing tokens in Postman variables</h2>
+
+  <p>We do need to point out that storing tokens in Postman as environment variables could pose a potential security risk.  If you are signed in to the Postman application it will automatically try and <a href="https://www.getpostman.com/docs/sync_overview">synchronize some entities such as Collections and Environments with the Postman servers</a>. This means that a token, which could allow someone else to gain access to your Management API, is leaving the privacy of your computer and uploaded Postman’s servers.</p>
+
+  <p>It also has to be said that Postman has taken measures to ensure that this information is encrypted, and indeed encourages users to store this sort of information in Environment Variables. You can <a href="https://www.getpostman.com/docs/security">read more about this on their website</a>.</p>
+
+  <p>If you feel that this still poses too much of a risk for you, then you will need to sign out of Postman to ensure that environment variables are not synchronized.</p>
+</section>
+
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: 'Testing with Postman' }),
+      dataType: 'json'
+    });
+  }
+</script>
+
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        <footer>
+  <div class="footer-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="li-docs no-basic"><a href="/extend/developers">Developers</a></li>
+        <li><a href="/extend/pricing">Pricing</a>
+        </li>
+        <li><a href="/extend/docs">Documentation</a>
+        </li>
+        <li class="li-docs no-basic"><a href="https://auth0-extend.run.webtask.io/slack-signup">Join us on Slack</a></li>
+        <li><a style="cursor: pointer;" onclick="showContactForm(&quot;extend_footer_sales&quot;);" rel="external">Talk to Sales</a>
+        </li>
+      </ul>
+      <div class="powered"><a href="https://www.auth0.com">A Product by<img src="https://cdn.auth0.com/website/auth0-extend/icons/icon-powered-auth0-white.svg" alt="Auth0"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-information">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="https://auth0.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li><a href="https://auth0.com/terms" target="_blank">Terms of Service</a>
+        </li>
+      </ul>
+      <div class="copyright">© 2013-2017 Auth0 Inc. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(window).load(function(){
+    $(".sidebar-container").sticky({ 
+      wrapperClassName: 'col-md-3',
+      topSpacing: 65
+    });
+
+    $(".navigation-bar").sticky({
+      zIndex: 11
+    });
+
+    $(".sticky-title").sticky({
+      topSpacing: 67,
+      zIndex: 11
+    });
+  });
+</script>
+
+<script>
+  var Auth0ContactForm = window.Auth0ContactForm.default;
+  var ContactForm = Auth0ContactForm.ContactForm;
+
+  function showContactForm(source) {
+    console.log(source);
+    var contactForm = new ContactForm({
+      postUrl: 'https://auth0-extend.run.webtask.io/contact?source=' + source
+    });
+    contactForm.show();
+  }
+</script>
+
+<script>
+    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+    socialButtonStyle: 'big',
+    auth: {
+      redirectUrl: 'https://auth0.com/extend/callback'
+    },
+    theme: {
+      logo: 'https://cdn.auth0.com/auth0-extend/assets/rounded-logo.png',
+      primaryColor: '#3445DC'
+    }
+  });
+
+  $('.js-login').on('click', function () {
+    lock.show();
+  });
+
+  $('.js-signup').on('click', function () {
+    lock.show({ initialScreen: 'signUp' });
+  });
+</script>
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: 'Testing with Postman' }),
+          dataType: 'json'
+        });
+      </script>
+    
+  
+    
+  
+</html>

@@ -1,0 +1,171 @@
+header {
+  .logo-extend {
+    img {
+      width: 200px;
+      display: block;
+      background-size: 70%;
+      padding: 15px;
+    }
+  } 
+    
+  &.site-header {
+    border-bottom: 1px solid #e2e2e2;
+    
+    a {
+      &.login {
+        margin-bottom: 0 !important;
+        border-radius: 3px;
+        border-width: 2px;
+        border-color: black;
+        text-transform: uppercase;
+        margin-right: 10px;
+      }
+        
+      &.signup {
+        color: white !important;
+        border: 2px solid #3445DC;
+        border-radius: 3px;
+        // margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 12px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 14px;
+        text-align: center;
+        padding: 0;
+        padding: 10px;
+        text-transform: uppercase;
+        line-height: 30px;
+        display: block;
+        background: #3445DC;
+        margin-right: 0;
+        display: inline-block;
+        font-size: 12px;
+        padding: 0;
+        padding-left: 15px;
+        padding-right: 14px;
+        text-align: left;
+        
+        &:hover, &:active, &:focus {
+          color: #3445DC !important;
+        }
+      }
+    }
+      
+    .post-signup, .pre-signup {
+      li {
+        border: none;
+        
+        // &:first-child {
+        //   border-top: 1px solid #f1f1f1;
+        // }
+      }
+    }
+  }
+}
+      
+.navbar-default {
+  .navbar-nav {
+    &>li {
+      &>a {
+        color: black;
+      }
+    }
+      
+  }
+}
+            
+.nav {
+  button.btn {
+    padding: 6px 16px;
+    position: relative;
+    top: 11px;
+    margin-left: 20px;
+  }
+    
+  
+  &.post-signup {
+    display: block;
+    position: relative;
+    
+    .user-nav {
+      padding: 15px;
+      cursor: pointer;
+      
+      &:hover {
+        .sub-nav {
+          top: 105%;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+      
+    .user-image {
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        
+        &.icon-dropdown {
+          width: 10px;
+          margin-left: 10px;
+        }
+      }
+    } 
+  
+    .sub-nav {
+      position: absolute;
+      background: white;
+      top: 100%;
+      right: 20px;
+      margin: 0;
+      padding: 0;
+      border-radius: 3px;
+      overflow: visible;
+      box-shadow: 0 0px 7px rgba(0,0,0,.2);
+      transition: all .3s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 10;
+      
+      
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        padding: 5px 10px;
+        min-width: 150px;
+        
+        &:hover {
+          background: #ededed;
+        }
+        
+        &:fist-child {
+          border-radius: 3px 3px 0 0;
+        }
+          
+        &:last-child {
+          border-radius: 0 0 3px 3px;
+        }
+        
+        &.logout {
+          border-top: 1px solid #ededed;
+        }
+
+        a {
+          color: rgba(0,0,0,.64);
+        }
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  padding: 15px 10px;
+}
+
+.navbar-right {
+  margin-right: 15px;
+}

@@ -1,0 +1,23 @@
+## Key Auth0 Extend Concepts
+
+Previous sections of this guide focused on collecting and defining extensibility requirements in the context of your platform. Before moving on to implementing the actual integration to satisfy these requirements, you need to understand the core concepts of Auth0 Extend and the underlying Webtask technology. 
+
+1. **Webtask URL**. As part of the onboarding process to Auth0 Extend, you received a Webtask URL, which may look like `https://wt-yourcompany.it.auth0.com`. This is the base URL you will use to invoke management APIs and execute your extensions. 
+
+2. **Webtask token**. Webtask tokens are used to authorize calls to Auth0 Extend management APIs. Each token has specific set of permissions and intended use. One of the management APIs allows you to create derived webtask tokens with scoped down permissions within your Auth0 Extend deployment. You can read more about the security model and webtask tokens in the [next section](#mapping-isolation-requirements-onto-webtask-okens). Here are the two types of tokens that will be used throughout this guide:
+
+    * **Master webtask token**. This is the webtask token you were given during the onboarding process into Auth0 Extend. This token gives you complete control over your Auth0 Extend deployment. You can use it to authorize calls to management APIs without any restrictions. **NOTE** you should never disclose your master webtask token to any of your customers or tenants. 
+
+    * **Tenant webtask token**. This token is scoped down to allow management of all extensions within a single [scope of isolation](#isolation-requirements) in your platform (typically a single tenant). You can create tenant webtask tokens using your master webtask token. Tenant webtask tokens should only be shared with the relevant tenant. 
+
+3. **Extension or webtask**. These terms will be used interchangably in this guide to describe the same concept: the atomic unit of custom logic authored by your users that can be separately managed and invoked by your platform. Logically an extension is similar to a single web hook. Extensions are defined by a combination of custom code, secret configuration, and metadata. 
+
+4. **Extension code**. This is a script that implements custom logic and is authored by users of your platform. In a typical case, it is a single JavaScript function in Node.js. However, with the use of [middleware](#middleware) you can allow your users to author extension code that is written in custom, domain specific languages and scripts, e.g. T-SQL for querying your data or a Mustach template for formatting the body of an e-mail. 
+
+5. **Extension secrets**. These are key/value pairs that your user can define for a particular extension via the Extension Editor, wt-cli, or HTTP APIs. Secrets allow for a secure mechanism to provision exension code with sensitive parameters, e.g. API keys or database connection strings. Auth0 Extend provides a convenient, secure, built-in mechanism for encrypted storage of secrets at rest, and only makes them available to executing extension code in decrypted form at runtime. 
+
+6. **Extension metadata**. These are key/value pairs that can be used to associate arbitrary metadata with a particular extension. Their primary use is annotating extensions to enable platform-specific functionality written by you (as opposed to your users) in order to provide management experience tailored to your platform. For example, you can use metadata to classify extensions (e.g. "on-new-lead", "format-email"), or indicate which of them are active vs disabled. Metadata can be used as search criteria when listing available extensions, which is a convenient way to determine whether an extension to call exists at runtime. 
+
+7. **Webtask container**. Webtask container is a logical, named entity that represents scope of isolation in Auth0 Extend as described in the [Isolation requirements](#isolation-requirements) section. Extensions executing in different webtask containers are guaranteed to be isolated. Extensions executing in the same webtask container may or may not run in the same address space (process) and therefore share the same state and resources. Webtask containers do not need to be explicitly created or registered - they are created by Auth0 Extend on demand as needed. 
+
+8. **Webtasks vs webtask containers**. Webtasks are named entities that are created in the context of a specific webtask container. Webtasks must have unique names within their respective containers, but there may be identically named webtasks in different containers. To execute a webtask both the webtask container name and webtask name are needed. 

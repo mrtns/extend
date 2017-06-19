@@ -1,0 +1,71 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Webtask API
+
+host: webtask.it.auth0.com
+
+schemes:
+- https
+
+paths:
+  /api/webtask/{webtask_container}:
+    get:
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: webtask_container
+        description: Your webtask container 
+        required: true
+        type: string
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string
+      - in: query
+        name: offset
+        description: Pass in number of records to skip. Defaults to 0.
+        default: 0
+        type: integer
+        minimum: 0
+      - in: query
+        name: limit
+        description: Pass in maximum number of records to return. Defaults to 100.
+        type: integer
+        default: 100
+      responses:
+        200:
+          description: List all the named webtasks in your webtask container
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/List'
+        403:
+          description: The webtask token is not submitted with the request or does not grant sufficient permissions.              
+
+definitions:
+  List:
+    type: object
+    properties:
+      container:
+        type: string
+        example: my-container
+      name:
+        type: string
+        example: my-webtask
+      token:
+        type: string
+        example: ey....
+      meta:
+        $ref: '#/definitions/Meta'
+      webtask_url:
+        type: string
+        example: https://my-container.webtask.io/my-webtask
+  Meta:
+    type: object
+    properties:
+      key:
+        type: string
+        example: value

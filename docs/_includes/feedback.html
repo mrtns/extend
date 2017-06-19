@@ -1,0 +1,38 @@
+<div class="feedback-footer" style="margin-top: 200px;">
+  <div class="feedback-title">Was this article helpful?</div>
+  <div class="feedback-buttons">
+    <button class="feedback-button-yes btn btn-transparent" onclick="onFeedback(true);">
+      <span class="btn-icon icon-budicon-470"></span>
+      Yes
+    </button>
+    <button class="feedback-button-no btn btn-transparent" onclick="onFeedback(false);">
+      <span class="btn-icon icon-budicon-471"></span>
+      No
+    </button>
+  </div>
+  <div class="feedback-content" style="display: none;">
+    <div class="feedback-message">Thank you for your feedback!</div>
+  </div>
+</div>
+
+<script>
+  function onFeedback(helpful) {
+    var url = 'https://auth0-extend.run.webtask.io/extend-docs';
+
+    $('.feedback-content').show();
+    
+    if (helpful) {
+      $('.feedback-button-no').attr('disabled', true);
+    } else {
+      $('.feedback-button-yes').attr('disabled', true);
+    }
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ helpful: helpful, source: '{{ page.title }}' }),
+      dataType: 'json'
+    });
+  }
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% for collection in site.data.outline %}
+    {% if collection.title == page.collection %}
+
+      <head>
+        {% include head.html %}
+
+        {% if collection.title == "API" %}
+          <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/swagger-ui-bundle.js"></script>
+          <script src="https://cdn.auth0.com/auth0-extend/docs/assets/js/swagger-ui-standalone-preset.js"></script>
+        {% endif %}
+      </head>
+
+      <body>
+
+        {% include navbar-site.html %}
+
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+
+            {% include navbar-docs.html current=collection.title %}           
+
+            <div class="container">
+              <div class="row">
+                <div class="sidebar-container col-md-3">
+                  {% include sidebar.html current=collection %}
+                </div>
+                <div class="col-md-9">
+                  <div class="docs-content-container">
+                    <div class="sticky-title">
+                      <h1>{{ page.title }}</h1>
+                    </div>
+                    <article class="docs-content" style="margin-top:-120px">
+                      {{ content }}
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </main>
+
+        {% include footer.html %}
+
+      </body>
+
+      <script>
+        $(window).load(function(){
+          $('.scrollspy').scrollSpy({ scrollOffset: 30 });
+        });
+
+        var url = 'https://auth0-extend.run.webtask.io/extend-docs/visits';
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: 'application/json',
+          data: JSON.stringify({ source: '{{ page.title }}' }),
+          dataType: 'json'
+        });
+      </script>
+    {% endif %}
+  {% endfor %}
+</html>

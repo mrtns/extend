@@ -1,0 +1,61 @@
+.highlighter-rouge {
+  .highlight {
+    font-size: 'Roboto Mono';
+    display: block;
+    overflow-x: auto;
+    background-color: #2f383d!important;
+    white-space: pre!important;
+    padding: 15px!important;
+    color: #fff!important;
+    line-height: 20px;
+
+    .nv {
+      color: #ff9a56;
+    }
+
+    .c1 {
+      font-style: normal;
+      color: #899fab;
+    }
+  
+    .s1, .s2, .sh {
+      color: #00fbca;
+    }
+
+    .na {
+      color: #fff;
+    }
+
+    .kc {
+      font-weight: normal;
+      color: #42c7f4;
+    }
+
+    .kd {
+      font-weight: normal;
+      color: #ff9a56;
+    }
+
+    .err {
+      color: inherit;
+      background: transparent;
+    }
+
+    .nt {
+      color: #ffa0e7;
+    }
+
+    .s {
+      color: #00fbca;
+    }
+
+    .nb {
+      color: #ff9a56;
+    }
+
+    .cp {
+      color: #899;
+      font-weight: normal;
+    }
+  }
+}
