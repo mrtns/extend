@@ -8,8 +8,8 @@ Once you have Postman installed, go to `Import` menu and select `Import from lin
 https://cdn.auth0.com/auth0-extend/docs/assets/webtask-collection.json
 ```
 
-![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-import.png)
+![](../assets/img/postman-import.png)
 
 After clicking on `Import`, Postman will open the collection.
 
-![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-collection.png)
+![](../assets/img/postman-collection.png)
