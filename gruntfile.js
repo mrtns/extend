@@ -109,7 +109,7 @@ module.exports = function exec(grunt) {
         options: {
             cwd:  'docs'
         },
-        exec: 'jekyll build'
+        exec: 'bundle exec jekyll build'
       }
     }
   });
