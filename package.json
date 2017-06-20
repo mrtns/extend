@@ -10,9 +10,7 @@
   "description": "Auth0 Extend Samples",
   "scripts": {
     "sec-deps": "nsp check --warn-only",
-    "start": "node proxy.js",
-    "cdn": "grunt cdn",
-    "cdn-dev": "grunt cdn-dev"
+    "start": "node proxy.js"
   },
   "tags": [
     "webtask",
@@ -58,10 +56,5 @@
   },
   "bugs": {
     "url": "http://github.com/auth0/extend/issues"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-aws-s3": "^1.0.0",
-    "grunt-run": "^0.7.0"
   }
 }
