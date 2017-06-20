@@ -5,11 +5,11 @@ To install the Postman Collection you will need to have installed the Postman Ap
 Once you have Postman installed, go to `Import` menu and select `Import from link`. Then, paste the following url:
 
 ```
-https://cdn.auth0.com/auth0-extend/docs/assets/webtask-collection.json
+https://auth0.com/extend/docs/assets/webtask-collection.json
 ```
 
-![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-import.png)
+![](../assets/img/postman-import.png)
 
 After clicking on `Import`, Postman will open the collection.
 
-![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-collection.png)
+![](../assets/img/postman-collection.png)

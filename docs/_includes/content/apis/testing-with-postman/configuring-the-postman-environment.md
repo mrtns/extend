@@ -10,4 +10,4 @@ You will need to create an environment and configure the following variables:
 
 In the screenshot below you can see a Postman environment configured with both the `webtask_container`, `webtask_token` and `webtask_name` variables defined:
 
-![](https://cdn.auth0.com/auth0-extend/docs/assets/img/postman-environment.png)
+![](../assets/img/postman-environment.png)
