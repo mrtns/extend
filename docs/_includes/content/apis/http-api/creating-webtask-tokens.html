@@ -1,4 +1,4 @@
-<div>
+
   <p>The webtask token request endpoint is used to issue a new webtask token. Request provides the authenticating webtask token A1 and a JSON structure with token request parameters. Response contains newly issued token A2.</p>
   <p>Issuing new tokens is useful when you want to provide your application or specific user with a restricted capability of running webtasks. For example, you can restrict the webtask token to only execute code from a specific URL, or specify secret parameters that will be passed to that code at execution time.</p>
   <p>The request must be <strong>authenticated</strong> by specifying the A1 webtask token as the <code>key</code> URL query parameter or with the <code>Authorization</code> HTTP request header as described above. The content type of the request must be <code>application/json</code>. The body of the request must contain a JSON object representing the intended restrictions of the A2 token to be issued. The object can specify the following properties (all of them optional):</p>

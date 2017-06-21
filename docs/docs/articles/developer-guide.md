@@ -16,7 +16,7 @@ collection: "Articles"
 
 {% include include-layout.html src="content/articles/developer-guide/nodejs-programming-model.md" name="nodejs-programming-model" %}
 
-{% include include-layout.html src="content/articles/developer-guide/nodejs-modules-and-dependencies.md" name="nodejs-modules-and-dependencies" %}
+{% include include-layout.html src="content/articles/developer-guide/npm-modules.md" name="npm-modules" %}
 
 {% include include-layout.html src="content/articles/developer-guide/choose-the-extension-authoring-experience.md" name="choose-the-extension-authoring-experience" %}
 

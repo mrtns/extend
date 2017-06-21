@@ -86,15 +86,16 @@
   }
 
   .opblock-summary-path {
-    font-family: inherit !important;
+    font-family: monospace;
     font-weight: normal !important;
-    margin-left: 21px !important;
+    margin-left: 10px !important;
   }
 
   .opblock-summary.opblock-summary-get, .opblock-summary.opblock-summary-put, .opblock-summary.opblock-summary-delete, .opblock-summary.opblock-summary-post {
     border: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin-bottom: 30px;
     cursor: default;
   }
 
@@ -180,10 +181,10 @@
     box-shadow: none !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin-bottom: 21px;
+    margin-bottom: 8px;
 
     h4 {
-      font-size: 16px !important;
+      font-size: 15px !important;
       color: #5c666f !important;
       font-weight: 500;
       font-family: inherit !important;

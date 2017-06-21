@@ -1,0 +1,49 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Webtask API
+
+host: webtask.it.auth0.com
+
+schemes:
+- https
+
+paths:
+  api/env/node/modules/{module_name}:
+    get:
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: module_name
+        description: The name of the NPM module 
+        required: true
+        type: string
+      - in: header
+        name: Authorization
+        required: true
+        description: Your webtask token
+        type: string
+      responses:
+        200:
+          description: "An array that contains an entry for each version of the given NPM module that is registered with the platform.<br/><br/>Each entry will include the state of the given version of the NPM module. Possible states include: <code>available</code>, <code>queued</code> or <code>failed</code>. A version that is in the <code>available</code> state is ready to be used by a webtask. A version that is in the <code>queued</code> state is currently being processed and will be available soon. Before taking a dependency on a <code>queued</code> version, poll until the state transitions to the <code>available</code> state. For a version that is in the <code>failed</code> state, please contact support."
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/List'
+        403:
+          description: The webtask token was not provided or does not have sufficient permissions             
+
+definitions:
+  List:
+    type: object
+    properties:
+      name:
+        type: string
+        example: lodash
+      state:
+        type: string
+        example: available
+      version:
+        type: string
+        example: 4.17.4

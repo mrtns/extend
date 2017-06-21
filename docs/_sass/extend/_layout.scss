@@ -52,6 +52,12 @@
   }
 }
 
+section {
+  > p > img {
+    margin: 20px;
+  }
+}
+
 .toc-dropdown-title {
   color: #0a84ae;
   cursor: pointer;
@@ -150,3 +156,4 @@ table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, tabl
 th {
   font-weight: 400;
 }
+
