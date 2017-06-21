@@ -12,7 +12,7 @@ However, before executing a webtask that has a dependency on an NPM module, the 
 
 If your customers are using the [command line tool](#enabling-command-line-tool-for-your-users), then the tool will read the dependencies listed in the package.json file and ensure that each is registered with the platform. If the package.json file specifies a version range for the module semver, the semver will be resolved to a particular version.
 
-If your customers are using the [embedded Extend Editor](libraries/extend-editor#integration-options) then they can specify their dependencies by clicking on the editor 'Settings' icon and selecting 'NPM Modules'.
+If your customers are using the [embedded Extend Editor](libraries/extend-editor#integration-options), then they can specify their dependencies by clicking on the editor 'Settings' icon and selecting 'NPM Modules'.
 
 ![Settings > NPM Modules](https://cloud.githubusercontent.com/assets/302314/26526748/3a4aeb36-435a-11e7-939a-3248a218bd22.png)
 
