@@ -1,5 +1,5 @@
 <p>
-Before a webtask can take a dependency on an NPM module, the NPM module must be registered with the platform. A specific version of the NPM module must also be specified during registration.  Registering NPM modules allows the platform to download and install the NPM module beforehand, ensuring that the dependency is available whenever the webtask executes.
+Before a webtask can take a dependency on an NPM module, the NPM module must be registered with the platform. A specific version of the NPM module must also be specified during registration, because several versions of the same NPM module can be registered. Registering NPM modules allows the platform to download and install the NPM module beforehand, ensuring that the dependency is available whenever the webtask executes.
 </p>
 <p>
 To ensure that a given version of a given NPM module has been registered with the platform, use the following endpoint. If the given version of the NPM module has not yet been registered, it will be queued for registration with the platform.

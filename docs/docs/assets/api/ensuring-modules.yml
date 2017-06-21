@@ -9,7 +9,7 @@ schemes:
 - https
 
 paths:
-  api/env/node/modules:
+  /api/env/node/modules:
     post:
       produces:
       - application/json

@@ -20,4 +20,4 @@ Your customers can then enter the NPM module that their code will take a depende
 
 ![Adding an NPM Module](https://cloud.githubusercontent.com/assets/302314/26526749/3a525c5e-435a-11e7-9217-533066c57f33.png)
 
-If your customers are not using either the command line tool or the embedded extend editor, you will need to ensure your customers NPM modules are registered with the platform by calling the [HTTP API](api/http-api#ensuring-modules).
+If your customers are not using either the command line tool or the embedded Extend Editor, you will need to ensure your customers NPM modules are registered with the platform by calling the [HTTP API](api/http-api#ensuring-modules).
