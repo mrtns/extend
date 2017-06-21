@@ -11,8 +11,6 @@ schemes:
 paths:
   /api/webtask/{webtask_container}/{webtask_name}/data:
     get:
-      description:
-        Exporting data
       produces:
       - application/json
       parameters:
@@ -35,7 +33,7 @@ paths:
         200:
           description: The data associated to your webtask
         403:
-          description: The webtask token is not submitted with the request or does not grant sufficient permissions.
+          description: The webtask token was not provided or does not have sufficient permissions
                     
     put:
       description:

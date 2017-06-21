@@ -6,6 +6,8 @@ permalink: docs/api/http-api
 collection: "API"
 --- 
 
+{::options parse_block_html="true" /}
+
 {% include swagger.html name="webtask-creation" %}
 
 {% include swagger.html name="webtask-listing" %}
@@ -21,5 +23,11 @@ collection: "API"
 {% include swagger.html name="revoking-webtask-tokens" %}
 
 {% include swagger.html name="inspecting-webtask-tokens" %}
+
+{% include swagger.html name="listing-modules" %}
+
+{% include swagger.html name="ensuring-modules" %}
+
+{::options parse_block_html="false" /}
 
 {% include feedback.html src="http-api" %}

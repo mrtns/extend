@@ -1,15 +1,22 @@
-<div id="{{ include.name }}" class="layout scrollspy js-swagger"  style="padding-top:150px; margin-bottom:-140px">
-  <h3 style="text-transform: capitalize;">{{ include.name | replace: '-', ' ' | capitalize }}</h3>
+{% for collection in site.data.outline %}
+{% if collection.title == 'API' %}
+{% for page in collection.subcategories %}
+{% if page.title == 'HTTP API' %}
+{% for section in page.items %}
+{% if section.name == include.name %}
+
+<div id="{{ section.name }}" class="layout scrollspy js-swagger"  style="text-align: justify;padding-top:150px; margin-bottom:-140px">
+  <h2>{{ section.title }}</h2>
   
   {% include content/apis/http-api/{{include.name}}.html %}
 
-  <div id="{{ include.name }}-swagger"></div>
+  <div id="{{ section.name }}-swagger"></div>
 
 
   <script>
     SwaggerUIBundle({
-      url: "../assets/api/{{ include.name }}.yml",
-      dom_id: '#{{ include.name }}-swagger',
+      url: "../assets/api/{{ section.name }}.yml",
+      dom_id: '#{{ section.name }}-swagger',
       presets: [
         SwaggerUIBundle.presets.apis
       ]
@@ -19,12 +26,12 @@
       window.SwaggerRenderers = {}
     }
 
-    window.SwaggerRenderers['{{ include.name }}'] = setInterval(function () {
-      var $el = $('#{{ include.name }}.js-swagger').html();
+    window.SwaggerRenderers['{{ section.name }}'] = setInterval(function () {
+      var $el = $('#{{ section.name }}.js-swagger').html();
 
       if ($el.indexOf('No spec provided.') !== -1) {
-        window.clearInterval(window.SwaggerRenderers['{{ include.name }}']);
-        delete window.SwaggerRenderers['{{ include.name }}'];
+        window.clearInterval(window.SwaggerRenderers['{{ section.name }}']);
+        delete window.SwaggerRenderers['{{ section.name }}'];
         if (Object.keys(window.SwaggerRenderers).length === 0) {
           setTimeout(function() {
             var currentRef = window.location.href;
@@ -48,3 +55,10 @@
     }, 1);
   </script>
 </div>
+
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}

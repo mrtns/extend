@@ -43,7 +43,7 @@ paths:
             items:
               $ref: '#/definitions/List'
         403:
-          description: The webtask token is not submitted with the request or does not grant sufficient permissions.              
+          description: The webtask token was not provided or does not have sufficient permissions              
 
 definitions:
   List:

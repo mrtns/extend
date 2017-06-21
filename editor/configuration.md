@@ -85,12 +85,8 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "loader": {
     "enabled": "boolean",
     "messages": "array"
-  },
-  "integrations": {
-    "enabled": "boolean",
-    "github": "boolean"
   }
 }
 ```
 
-Last update: `6/17/2017`.
+Last update: `6/21/2017`.
