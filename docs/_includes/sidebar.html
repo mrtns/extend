@@ -22,9 +22,13 @@
             <a id="{{ subcategory.name }}" class="js-subcategory {{ isActive }}" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
             <ul class="sidebar-item-list sidebar-item-list-depth1 {{ isCurrent }}">
             {% for item in subcategory.items %}
-              <li class="sidebar-item sidebar-item-depth1 ">
-                <a class="js-subcategory-item {{ isSubActive }}" href="{{ item.href }}">{{ item.title }}</a>
-              </li>
+              {% if item.name == "divider" %}
+                <div class="sidebar-item sidebar-item-depth1 divider"></div>
+              {% else %}
+                <li class="sidebar-item sidebar-item-depth1">
+                  <a class="js-subcategory-item {{ isSubActive }}" href="#{{ item.name }}">{{ item.title }}</a>
+                </li>
+              {% endif %}
             {% endfor %}
             </ul>
           </li>

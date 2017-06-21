@@ -11,7 +11,6 @@ schemes:
 paths:
   /api/webtask/{webtask_container}:
     delete:
-      description: To delete cached information of all webtasks associated with a specific webtask container.
       produces:
       - application/json
       parameters:
@@ -27,11 +26,11 @@ paths:
         type: string
       responses:
         204:
-          description: Cache has been successfuly cleaned up and some artifacts were removed in the process.
+          description: Cache has been successfuly cleaned up and some artifacts were removed in the process
         403:
-          description: The webtask token is not submitted with the request or does not grant sufficient permissions.
+          description: The webtask token was not provided or does not have sufficient permissions
         404:
-          description: Cache did not contain any artifacts to be removed.
+          description: Cache did not contain any artifacts to be removed
 
   /api/webtask/{webtask_container}/{webtask_name}:
     delete:

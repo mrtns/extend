@@ -33,4 +33,4 @@ paths:
         204:
           description: The webtask was deleted successfully
         403:
-          description: The webtask token is not submitted with the request or does not grant sufficient permissions.
+          description: The webtask token was not provided or does not have sufficient permissions
