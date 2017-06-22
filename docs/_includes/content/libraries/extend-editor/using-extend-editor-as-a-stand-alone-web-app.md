@@ -3,7 +3,7 @@
 You can run the Extend Editor as a stand alone web application instead of embedding it within your web site. Hosted version of the Extend Editor is already part of your Auth0 Extend installation, and you can provide individual [configuration parameters]() within the URL itself as follows: 
 
 ```
-{host_url}/edit/{webtask_container}#webtaskName={webtask_name}&token={webtask_token}&...
+{host_url}/edit/{webtask_container}#/{webtask_name}/{webtask_token}
 ```
 
 The **{host_url}**, **{webtask_container}**, **{webtask_token}**, and **{webtask_name}** parameters are the same as you would otherwise specify when [hosting the editor in your web site](#hosting-extend-editor-in-your-web-site). You can specify any other parameters of the configuration object as corresponding params of the URL hash. 
