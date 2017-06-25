@@ -40,7 +40,7 @@
     }
 
     img {
-      max-width: 100%;
+      max-width: calc(100% - 40px);
       box-sizing: content-box;
       background-color: #fff;
     }
