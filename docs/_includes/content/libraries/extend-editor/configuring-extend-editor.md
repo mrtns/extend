@@ -74,7 +74,7 @@ paramsEditor.defaultParams | A hash of params names to string params values.
 paramsEditor.expand | Automatically expand the params section
 [bodyEditor](#bodyeditor-object) | Determines whether and how the editor displays the HTTP request body editor section for executing the extensions. Set to `false` to disable the the ability to manipulate request body, or to an object with options as outlined below. 
 bodyEditor.typeSelector | Determines whether to show the request body type selector. 
-bodyEditor.defaultType | Allowed types are `raw`, `json`, `x-www-form-urlencoded`. 
+bodyEditor.defaultType | Allowed types are `raw`, `form-data`, `x-www-form-urlencoded`. 
 bodyEditor.expand | Automatically expand the body section
 bodyEditor.rawTypeOptions.defaultMode | Determines the default mode for editing raw request body. Allowed values are `json`, `xml`, or `text`. 
 bodyEditor.rawTypeOptions.enabled | Determines whether to allow the user to change the mode of editg the rawType option. 
