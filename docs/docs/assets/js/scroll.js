@@ -1,19 +1,31 @@
 $(document).ready(function(){
   $('.scrollspy').scrollSpy({ scrollOffset: 30 });
-  var $navbar = $(".site-header");
-  var $header = $("#page-header");
-  var $docTitle = $(".doc-title");
-  var height = $navbar.outerHeight();
+  var $navbar = $(".site-header"),
+      $header = $("#page-header"),
+      $docTitle = $(".doc-title"),
+      $sidebar = $(".sidebar-container"),
+      $content = $(".docs-content");
+  
 
   function handleScroll() {
-    var scrollTop = $(this).scrollTop();
-      var top = scrollTop > height ? height : scrollTop;
-      $header.css({ top:  -top + 'px' })
-      if (scrollTop > height) {
-        $docTitle.addClass("shrink");
-      } else {
-        $docTitle.removeClass("shrink");
-      }
+    var scrollTop = $(this).scrollTop(),
+        sidebarHeight = $sidebar.outerHeight(),
+        navbarHeight = $navbar.outerHeight(),
+        contentHeight = $content.outerHeight(),
+        top = scrollTop > navbarHeight ? navbarHeight : scrollTop;
+
+    $header.css({ top:  -top + 'px' })
+    if (scrollTop > navbarHeight) {
+      $docTitle.addClass("shrink");
+    } else {
+      $docTitle.removeClass("shrink");
+    }
+    
+    if (contentHeight - scrollTop <= sidebarHeight) {
+      $sidebar.css({ top: (contentHeight - sidebarHeight - scrollTop) + 'px' })
+    } else {
+      $sidebar.css({ top: 0 + 'px' })
+    }
   }
 
   $(document).scroll(handleScroll);
