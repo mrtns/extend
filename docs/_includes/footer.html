@@ -29,24 +29,6 @@
 </footer>
 
 <script>
-  $(window).load(function(){
-    $(".sidebar-container").sticky({ 
-      wrapperClassName: 'col-md-3',
-      topSpacing: 65
-    });
-
-    $(".navigation-bar").sticky({
-      zIndex: 11
-    });
-
-    $(".sticky-title").sticky({
-      topSpacing: 67,
-      zIndex: 11
-    });
-  });
-</script>
-
-<script>
   var Auth0ContactForm = window.Auth0ContactForm.default;
   var ContactForm = Auth0ContactForm.ContactForm;
 
@@ -57,10 +39,8 @@
     });
     contactForm.show();
   }
-</script>
 
-<script>
-    var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
+  var lock = new Auth0Lock('wTlTfy6TFnhOHA0QJebuF2AW65WDc1zS', 'auth0.auth0.com', {
     socialButtonStyle: 'big',
     auth: {
       redirectUrl: 'https://auth0.com/extend/callback'

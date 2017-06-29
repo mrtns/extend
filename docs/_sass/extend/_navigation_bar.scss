@@ -1,5 +1,8 @@
 .navigation-bar {
   background: #f5f7f9;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
 
   @media (min-height: 992px) {
     white-space: nowrap;
@@ -55,61 +58,6 @@
     background: white;
     width: 100%;
     z-index: 800;
-  }
-
-  .search-form {
-    padding: 0;
-    padding-top: 16px;
-    float: right;
-    width: 30%;
-
-    @media (min-height: 992px) {
-      padding-top: 8px;
-      padding-bottom: 6px;
-      display: inline-block;
-      margin-right: 10px;
-      vertical-align: top;
-    }
-
-    @media (min-height: 992px) {
-      padding-top: 16px;
-      float: right;
-      width: 30%;
-    }
-
-    .navigation-bar-search {
-      @media (min-height: 992px) {
-        min-width: 32px;
-        min-height: 35px;
-      }
-
-      .form-control {
-        // Disable input animation on focus
-        &:focus {
-          text-indent: 26px;
-        }
-
-        @media (min-height: 992px) {
-          display: none;
-          background-color: transparent;
-          width: 0;
-          font-size: 16px;
-        }
-      }
-
-      // Reset default label styles
-      label {
-        display: inline;
-        margin-bottom: 0;
-      }
-
-      i {
-        @media (min-height: 992px) {
-          left: 9px;
-          cursor: pointer;
-        }
-      }
-    }
   }
 
   .navigation-bar-tabs {

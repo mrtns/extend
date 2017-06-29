@@ -1,4 +1,5 @@
 - title: Articles
+  name: articles
   href: /extend/docs
   subcategories:
     - title: What is Auth0 Extend
@@ -85,6 +86,7 @@
           name: premium-support
 
 - title: API
+  name: apis
   href: /extend/docs/api/http-api
   subcategories:
     - title: HTTP API
@@ -128,6 +130,7 @@
           name: storing-tokens-in-postman-variables
 
 - title: Libraries
+  name: libraries
   href: /extend/docs/libraries/extend-editor
   subcategories:
     - title: Extend Editor

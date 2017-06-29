@@ -10,6 +10,7 @@ header {
     
   &.site-header {
     border-bottom: 1px solid #e2e2e2;
+    background-color: #FFF;
     
     a {
       &.login {
@@ -55,10 +56,6 @@ header {
     .post-signup, .pre-signup {
       li {
         border: none;
-        
-        // &:first-child {
-        //   border-top: 1px solid #f1f1f1;
-        // }
       }
     }
   }

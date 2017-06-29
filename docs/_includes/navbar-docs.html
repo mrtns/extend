@@ -1,4 +1,4 @@
-<div class="navigation-bar ">
+<div class="navigation-bar">
   <div class="container">
     <ul class="navigation-bar-tabs nav nav-tabs">
       {% for collection in site.data.outline %}
@@ -12,5 +12,13 @@
         </li>
       {% endfor %}
     </ul>
+    <form class="search search-container">
+       <i class="search icon-budicon-489"></i>
+       <input class="search search-input" id="search-input" type="search" autocomplete="off" placeholder="Search" required>
+       </input>
+       <div id="search-results" class="search search-results">
+
+      </div>
+    </form>
   </div>
 </div>  
