@@ -19,26 +19,26 @@
           {% include navbar-site.html %}
           {% include navbar-docs.html current=collection.title %}
           <div class="container">
-              <div class="row">
-                <div class="sidebar-container col-md-3">
-                  {% include sidebar.html current=collection %}
-                </div>
-                <div class="col-md-9">
-                  <div class="docs-content-container">
-                    <div class="doc-title">
-                      <h1>{{ page.title }}</h1>
-                    </div>
+            <div class="row">
+              <div class="sidebar-container col-md-3">
+                {% include sidebar.html current=collection %}
+              </div>
+              <div class="col-md-9">
+                <div class="docs-content-container">
+                  <div class="doc-title">
+                    <h1>{{ page.title }}</h1>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
 
         <main class="page-content" style="padding-top: 250px" aria-label="Content">
           <div class="wrapper">
             <div class="container">
               <div class="row">
-                <div class="col-md-3"></div>
+                <div class="sidebar-placeholder col-md-3"></div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
                     <article class="docs-content" style="margin-top:-120px">
