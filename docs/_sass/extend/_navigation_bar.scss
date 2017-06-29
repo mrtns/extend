@@ -1,7 +1,7 @@
 .navigation-bar {
   background: #f5f7f9;
   z-index: 10;
-  position: absolute;
+  position: fixed;
   width: 100%;
 
   @media (min-height: 992px) {
