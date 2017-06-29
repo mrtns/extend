@@ -77,7 +77,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "defaultEditor": "string",
   "allowHashParams": "boolean",
   "expand": {
-    "left": "explorer|secrets|meta|dependencies|github|scheduler|templates",
+    "left": "explorer|secrets|meta|dependencies|scheduler|templates",
     "right": "runner",
     "bottom": "logs"
   },
@@ -85,6 +85,10 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "loader": {
     "enabled": "boolean",
     "messages": "array"
+  },
+  "integrations": {
+    "enabled": "boolean",
+    "github": "boolean"
   }
 }
 ```
