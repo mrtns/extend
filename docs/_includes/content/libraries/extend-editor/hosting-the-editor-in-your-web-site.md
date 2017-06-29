@@ -1,4 +1,4 @@
-#### Hosting Extend Editor in Your Web Site
+#### Hosting the Editor in Your Web Site
 
 Extend Editor can be hosted within your own web site and customized to provide your users with the most streamlined, built-in experience. Extend Editor can be added with just a few lines of script: 
 

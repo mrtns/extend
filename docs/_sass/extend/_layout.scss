@@ -1,7 +1,7 @@
 @import "header";
 @import "footer";
 @import "navigation_bar";
-@import "search_control";
+@import "search";
 @import "sidebar";
 @import "docs";
 @import "feedback-footer";
@@ -16,18 +16,13 @@
   }
 }
 
-.is-sticky {
-  .sticky-title {
-    height: 84px;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    
-    h1 {
-      font-size: 28px;
-    }
-  }
+#page-header {
+  position:fixed;
+  width: 100%;
+  z-index:10;
 }
 
-.sticky-title {
+.doc-title {
   background-color: #fff;
   height: 96px;
   display: flex;
@@ -38,6 +33,15 @@
     display: inline;
     margin: 0 !important;
     transition: font-size 0.5s;
+  }
+
+  &.shrink {
+    height: 84px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 10px;
+    h1 {
+      font-size: 28px;
+    }
   }
 
   .toc-dropdown {
@@ -119,13 +123,6 @@ section {
   .item-link-depth-2 {
       color: #777;
       padding: 4px 0;
-  }
-}
-
-#sticky-wrapper {
-  .sidebar-container {
-    width: 100%;   
-    padding: 0;
   }
 }
 

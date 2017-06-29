@@ -1,7 +1,7 @@
-{% if page.collection == 'Articles' %} 
-  {% assign assets_url= "assets" %} 
-{% else %} 
-  {% assign assets_url= "../assets" %} 
+{% if collection.name == "articles" %}
+  {% assign assets_url = "assets" %}
+{% else %}
+  {% assign assets_url = "../assets" %}
 {% endif %}
 
 <meta charset="utf-8">
@@ -34,13 +34,27 @@
 <link rel="stylesheet" href="{{ assets_url }}/main.css">
 <link rel="stylesheet" href="{{ assets_url }}/swagger-ui.css">
 <link rel="canonical" href="{{ page.url | replace:" index.html "," | absolute_url }} ">
+
 <link rel="alternate " type="application/rss+xml " title="{{ site.title | escape }} " href="{{ "/feed.xml" | relative_url }} ">
 <link rel="icon " type="image/png " href="//auth0.com/extend/favicon-16x16.png " sizes="16x16 ">
 <link rel="icon " type="image/png " href="//auth0.com/extend/favicon-32x32.png " sizes="32x32 ">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono " rel="stylesheet ">
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js "></script>
-<script src="{{ assets_url }}/js/jquery.sticky.js "></script>
 <script src="{{ assets_url }}/js/materialize.js "></script>
+<script src="{{ assets_url }}/js/search.js "></script>
+<script src="{{ assets_url }}/js/scroll.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.0.1/lunr.min.js"></script>
 <script src="https://cdn.auth0.com/js/lock/10.12.1/lock.min.js "></script>  
 <script src="https://cdn.auth0.com/auth0-extend/assets/contact-form.js "></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    search({ searchDataPath: "{{ assets_url }}/search.json" })
+  });
+</script>
+
+{% if collection.name == "apis" %}
+<script src="{{ assets_url }}/js/swagger-ui-bundle.js"></script>
+<script src="{{ assets_url }}/js/swagger-ui-standalone-preset.js"></script>
+{% endif %}

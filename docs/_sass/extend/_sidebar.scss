@@ -28,13 +28,6 @@ body {
     // padding-right: 0;
     z-index: 5;
   }
-
-  // Fix react-sticky placeholder height bug (only on mobile)
-  .sticky {
-    @media (min-width: 992px) {
-      height: 60px;
-    }
-  }
 }
 
 .sidebar {
