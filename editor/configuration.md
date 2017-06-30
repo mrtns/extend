@@ -89,7 +89,8 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "integrations": {
     "enabled": "boolean",
     "github": "boolean"
-  }
+  },
+  "poweredBy": "boolean"
 }
 ```
 
