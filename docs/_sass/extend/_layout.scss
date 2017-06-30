@@ -17,18 +17,18 @@
 }
 
 #page-header {
-  position:fixed;
   width: 100%;
-  z-index:10;
 }
 
 .doc-title {
+  position: fixed;
   background-color: #fff;
   margin-top: 60px;
   height: 96px;
   display: flex;
   align-items: flex-end;
   width: 716px !important;
+  z-index: 9;
 
   h1 {
     display: inline;

@@ -20,13 +20,14 @@ body {
 }
 
 .sidebar-container {
-  overflow: auto;
   height: 100%;
-  margin-top: 60px;
+  
 }
 
 .sidebar {
-  position: relative;
+  position: fixed;
+  width: 254px;
+  margin-top: 70px;
   
   @media (min-width: 992px) {
     padding-top: $sidebar-top-padding;
