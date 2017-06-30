@@ -64,7 +64,8 @@ Several aspects of the Extend Editor can be controlled throught the options obje
       "defaultType": "raw|form-data|x-www-form-urlencoded",
       "rawTypeOptions": {
         "enabled": "boolean",
-        "defaultMode": "json|xml|text"
+        "availableModes": "array",
+        "defaultMode": "json|xml|text|csv"
       },
       "expand": "boolean"
     },
