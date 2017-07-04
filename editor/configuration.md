@@ -41,6 +41,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "allowEditingDependencies": "boolean",
   "allowAccessingLogs": "boolean",
   "allowEditingSchedule": "boolean",
+  "allowEditingStorage": "boolean",
   "allowSwitchingTemplates": "boolean",
   "allowCreatingFromTemplate": "boolean",
   "runner": {
@@ -78,7 +79,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "defaultEditor": "string",
   "allowHashParams": "boolean",
   "expand": {
-    "left": "explorer|secrets|meta|dependencies|scheduler|templates",
+    "left": "explorer|secrets|meta|dependencies|scheduler|storage|templates",
     "right": "runner",
     "bottom": "logs"
   },
