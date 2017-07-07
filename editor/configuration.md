@@ -41,6 +41,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "allowEditingDependencies": "boolean",
   "allowAccessingLogs": "boolean",
   "allowEditingSchedule": "boolean",
+  "allowEditingStorage": "boolean",
   "allowSwitchingTemplates": "boolean",
   "allowCreatingFromTemplate": "boolean",
   "runner": {
@@ -64,7 +65,8 @@ Several aspects of the Extend Editor can be controlled throught the options obje
       "defaultType": "raw|form-data|x-www-form-urlencoded",
       "rawTypeOptions": {
         "enabled": "boolean",
-        "defaultMode": "json|xml|text"
+        "availableModes": "array",
+        "defaultMode": "json|xml|text|csv"
       },
       "expand": "boolean"
     },
@@ -77,7 +79,7 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "defaultEditor": "string",
   "allowHashParams": "boolean",
   "expand": {
-    "left": "explorer|secrets|meta|dependencies|github|scheduler|templates",
+    "left": "explorer|secrets|meta|dependencies|scheduler|storage|templates",
     "right": "runner",
     "bottom": "logs"
   },
@@ -85,8 +87,13 @@ Several aspects of the Extend Editor can be controlled throught the options obje
   "loader": {
     "enabled": "boolean",
     "messages": "array"
-  }
+  },
+  "integrations": {
+    "enabled": "boolean",
+    "github": "boolean"
+  },
+  "poweredBy": "boolean"
 }
 ```
 
-Last update: `6/23/2017`.
+Last update: `7/7/2017`.
