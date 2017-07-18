@@ -15,7 +15,10 @@ Extend Editor can be hosted within your own web site and customized to provide y
       hostUrl: '{host_url}',
       webtaskContainer: '{webtask_container}',
       token: '{webtask_token}',
-      webtaskName: 'webtask-sample'
+      webtaskName: 'webtask-sample',
+      // If `webtask-sample` does not exist, Extend editor will create 
+      // a webtask `webtask-sample` with a sample code.
+      createIfNotExists: true 
     });
   </script>
 </body>

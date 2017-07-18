@@ -25,6 +25,7 @@ webtaskUrl | The base URL of the Auth0 Extend deployment to use. If you are an A
 [allowDeleting](#allowdeleting-boolean) | Determines whether the user can delete a webtask or not.
 [allowEditingDependencies](#alloweditingdependencies-boolean) | Determines whether the user can edit `npm` dependencies or not.
 [preventClosingWindowIfDirty](#preventclosingWindowifdirty-boolean) | Determines if Extend editor should check for browser closing event.
+[createIfNotExists](#createifnotexists-object) | If `webtaskName` is provided, determines if Extend editor should create a webtask if the name provided does not exist.
 
 ### Header Options
 
@@ -284,6 +285,49 @@ The default value is `true`.
 ```javascript
 var options = {
   preventClosingWindowIfDirty: true
+}
+```
+
+### createIfNotExists {object}
+
+The default value is `false`.
+
+```javascript
+// If `my-webtask` does not exist, Extend editor will create 
+// a webtask `my-webtask` with the following code:
+//
+//  module.exports = function(context, cb) {
+//    cb(null, { hello: 'world' });
+//  }; 
+
+var options = {
+  webtaskName: 'my-webtask',
+  createIfNotExists: true
+}
+```
+
+```javascript
+// If `my-webtask` does not exist, Extend editor will create 
+// a webtask `my-webtask` with the code at `my-category`.`empty-function`.
+
+var options = {
+  webtaskName: 'my-webtask',
+  createIfNotExists: {
+    enabled: true,
+    category: 'my-category'
+  },
+  categories: [{
+    name: 'my-category',
+    templates: [{
+      default: true,
+      name: 'empty-function',
+      code: [
+        'module.exports = function(context, cb) {',
+        '  cb(null, { hello: \'world\' });',
+        '};',
+      ].join('\n')
+    }]
+  }]
 }
 ```
 
