@@ -16,6 +16,8 @@ collection: "Libraries"
 
 {% include include-layout.html src="content/libraries/extend-editor/using-extend-editor-as-a-stand-alone-web-app.md" name="using-extend-editor-as-a-stand-alone-web-app"%} 
 
+{% include include-layout.html src="content/libraries/extend-editor/npm-modules.md" name="npm-modules"%} 
+
 {::options parse_block_html="false" /}
 
 {% include feedback.html src="libraries/extend-editor" %}

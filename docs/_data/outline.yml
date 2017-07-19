@@ -145,6 +145,8 @@
           name: configuring-extend-editor
         - title: Using Extend Editor as a Stand Alone Web App
           name: using-extend-editor-as-a-stand-alone-web-app 
+        - title: NPM Modules
+          name: npm-modules
 
     - title: Logs Viewer
       name: logs-viewer
