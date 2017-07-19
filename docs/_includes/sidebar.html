@@ -1,40 +1,48 @@
 <div class="sidebar">
-  {% for collection in site.data.outline %}
-    {% if collection.title == page.collection %}
-      <div class="section-title">{{ collection.title }}</div>
-      <ul class="sidebar-item-list sidebar-item-list-depth0">
-        <div class="mobile-dropdown-content scrollable">
-        {% for subcategory in collection.subcategories %}
-          <li class="sidebar-item sidebar-item-depth0">
-            {% if page.url contains subcategory.name %}
-              {% assign isActive = "active" %}
-              {% assign isCurrent = "is-current" %}
-            {% else %}  
-              {% assign isActive = "" %}
-              {% assign isCurrent = "" %}
-            {% endif %}
-
-            {% if page.url == "/docs/" and subcategory.name == 'what-is-auth0-extend' %}
-              {% assign isActive = "active" %}
-              {% assign isCurrent = "is-current" %}
-            {% endif %}
-
-            <a id="{{ subcategory.name }}" class="js-subcategory {{ isActive }}" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
-            <ul class="sidebar-item-list sidebar-item-list-depth1 {{ isCurrent }}">
-            {% for item in subcategory.items %}
-              {% if item.name == "divider" %}
-                <div class="sidebar-item sidebar-item-depth1 divider"></div>
-              {% else %}
-                <li class="sidebar-item sidebar-item-depth1">
-                  <a class="js-subcategory-item {{ isSubActive }}" href="#{{ item.name }}">{{ item.title }}</a>
-                </li>
+  <div class="sidebar-mobile-header js-sidebar-mobile-header">
+    <span class="js-active-category">Active category</span>
+    <span> > </span>
+    <span class="js-active-subcategory">Active subcategory</span>
+    <i class="sidebar-mobile-header-icon icon-budicon-460"></i>
+  </div>
+  <div class="sidebar-mobile-content js-sidebar-mobile-content">
+    {% for collection in site.data.outline %}
+      {% if collection.title == page.collection %}
+        <div class="section-title">{{ collection.title }}</div>
+        <ul class="sidebar-item-list sidebar-item-list-depth0">
+          <div class="mobile-dropdown-content scrollable">
+          {% for subcategory in collection.subcategories %}
+            <li class="sidebar-item sidebar-item-depth0">
+              {% if page.url contains subcategory.name %}
+                {% assign isActive = "active" %}
+                {% assign isCurrent = "is-current" %}
+              {% else %}  
+                {% assign isActive = "" %}
+                {% assign isCurrent = "" %}
               {% endif %}
-            {% endfor %}
-            </ul>
-          </li>
-        {% endfor %}
-        </div>
-      </ul>
-    {% endif %}
-  {% endfor %}
+
+              {% if page.url == "/docs/" and subcategory.name == 'what-is-auth0-extend' %}
+                {% assign isActive = "active" %}
+                {% assign isCurrent = "is-current" %}
+              {% endif %}
+
+              <a id="{{ subcategory.name }}" class="js-subcategory {{ isActive }}" href="{{ subcategory.href }}">{{ subcategory.title }}</a>
+              <ul class="sidebar-item-list sidebar-item-list-depth1 {{ isCurrent }}">
+              {% for item in subcategory.items %}
+                {% if item.name == "divider" %}
+                  <div class="sidebar-item sidebar-item-depth1 divider"></div>
+                {% else %}
+                  <li class="sidebar-item sidebar-item-depth1">
+                    <a class="js-subcategory-item {{ isSubActive }}" href="#{{ item.name }}">{{ item.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+          </div>
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>

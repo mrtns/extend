@@ -21,13 +21,22 @@ body {
 
 .sidebar-container {
   height: 100%;
-  
+
+  @media(max-width: 992px) {
+    padding: 0;
+  }
 }
 
 .sidebar {
   position: fixed;
   width: 254px;
-  margin-top: 70px;
+  margin-top: 67px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+  }
   
   @media (min-width: 992px) {
     padding-top: $sidebar-top-padding;
@@ -44,6 +53,45 @@ body {
     }
   }
 
+  .sidebar-mobile-header {
+    height: 60px;
+    line-height: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 0 40px 0 15px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+
+    .sidebar-mobile-header-icon {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .sidebar-mobile-content {
+    padding: 0 15px;
+    height: calc(100vh - 127px);
+    overflow: scroll;
+
+    &.visible {
+      display: block;
+    }
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
   .section-title {
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -52,9 +100,9 @@ body {
     height: $section-title-height;
     color: $color-text-light;
 
-    // @media (min-width: 992px) {
-    //   display: none;
-    // }
+    @media (max-width: 992px) {
+      display: none;
+    }
 
     @media (min-width: 992px) {
       position: relative;
@@ -250,75 +298,6 @@ body {
           right: auto;
         }
       }
-    }
-  }
-
-  .mobile-dropdown-trigger {
-    width: 100%;
-    border-bottom: 1px solid rgba(black, 0.1);
-    background-color: white;
-    position: relative;
-    height: 60px;
-    cursor: pointer;
-
-    @media (min-width: 992px) {
-      display: none;
-    }
-  }
-
-  .mobile-dropdown-title {
-    margin: 0;
-    height: 60px;
-    line-height: 60px;
-    font-size: 15px;
-    font-weight: $font-weight-bold;
-    position: relative;
-
-    > span {
-      display: block;
-      white-space: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
-      line-height: 60px;
-      height: 60px;
-      padding-left: 15px;
-      padding-right: 70px;
-
-      > .arrow-icon {
-        font-size: 12px;
-        color: $color-text-light;
-        position: relative;
-        top: 1px;
-        margin-left: 4px;
-        margin-right: 4px;
-      }
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 15px;
-      width: 80px;
-      background-color: white;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 40%);
-    }
-  }
-
-  .mobile-dropdown-icon {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-  }
-
-  .mobile-dropdown-content {
-    background-color: white;
-
-    @media (min-width: 992px) {
-      height: calc(100% - 60px);
-      overflow-y: scroll;
     }
   }
 }

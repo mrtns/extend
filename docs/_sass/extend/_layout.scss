@@ -20,43 +20,6 @@
   width: 100%;
 }
 
-.doc-title {
-  position: fixed;
-  background-color: #fff;
-  margin-top: 60px;
-  height: 96px;
-  display: flex;
-  align-items: flex-end;
-  width: 716px !important;
-  z-index: 9;
-
-  h1 {
-    display: inline;
-    margin: 0 !important;
-    transition: font-size 0.5s;
-  }
-
-  &.shrink {
-    height: 84px;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    padding-bottom: 10px;
-    h1 {
-      font-size: 28px;
-    }
-  }
-
-  .toc-dropdown {
-    float: right;
-
-    &:hover {
-      .toc-dropdown-content {
-        opacity: 1;
-        visibility: visible;
-      } 
-    }
-  }
-}
-
 section {
   > p > img {
     margin: 20px;
