@@ -25,6 +25,7 @@
       color: #5C666F !important;
       font-family: inherit !important;
       font-weight: normal !important;
+      min-width: 100px;
     }
   }
 
@@ -83,6 +84,10 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
     // margin-bottom: 8px !important;
+  }
+
+  .opblock-summary {
+    overflow-x: scroll;
   }
 
   .opblock-summary-path {

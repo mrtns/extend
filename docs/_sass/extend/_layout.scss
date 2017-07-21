@@ -96,6 +96,8 @@ table {
   margin-bottom: 28px;
   border-spacing: 0;
   border-collapse: collapse;
+  display: block;
+  overflow-x: scroll;
 }
 
 table>thead>tr>th {
