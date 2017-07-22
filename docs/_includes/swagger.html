@@ -5,7 +5,7 @@
 {% for section in page.items %}
 {% if section.name == include.name %}
 
-<div id="{{ section.name }}" class="layout scrollspy js-swagger"  style="text-align: justify;padding-top:150px; margin-bottom:-140px">
+<div id="{{ section.name }}" class="layout scrollspy js-swagger">
   <h2>{{ section.title }}</h2>
   
   {% include content/apis/http-api/{{include.name}}.html %}

@@ -1,6 +1,7 @@
 function search(options) {
   var $input = $(".search-input"),
       $results = $(".search-results"),
+      $navigationBar = $(".navigation-bar"),
       loaded = false,
       searching = false,
       selecting = false,
@@ -82,6 +83,7 @@ function search(options) {
     if (loaded) {
       searching = false;
       $input.removeClass("search-input-extended");
+      $navigationBar.removeClass("search-active");
       $input.val("");
       exitSearchSelect()
     }
@@ -98,6 +100,7 @@ function search(options) {
   function enterSearch() {
     if (loaded) {
       $input.addClass("search-input-extended");
+      $navigationBar.addClass("search-active");
     } else {
       exitSearch();
     }

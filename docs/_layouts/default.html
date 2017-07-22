@@ -23,25 +23,22 @@
               <div class="sidebar-container col-md-3">
                 {% include sidebar.html current=collection %}
               </div>
-              <div class="col-md-9">
-                <div class="docs-content-container">
-                  <div class="doc-title">
-                    <h1>{{ page.title }}</h1>
-                  </div>
-                </div>
-              </div>
+              <div class="col-md-9"></div>
             </div>
           </div>
         </div>
 
-        <main class="page-content" style="padding-top: 140px" aria-label="Content">
+        <main class="page-content" aria-label="Content">
           <div class="wrapper">
             <div class="container">
               <div class="row">
                 <div class="sidebar-placeholder col-md-3"></div>
                 <div class="col-md-9">
                   <div class="docs-content-container">
-                    <article class="docs-content" style="margin-top:-120px">
+                    <div class="doc-title">
+                      <h1>{{ page.title }}</h1>
+                    </div>
+                    <article class="docs-content">
                       {{ content }}
                     </article>
                   </div>
