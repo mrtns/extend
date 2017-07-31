@@ -44,7 +44,7 @@
             setTimeout(function() {
               $('p').filter(function() {
                 return $(this).text() === 'Your webtask token';
-              }).html('Your webtask token. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
+              }).html('Value should be \'Bearer: {your-token}\'. Navigate to <a style="cursor: pointer;" target="_blank" href="https://auth0.com/extend/try">extend/try</a> to get your token.');
             }, 200);
 
             $('.scrollspy')
