@@ -1,5 +1,6 @@
-body.prevent-scroll {
-  overflow: hidden;
+::-webkit-scrollbar {
+  width: 1px;
+  background: transparent;
 }
 
 .docs-content-container {
