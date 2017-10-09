@@ -264,7 +264,7 @@ var options = {
 
 ### allowEditingDependencies {boolean}
 
-The default value is `false`.
+The default value is `true`.
 
 ```javascript
 var options = {
