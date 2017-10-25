@@ -10,6 +10,11 @@ function createExtendEditorConfig(options) {
             enabled: true,
             displayName: true
         },
+        fullscreen: {
+            enabled: true,
+            height: '100%',
+            width: '100%'
+        },        
         allowRenaming: false,
         allowDeleting: false,
         allowCreating: false,
@@ -27,7 +32,7 @@ function createExtendEditorConfig(options) {
                 defaultHeaders: {
                     'Content-Type': 'application/json',
                     Authorization: function (secrets) {
-                    var token = secrets ? secrets['auth0-extension-secret'] : '';
+                    var token = secrets ? secrets['wt-auth-secret'] : '';
                     return 'Bearer ' + token;
                     }
                 }
@@ -52,42 +57,67 @@ function getExtensibilityPointCode(extensibilityPoint) {
         '// This code will execute whenever an opportunity is changed.',
         '// Use 1000+ Node.js modules here. ',
         '',
-        'module.exports = function(ctx, cb) {',
-        '  console.log(\'On opportunity changed:\', ctx.body);',
-        '  var opportunity = ctx.body;',
+        'module.exports = function(oppty, cb) {',
+        '  console.log(\'On opportunity changed:\', oppty);',
         '  ',
-        '  if (opportunity.size > 1000) {',
+        '  if (oppty.size > 1000) {',
         '    // send e-mail to manager',
         '  }',
         '  ',
-        '  cb(null, opportunity);',
+        '  cb(null, oppty);',
         '};'
     ].join('\n');
 
     if (extensibilityPoint === 'on-new-lead') {
         code = [
-            '// This code will execute whenever a new lead is created.',
-            '// Use 1000+ Node.js modules here. ',
+            '// This code will enrich the lead with additional profile information whenever a new lead is created',
+            '// Require any Node.js modules that you added here.',
+            '// You can access secrets using: module.exports.secrets',
+            'module.exports = function(lead, cb) {',
+            '  console.log("On new lead:", lead);',
             '',
-            'module.exports = function(ctx, cb) {',
-            '  console.log(\'On new lead:\', ctx.body);',
-            '  ',
-            '  var lead = ctx.body;',
-            '  ',
-            '  if (lead.value > 1000) {',
-            '    // Send e-mail to manager',
-            '    // ...',
+            '  lead.profile = {',
+            '    created: new Date(),',
+            '    vip: (lead.value > 1000)',
+            '  };',
+            '',  
+            '  // To use Clearbit add a clearbit_key secret with your clearbit key as the value.',
+            '  // You can signup at https://dashboard.clearbit.com/signup',
+            '  var clearbit_key = module.exports.secrets.clearbit_key;', 
+            '',  
+            '  // If the clearbit_key secret has been set',
+            '  if (clearbit_key !== undefined) {',
+            '    getProfileFromClearbit(lead.email, (err, clearbit) => {',
+            '      if(!err) {',
+            '        lead.profile.clearbit = clearbit;',
+            '        cb(null, lead);',
+            '      }',
+            '      else {',
+            '        cb(err);',
+            '      }',
+            '    });',
+            '  }',
+            '  else {',
+            '    cb(null, lead);',
             '  }',
             '',
-            '  // lead.profile = getProfileFromFullContact(lead.email);',
-            '  lead.profile = {',
-            '    vip: true,',
-            '    comment: \'This was added by custom code\'',
-            '  };',
-            ' ',
-            '  // return the newly created lead',
-            '  cb(null, lead);',
-            '};'
+            '  // Calls clearbit to get social media information for the lead',
+            '  function getProfileFromClearbit(email, cb) {',
+            '    var clearbit = require("clearbit")(module.exports.secrets.clearbit_key);',
+            '    var person = clearbit.Person;',
+            '    var cb_profile = {}',
+            '    person.find({email: email}).',
+            '      then(person=> {',
+            '        cb_profile.github = person.github.handle;',
+            '        cb_profile.twitter = person.twitter.handle;',
+            '        cb_profile.linkedin = person.linkedin.handle;',
+            '        cb(null, cb_profile);',
+            '      }).',
+            '      catch(e=> {',
+            '        cb(err);',
+            '      });',
+            '   }',
+            '};'        
         ].join('\n')
     }
 
@@ -98,7 +128,7 @@ function getExtensibilityPointSample(extensibilityPoint)  {
     var sample = { opportunity: 100 }
 
     if (extensibilityPoint === 'on-new-lead') {
-        sample = { value: 1 }
+        sample = { name: "Jane Doe", email: "janedoe@sample.com", value: "1000" }
     }
 
     return JSON.stringify(sample, null, 2);
@@ -119,12 +149,13 @@ function createRuntimeConfig(options) {
             templates: [{
                 name: options.extensibilityPoint,
                 secrets: {
-                    'auth0-extension-secret': options.randomBytes
+                    'wt-auth-secret': options.randomBytes
                 },
                 meta: {
-                    'auth0-extension-secret': options.randomBytes,
-                    'auth0-extension-type': options.extensibilityPoint,
-                    'wt-compiler': 'auth0-ext-compilers/generic'
+                    'wt-compiler': '@webtask/middleware-compiler',
+                    'wt-middleware': '@webtask/bearer-auth-middleware,@auth0extend/zerocrm-middleware',
+                    'wt-node-dependencies': '{"@webtask/middleware-compiler":"1.3.0","@webtask/bearer-auth-middleware":"1.2.1", "@auth0extend/zerocrm-middleware":"1.0.0"}'
+                    
                 },
                 code: getExtensibilityPointCode(options.extensibilityPoint)
             }]
