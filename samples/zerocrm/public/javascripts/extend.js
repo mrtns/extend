@@ -55,7 +55,8 @@ function createExtendEditorConfig(options) {
 function getExtensibilityPointCode(extensibilityPoint) {
     var code = [
         '// This code will execute whenever an opportunity is changed.',
-        '// Use 1000+ Node.js modules here. ',
+        '// Require any Node.js modules that you added here.',
+        '// You can access secrets using: module.webtask.secrets',
         '',
         'module.exports = function(oppty, cb) {',
         '  console.log(\'On opportunity changed:\', oppty);',
@@ -72,7 +73,13 @@ function getExtensibilityPointCode(extensibilityPoint) {
         code = [
             '// This code will enrich the lead with additional profile information whenever a new lead is created',
             '// Require any Node.js modules that you added here.',
-            '// You can access secrets using: module.exports.secrets',
+            '// You can access secrets using: module.webtask.secrets',
+            '',
+            '// To use Clearbit add a clearbit_key secret with your clearbit key as the value.',
+            '// You can signup at https://dashboard.clearbit.com/signup',
+            '', 
+            'var clearbit_key = module.webtask.secrets.clearbit_key;', 
+            'var clearbit = require("clearbit")(clearbit_key);',
             'module.exports = function(lead, cb) {',
             '  console.log("On new lead:", lead);',
             '',
@@ -81,12 +88,8 @@ function getExtensibilityPointCode(extensibilityPoint) {
             '    vip: (lead.value > 1000)',
             '  };',
             '',  
-            '  // To use Clearbit add a clearbit_key secret with your clearbit key as the value.',
-            '  // You can signup at https://dashboard.clearbit.com/signup',
-            '  var clearbit_key = module.exports.secrets.clearbit_key;', 
-            '',  
             '  // If the clearbit_key secret has been set',
-            '  if (clearbit_key !== undefined) {',
+            '  if (clearbit_key !== "SET CLEARBIT KEY") {',
             '    getProfileFromClearbit(lead.email, (err, clearbit) => {',
             '      if(!err) {',
             '        lead.profile.clearbit = clearbit;',
@@ -103,10 +106,9 @@ function getExtensibilityPointCode(extensibilityPoint) {
             '',
             '  // Calls clearbit to get social media information for the lead',
             '  function getProfileFromClearbit(email, cb) {',
-            '    var clearbit = require("clearbit")(module.exports.secrets.clearbit_key);',
-            '    var person = clearbit.Person;',
-            '    var cb_profile = {}',
-            '    person.find({email: email}).',
+            '    var Person = clearbit.Person;',
+            '    var cb_profile = {};',
+            '    Person.find({email: email}).',
             '      then(person=> {',
             '        cb_profile.github = person.github.handle;',
             '        cb_profile.twitter = person.twitter.handle;',
@@ -114,7 +116,8 @@ function getExtensibilityPointCode(extensibilityPoint) {
             '        cb(null, cb_profile);',
             '      }).',
             '      catch(e=> {',
-            '        cb(err);',
+            '        console.log(err);',
+            '        cb(null, cb_profile);',
             '      });',
             '   }',
             '};'        
@@ -149,13 +152,15 @@ function createRuntimeConfig(options) {
             templates: [{
                 name: options.extensibilityPoint,
                 secrets: {
-                    'wt-auth-secret': options.randomBytes
+                    'wt-auth-secret': options.randomBytes,
+                    'clearbit_key': 'SET CLEARBIT KEY'
                 },
                 meta: {
                     'wt-compiler': '@webtask/middleware-compiler',
                     'wt-middleware': '@webtask/bearer-auth-middleware,@auth0extend/zerocrm-middleware',
-                    'wt-node-dependencies': '{"@webtask/middleware-compiler":"1.3.0","@webtask/bearer-auth-middleware":"1.2.1", "@auth0extend/zerocrm-middleware":"1.0.0"}'
-                    
+                    'wt-node-dependencies': '{"@webtask/middleware-compiler":"1.3.0","@webtask/bearer-auth-middleware":"1.2.1", "@auth0extend/zerocrm-middleware":"1.0.0"}',
+                    'wt-auth-secret': options.randomBytes,
+                    'auth0-extension-type': options.extensibilityPoint
                 },
                 code: getExtensibilityPointCode(options.extensibilityPoint)
             }]

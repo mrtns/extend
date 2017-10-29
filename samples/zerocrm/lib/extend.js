@@ -76,7 +76,7 @@ exports.invokeExtension = (extensions, payload, cb) => {
         status: 500, 
         message: `Inconsistent configuration. More than 1 extension defined the extensibility point. Only one is allowed.`
     });
-
+    
     // No extensions defined, return unmodified input record
     if (extensions.length === 0) return cb(null, payload);
 
@@ -84,7 +84,7 @@ exports.invokeExtension = (extensions, payload, cb) => {
 
     // Execute the extension
     return superagent.post(extension.webtask_url)
-        .set('Authorization', `Bearer ${extension.meta['auth0-extension-secret']}`)
+        .set('Authorization', `Bearer ${extension.meta['wt-auth-secret']}`)
         .send(payload)
         .end((error, res) => {
             if (error) return errorResponse({ 
@@ -98,7 +98,6 @@ exports.invokeExtension = (extensions, payload, cb) => {
 
             // This is the place where any additional validations of the data returned
             // from the extension would happen. 
-
             return cb(null, res.body);
         })
 
