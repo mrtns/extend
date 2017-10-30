@@ -117,7 +117,7 @@ function getExtensibilityPointCode(extensibilityPoint) {
             '      }).',
             '      catch(e=> {',
             '        console.log(e);',
-            '        cb(null, cb_profile);',
+            '        cb(null, e);',
             '      });',
             '   }',
             '};'        
