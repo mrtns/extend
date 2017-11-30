@@ -14,9 +14,12 @@ collection: "Libraries"
 
 {% include include-layout.html src="content/libraries/extend-editor/configuring-extend-editor.md" name="configuring-extend-editor" %}
 
+{% include include-layout.html src="content/libraries/extend-editor/installing-from-npm.md" name="installing-from-npm"%} 
+
 {% include include-layout.html src="content/libraries/extend-editor/using-extend-editor-as-a-stand-alone-web-app.md" name="using-extend-editor-as-a-stand-alone-web-app"%} 
 
 {% include include-layout.html src="content/libraries/extend-editor/npm-modules.md" name="npm-modules"%} 
+
 
 {::options parse_block_html="false" /}
 
