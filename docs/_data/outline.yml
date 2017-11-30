@@ -143,6 +143,8 @@
           name: hosting-the-editor-in-your-web-site
         - title: Configuring Extend Editor
           name: configuring-extend-editor
+        - title: Installing from NPM
+          name: installing-from-npm
         - title: Using Extend Editor as a Stand Alone Web App
           name: using-extend-editor-as-a-stand-alone-web-app 
         - title: NPM Modules
