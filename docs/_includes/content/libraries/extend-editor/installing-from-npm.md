@@ -6,6 +6,8 @@ If you already have a [React](https://reactjs.org/) application, you can just ad
 npm install extend-editor-react --save
 ```
 
+**Note**: If you find a bug or you want so share something you'd like to change you can file it [here](https://github.com/auth0/extend-editor-react/issues).
+
 ### Usage
 
 #### Configuration Options
