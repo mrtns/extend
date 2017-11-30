@@ -3,7 +3,7 @@
 If you already have a [React](https://reactjs.org/) application, you can just add our NPM module to your project by doing:
 
 ```sh
-npm install extend-editor-react --save
+npm install @auth0extend/extend-editor-react --save
 ```
 
 **Note**: If you find a bug or you want so share something you'd like to change you can file it [here](https://github.com/auth0/extend-editor-react/issues).
@@ -29,7 +29,7 @@ Following, you'll find examples about how to use the different properties of the
 ```javascript
 import React from 'react';
 import { Component } from 'react';
-import ExtendEditor from 'extend-editor-react';
+import ExtendEditor from '@auth0extend/extend-editor-react';
 
 export default class MyApp extends Component {
   render() {
@@ -59,7 +59,7 @@ export default class MyApp extends Component {
 ```javascript
 import React from 'react';
 import { Component } from 'react';
-import ExtendEditor from 'extend-editor-react';
+import ExtendEditor from '@auth0extend/extend-editor-react';
 
 export default class MyApp extends Component {
   onEditorDidSaveWebtask(data) {
