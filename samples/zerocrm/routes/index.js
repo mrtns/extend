@@ -9,6 +9,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+function resolveHostUrl(req, defaultHost) {
+    return req.query.node && req.query.node === '8' ? 'https://sandbox.auth0-extend.com' : defaultHost;
+}
+
 router.set('views', path.join(__dirname, '..', 'views'));
 router.set('view engine', 'ejs');
 router.use(bodyParser.json());
@@ -25,10 +29,13 @@ router.get('/settings', function(req, res, next) {
 
     return async.waterfall([
         (cb) => extend.mapTenantToIsolationScope(req, cb),
-        (webtaskContext, cb) => res.render('settings', { 
-            webtaskContext: webtaskContext, 
-            randomBytes: crypto.randomBytes(32).toString('hex')
-        })
+        (webtaskContext, cb) => {
+            webtaskContext.hostUrl = resolveHostUrl(req, webtaskContext.hostUrl);
+            return res.render('settings', { 
+                webtaskContext: webtaskContext, 
+                randomBytes: crypto.randomBytes(32).toString('hex')
+            });
+        }
     ], next);
 });
 
@@ -41,7 +48,10 @@ router.post('/api/leads', bodyParser.json(), function (req, res, next) {
 
     return async.waterfall([
         (cb) => extend.mapTenantToIsolationScope(req, cb),
-        (webtaskContext, cb) => extend.discoverExtensions(webtaskContext, 'on-new-lead', cb),
+        (webtaskContext, cb) => {
+            webtaskContext.hostUrl = resolveHostUrl(req, webtaskContext.hostUrl);
+            return extend.discoverExtensions(webtaskContext, 'on-new-lead', cb);
+        },
         (extensions, cb) => extend.invokeExtension(extensions, req.body, cb),
         (result, cb) => {
             // This is the place where any application-specific processing of the 

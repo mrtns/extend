@@ -4,7 +4,7 @@ function createExtendEditorConfig(options) {
         token: options.webtaskContext.webtaskToken,
         hostUrl: options.webtaskContext.hostUrl,
         webtaskContainer: options.webtaskContext.webtaskContainer,
-        theme: 'light',
+        theme: 'dark',
         header: false,
         toolbar: {
             enabled: true,
@@ -212,11 +212,16 @@ function createInitialTutorial() {
         },
         { 
           sel : $(".tutorial.step3"), 
+          content : "Enter 'john.doe@acme.com' as the value of email",
+          position : "e" 
+        },
+        { 
+          sel : $(".tutorial.step4"), 
           content : "Click here.",
           position : "e" 
         },
         {
-          sel : $(".tutorial.step4"), 
+          sel : $(".tutorial.step5"), 
           content: 'JSON result is returned showing information about the newly created lead.',
           position : "n",
           delay : 5000

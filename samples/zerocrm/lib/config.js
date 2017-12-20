@@ -32,9 +32,9 @@ if (module.exports.masterWebtaskToken) {
     if (containerNamespace === undefined) {
         module.exports.multitenancyEnabled = true;
     }
-    else if (module.exports.webtaskContainer !== module.exports.zerocrmTenant) {
-        die('When running the ZeroCRM app using a trial webtask token, multi-tenancy is not available. Set WEBTASK_CONTAINER environment variable to the same value as ZEROCRM_TENANT.');
-    }
+    // else if (module.exports.webtaskContainer !== module.exports.zerocrmTenant) {
+    //     die('When running the ZeroCRM app using a trial webtask token, multi-tenancy is not available. Set WEBTASK_CONTAINER environment variable to the same value as ZEROCRM_TENANT.');
+    // }
 
     function die(message) {
         throw new Error(`${message} Please see https://github.com/auth0/extend/wiki/Auth0-Extend-User%27s-Guide#sample-application for more information.`);
