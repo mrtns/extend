@@ -32,7 +32,7 @@ function createExtendEditorConfig(options) {
                 defaultHeaders: {
                     'Content-Type': 'application/json',
                     Authorization: function (secrets) {
-                    var token = secrets ? secrets['wt-auth-secret'] : '';
+                    var token = secrets ? secrets['auth0-extension-secret'] : '';
                     return 'Bearer ' + token;
                     }
                 }
@@ -152,14 +152,14 @@ function createRuntimeConfig(options) {
             templates: [{
                 name: options.extensibilityPoint,
                 secrets: {
-                    'wt-auth-secret': options.randomBytes,
+                    'auth0-extension-secret': options.randomBytes,
                     'clearbit_key': 'SET CLEARBIT KEY'
                 },
                 meta: {
                     'wt-compiler': '@webtask/middleware-compiler',
                     'wt-middleware': '@webtask/bearer-auth-middleware,@auth0extend/zerocrm-middleware',
                     'wt-node-dependencies': '{"@webtask/middleware-compiler":"1.3.0","@webtask/bearer-auth-middleware":"1.2.1", "@auth0extend/zerocrm-middleware":"1.0.0"}',
-                    'wt-auth-secret': options.randomBytes,
+                    'auth0-extension-secret': options.randomBytes,
                     'auth0-extension-type': options.extensibilityPoint
                 },
                 code: getExtensibilityPointCode(options.extensibilityPoint)
