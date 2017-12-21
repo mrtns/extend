@@ -21,7 +21,13 @@ router.use(cookieParser());
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
 router.get('/', function(req, res) {
-    res.render('index', { });
+    res.redirect(`/leads`);
+});
+
+router.get('/leads', function(req, res) {
+    res.render('index', {
+        nodeVersion: req.query.node
+    });
 });
 
 router.get('/settings', function(req, res, next) {
@@ -33,7 +39,8 @@ router.get('/settings', function(req, res, next) {
             webtaskContext.hostUrl = resolveHostUrl(req, webtaskContext.hostUrl);
             return res.render('settings', { 
                 webtaskContext: webtaskContext, 
-                randomBytes: crypto.randomBytes(32).toString('hex')
+                randomBytes: crypto.randomBytes(32).toString('hex'),
+                nodeVersion: req.query.node
             });
         }
     ], next);

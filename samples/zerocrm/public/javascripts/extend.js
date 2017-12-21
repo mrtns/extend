@@ -121,7 +121,57 @@ function getExtensibilityPointCode(extensibilityPoint) {
             '      });',
             '   }',
             '};'        
-        ].join('\n')
+        ].join('\n');
+
+        if (qs('node') === '8') {
+            code = [
+                '// This code will enrich the lead with additional profile information whenever a new lead is created',
+                '// Require any Node.js modules that you added here.',
+                '// You can access secrets using: module.webtask.secrets',
+                '',
+                '// To use Clearbit add a clearbit_key secret with your clearbit key as the value.',
+                '// You can signup at https://dashboard.clearbit.com/signup',
+                '',
+                'const clearbit_key = module.webtask.secrets.clearbit_key;',
+                'const clearbit = require("clearbit")(clearbit_key);',
+                '',
+                'module.exports = async function(lead, cb) {',
+                '  console.log("On new lead:", lead);',
+                '',
+                '  lead.profile = {',
+                '    created: new Date(),',
+                '    vip: (lead.value > 1000)',
+                '  };',
+                '',
+                '  // If the clearbit_key secret has been set',
+                '  if (clearbit_key !== "SET CLEARBIT KEY") {',
+                '    try {',
+                '      cb(null, await getProfileFromClearbit(lead.email));',
+                '    } catch (err) {',
+                '      cb(err);',
+                '    }',
+                '    ',
+                '    return;',
+                '  }',
+                '  ',
+                '  cb(null, lead);',
+                '};',
+                '',
+                '// Calls clearbit to get social media information for the lead',
+                'async function getProfileFromClearbit(email) {',
+                '  var Person = clearbit.Person;',
+                '  var cb_profile = {};',
+                '  ',
+                '  return Person.find({email: email}). ',
+                '    then(person => {',
+                '      cb_profile.github = person.github.handle;',
+                '      cb_profile.twitter = person.twitter.handle;',
+                '      cb_profile.linkedin = person.linkedin.handle;',
+                '      return cb_profile;',
+                '    });',
+                ' }'
+            ].join('\n')
+        }
     }
 
     return code;
@@ -158,7 +208,7 @@ function createRuntimeConfig(options) {
                 meta: {
                     'wt-compiler': '@webtask/middleware-compiler',
                     'wt-middleware': '@webtask/bearer-auth-middleware,@auth0extend/zerocrm-middleware',
-                    'wt-node-dependencies': '{"@webtask/middleware-compiler":"1.3.0","@webtask/bearer-auth-middleware":"1.2.1", "@auth0extend/zerocrm-middleware":"1.0.0"}',
+                    'wt-node-dependencies': '{"@webtask/middleware-compiler":"1.3.0","@webtask/bearer-auth-middleware":"1.2.1", "@auth0extend/zerocrm-middleware":"1.0.0", "clearbit":"1.3.3"}',
                     'auth0-extension-secret': options.randomBytes,
                     'auth0-extension-type': options.extensibilityPoint
                 },
@@ -166,6 +216,10 @@ function createRuntimeConfig(options) {
             }]
         }]
     };
+
+    if (qs('node') === '8') {
+        editorOptions.categories[0].templates[0].meta['wt-editor-linter'] = 'disabled';
+    }
 
     return editorOptions;
 }
@@ -191,12 +245,18 @@ function createTripMock() {
 }
 
 function createInitialTutorial() {
+    var tutorialUrl = 'settings?mode=tutorial';
+    
     if (qs('mode') !== 'tutorial') {
         return createTripMock();
     }
 
+    if (qs('node') === '8') {
+        tutorialUrl = 'settings?node=8&mode=tutorial'
+    }
+
     $('.tutorial.step6 a')
-        .attr('href', 'settings?mode=tutorial');
+        .attr('href', tutorialUrl);
 
     var trip = new Trip([
         { 

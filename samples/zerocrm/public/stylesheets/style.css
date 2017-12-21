@@ -82,10 +82,14 @@ html, body {
 }
 
 .crm {
-  height: calc(100% - 43px);
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.crm.with-node-banner {
+  height: calc(100% - 43px);
 }
 
 .crm .container .header {
@@ -679,9 +683,11 @@ html, body {
   padding: 13px;
   text-align: center;
   font-size: 14px;
+  user-select: none;
 }
 
 .node8 a {
   text-decoration: underline;
   cursor: pointer;
+  color: #fff;
 }

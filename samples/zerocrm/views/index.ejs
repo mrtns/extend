@@ -17,18 +17,20 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/trip.css"/>
 </head>
 <body>
-  <div class="node8">Try-out ZeroCRM running in <strong>Node8</strong> by clicking <a>here</a>.</div>
-  <div class="crm">
+  <% if(nodeVersion !== '8'){ %>
+    <div class="node8">Try-out <strong>Zero CRM</strong> running in <strong>Node8</strong> by clicking <a href="leads?node=8">here</a></div>
+  <% } %>
+  <div class="crm <%= nodeVersion !== '8' ? 'with-node-banner' : '' %>">
     <div class="sidebar">
       <div class="logo">
         <span>Zero CRM</span>
       </div>
       <ol>
-        <li class="active"><a href="#"><i class="icon-budicon-289"></i>Leads</a></li>
+        <li class="active"><a href="leads<%= nodeVersion === '8' ? '?node=8' : '' %>"><i class="icon-budicon-289"></i>Leads</a></li>
         <li><i class="icon-budicon-290"></i>Accounts</li>
         <li><i class="icon-budicon-209"></i>Opportunities</li>
         <li><i class="icon-budicon-706"></i>Reports</li>
-        <li class="tutorial step6"><a href="settings"><i class="icon-budicon-329"></i>Settings</a></li>
+        <li class="tutorial step6"><a href="settings<%= nodeVersion  === '8' ? '?node=8' : '' %>"><i class="icon-budicon-329"></i>Settings</a></li>
       </ol>
       <div class="banner">
         <h5>Ready to implement Extend?</h5>
@@ -83,7 +85,7 @@
     </div>
   </div>
   <script>
-    $(function () {
+    $(function () {      
       var trip = createInitialTutorial();
 
       trip.start();
@@ -132,7 +134,6 @@
           $('#create').text('Create new lead');
 
          setTimeout(function () { trip.next(4); }, 300);
-         
         });
       });
     });
