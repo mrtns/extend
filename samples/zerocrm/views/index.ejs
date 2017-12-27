@@ -17,10 +17,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/trip.css"/>
 </head>
 <body>
-  <% if(nodeVersion !== '8'){ %>
-    <div class="node8">Try-out <strong>Zero CRM</strong> running in <strong>Node8</strong> by clicking <a href="leads?node=8">here</a></div>
-  <% } %>
-  <div class="crm <%= nodeVersion !== '8' ? 'with-node-banner' : '' %>">
+  <div class="crm">
     <div class="sidebar">
       <div class="logo">
         <span>Zero CRM</span>
@@ -40,6 +37,15 @@
     </div>
     <div class="container">
       <div class="header">
+        <% if(nodeVersion !== '8'){ %>
+          <div onclick="switchNodeVersion('8')" class="node8">
+            <a href="#">Switch to <strong>Node 8</strong></a>
+          </div>
+        <% } else { %>
+          <div onclick="switchNodeVersion('4')" class="node8">
+            <a href="#">Switch back to <strong>Node 4</strong></a>
+          </div>
+        <% } %>
         <ol>
           <li>
             <a href="https://auth0.com/extend/docs/getting-started#sample-application" target="_blank"><i class="icon-budicon-754"></i>Documentation</a>
@@ -84,8 +90,33 @@
       </div>
     </div>
   </div>
-  <script>
-    $(function () {      
+  <script>    
+    var storage = window.localStorage;
+
+    function switchNodeVersion (version) {
+      var href = window.location.href;
+
+      if (storage) {
+        storage.setItem('ZeroCRMNodeVersion', version);
+      }
+
+      if (version == 8 && (typeof qs('node') === 'undefined' || qs('node') != 8)) {
+        window.location.href = href + (href.indexOf('?') === -1 ? '?' : '&') + 'node=8'
+      } else {
+        window.location.href = href.split('?')[0] + (href.indexOf('mode=tutorial') >= 0 ? '?mode=tutorial' : '');
+      }
+    };
+
+    $(function () {     
+      if (storage) {
+        var version = storage.getItem('ZeroCRMNodeVersion');
+
+        if (version == 8 && (typeof qs('node') === 'undefined' || qs('node') != 8)) {
+          var href = window.location.href;
+          window.location.href = href + (href.indexOf('?') === -1 ? '?' : '&') + 'node=8'
+        }
+      }
+
       var trip = createInitialTutorial();
 
       trip.start();

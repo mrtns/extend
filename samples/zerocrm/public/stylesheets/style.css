@@ -261,6 +261,7 @@ html, body {
   margin-top: 25px;
   padding-bottom: 21px;
   border-bottom: 1px solid #333333;
+  min-height: 28px;
 }
 
 .crm .sidebar .logo img {
@@ -678,9 +679,9 @@ html, body {
 }
 
 .node8 {
-  background: #3445DC;
-  color: #fff;
-  padding: 13px;
+  /* background: #3445DC; */
+  color: #3445DC;
+  /* padding: 13px; */
   text-align: center;
   font-size: 14px;
   user-select: none;
@@ -689,5 +690,7 @@ html, body {
 .node8 a {
   text-decoration: underline;
   cursor: pointer;
-  color: #fff;
+  color: #3445DC;
+  text-decoration: none;
 }
+
