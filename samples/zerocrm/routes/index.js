@@ -21,7 +21,7 @@ router.use(cookieParser());
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
 router.get('/', function(req, res) {
-    res.redirect(`/leads`);
+    res.redirect(req.originalUrl + `leads`);
 });
 
 router.get('/leads', function(req, res) {
