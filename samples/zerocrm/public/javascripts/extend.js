@@ -4,7 +4,7 @@ function createExtendEditorConfig(options) {
         token: options.webtaskContext.webtaskToken,
         hostUrl: options.webtaskContext.hostUrl,
         webtaskContainer: options.webtaskContext.webtaskContainer,
-        theme: 'light',
+        theme: 'dark',
         header: false,
         toolbar: {
             enabled: true,
