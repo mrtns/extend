@@ -15,6 +15,7 @@ function createExtendEditorConfig(options) {
             height: '100%',
             width: '100%'
         },        
+        poweredBy: false,
         allowRenaming: false,
         allowDeleting: false,
         allowCreating: false,
