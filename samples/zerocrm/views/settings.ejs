@@ -97,6 +97,22 @@
   </div>
 
   <script>
+    var storage = window.localStorage;
+
+    function switchNodeVersion (version) {
+      var href = window.location.href;
+
+      if (storage) {
+        storage.setItem('ZeroCRMNodeVersion', version);
+      }
+
+      if (version == 8 && (typeof qs('node') === 'undefined' || qs('node') != 8)) {
+        window.location.href = href + (href.indexOf('?') === -1 ? '?' : '&') + 'node=8'
+      } else {
+        window.location.href = href.split('?')[0] + (href.indexOf('mode=tutorial') >= 0 ? '?mode=tutorial' : '');
+      }
+    };
+
     var trip = createSettingsTutorial();
 
     trip.start();
@@ -121,6 +137,15 @@
     }
     
     $(function () {
+      if (storage) {
+        var version = storage.getItem('ZeroCRMNodeVersion');
+
+        if (version == 8 && (typeof qs('node') === 'undefined' || qs('node') != 8)) {
+          var href = window.location.href;
+          window.location.href = href + (href.indexOf('?') === -1 ? '?' : '&') + 'node=8'
+        }
+      }
+
       $('#onnewlead').click(function () {
         displayExtendEditor('on-new-lead');
         $('.js-content-title').text('On new lead');
