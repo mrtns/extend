@@ -1,7 +1,9 @@
 ## Walkthrough
 Here is a quick walkthrough of using ZeroCRM.
 
-* Run the app with the command: `DEBUG=zerocrm npm start`
+* Run the app with the following command: 
+  * MacOS or Linux: `DEBUG=zerocrm npm start`
+  * Windows: `set DEBUG=zerocrm & npm start`
 * Open your browser to `http://localhost:3000`. You'll see a screen for creating leads.
 
 <kbd>
